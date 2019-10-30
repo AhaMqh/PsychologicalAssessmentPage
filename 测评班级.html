@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测评班级</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="head">
+            <div class="layui-row">
+                <div class="layui-col-xs5 layui-col-sm5 layui-col-md5 head-logo">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 school"><span>昆明市明通小学</span></div>
+                <div class="head-user">
+                    <div class="user-pic">
+                        <img src="img/default-head.svg" alt="">
+                    </div>
+                    <div class="user-name"><span>徐某某老师，欢迎您</span></div>
+                    <div class="quit"><a href="登录.html"><span class="tuichu">退出</span></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="body-container">
+            <div class="theform">
+                <div class="theform-head-cpxq">
+                    <img src="img/ceping-detail.svg" alt="">
+                    <span>测评班级详情</span>
+                </div>
+                <div class="theform-select">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item ts_body" style="display: flex;">
+                            <div class="layui-input-block sousuo_txt" style="width: 200px;">
+                                <select name="interest" lay-filter="">
+                                    <option value="1" selected="">请选择年级</option>
+                                    <option value="5">一年级</option>
+                                    <option value="4">二年级</option>
+                                </select>
+                            </div>
+                            <div class="layui-input-block" style="width: 200px;margin-left: 40px;">
+                                <select name="interest" lay-filter="">
+                                    <option value="1" selected="">请选择班级</option>
+                                    <option value="2">01班</option>
+                                    <option value="3">02班</option>
+                                    <option value="4">03班</option>
+                                    <option value="5">04班</option>
+                                </select>
+                            </div>
+                            
+                            <div class="layui-input-block" style="margin-left: 40px;">
+                                <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">查询</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="theform-body">
+                    <div class="table-name">2019年1-2年级心理测评（MHT）</div>
+                    <table class="layui-table t_class" style="margin-top: 0;">
+                        <colgroup>
+                            <col width="80">
+                            <col width="200">
+                            <col width="230">
+                            <col width="350">
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>年级</th>
+                                <th>班级</th>
+                                <th>测评人数比例 (实际测评/应测评)</th>
+                                <th>状态</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                               
+                                <td>一年级</td>
+                                <td>1班</td>
+                                <td><span class="num_test">40</span><span class="fg_num">/</span>40</td>
+                                <td><a href="测评结果.html"><span class="tb_finish">已结束</span></a></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                               
+                                <td>一年级</td>
+                                <td>2班</td>
+                                <td><span class="num_test">28</span><span class="fg_num">/</span>56</td>
+                                <td><a href="测评详情.html"><span class="tb_beagin">进行中</span></a></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                               
+                                <td>一年级</td>
+                                <td>3班</td>
+                                <td><span class="num_test">0</span><span class="fg_num">/</span>31</td>
+                                <td><span class="tb_nostart">未开始</span></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                               
+                                <td>二年级</td>
+                                <td>1班</td>
+                                <td><span class="num_test">77</span><span class="fg_num">/</span>80</td>
+                                <td><a href="测评详情.html"><span class="tb_beagin">进行中</span></a></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                               
+                                <td>二年级</td>
+                                <td>2班</td>
+                                <td><span class="num_test">46</span><span class="fg_num">/</span>46</td>
+                                <td><a href="测评结果.html"><span class="tb_finish">已结束</span></a></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                               
+                                <td>二年级</td>
+                                <td>3班</td>
+                                <td><span class="num_test">35</span><span class="fg_num">/</span>35</td>
+                                <td><a href="测评结果.html"><span class="tb_finish">已结束</span></a></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                               
+                                <td>二年级</td>
+                                <td>4班</td>
+                                <td><span class="num_test">43</span><span class="fg_num">/</span>51</td>
+                                <td><a href="测评详情.html"><span class="tb_beagin">进行中</span></a></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                               
+                                <td>二年级</td>
+                                <td>5班</td>
+                                <td><span class="num_test">55</span><span class="fg_num">/</span>63</td>
+                                <td><span class="tb_nostart">未开始</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div id="demo2" style="position: absolute;left: 15px;bottom: 0;"></div>
+            </div>
+        </div>
+        <div class="push">
+            <!-- not put anything here -->
+        </div>
+    </div>
+    <div class="foot">
+        <p>copyright&nbsp;思贤心理咨询</p>
+    </div>
+</body>
+<script src="layui/layui.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</html>

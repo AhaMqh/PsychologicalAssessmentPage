@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>学生首页</title>
+  <link rel="stylesheet" href="layui/css/layui.css">
+  <link rel="stylesheet" href="css/student.css">
+</head>
+
+<body>
+  <div class="main">
+    <div class="head">
+      <div class="layui-row">
+        <div class="layui-col-xs5 layui-col-sm5 layui-col-md5 head-logo">
+          <img src="img/logo.png" alt="">
+        </div>
+        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 school"><span>昆明市明通小学</span></div>
+        <div class="head-user">
+          <div class="user-pic">
+            <img src="img/default-head.svg" alt="">
+          </div>
+          <div class="user-name"><span>金某某同学，欢迎您</span></div>
+          <div class="quit"><a href="登录.html"><span class="exit">退出</span></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="body-container">
+      <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 info_stu">
+        <div class="stuform-head">
+          <div class="stu_info"><span class="stu_txt">学生信息</span></div>
+        </div>
+
+        <div class="ax_default ellipse_o">
+          <img class="img " src="img/u24.svg" />
+
+        </div>
+
+        <!-- Unnamed (圆形) -->
+        <div class="ax_default ellipse_one">
+          <img class="img " src="img/u25.svg" />
+
+        </div>
+
+        <div class="ax_default ellipse_t">
+          <img class="img " src="img/u24.svg" />
+
+        </div>
+
+        <!-- Unnamed (圆形) -->
+        <div class="ax_default ellipse_two">
+          <img class="img " src="img/u25.svg" />
+
+        </div>
+
+        <div class="stuform-body">
+          <div class="ax_default ellipse_thr">
+            <img class="img " src="img/u24.svg" />
+
+          </div>
+          <div class="ax_default ellipse_three">
+            <img class="img " src="img/u25.svg" />
+
+          </div>
+          <div class="ax_default ellipse_f">
+            <img class="img " src="img/u24.svg" />
+
+          </div>
+          <div class="ax_default ellipse_four">
+            <img class="img " src="img/u25.svg" />
+
+          </div>
+          <div class="ax_default box_one">
+            <div class="thread"></div>
+
+          </div>
+          <div class="ax_default box_two">
+            <div class="thread"></div>
+
+          </div>
+
+          <div class="stu_stuInfo">
+            <div class="stu_head">
+              <img src="img/1.jpg">
+            </div>
+            <div class="stu_info_box">
+              <table class="layui-table  exam_info_table" style="height: 350px;" lay-skin="row">
+                <colgroup>
+                  <col width="80">
+                  <col width="170">
+
+                </colgroup>
+
+                <tbody>
+                  <tr>
+                    <td class="info_stutit"><i class="layui-icon layui-icon-username icon_info"></i>  姓名：</td>
+                    <td>金某某</td>
+
+                  </tr>
+                  <tr>
+                    <td class="info_stutit"><i class="layui-icon layui-icon-male icon_info"></i> 性别：</td>
+                    <td>男</td>
+
+                  </tr>
+                  <tr>
+                    <td class="info_stutit"><i class="layui-icon layui-icon-note icon_info"></i>学号：</td>
+                    <td>KMYTZX20190203</td>
+
+                  </tr>
+                  <tr>
+                    <td class="info_stutit"><i class="layui-icon layui-icon-user icon_info"></i>班级：</td>
+                    <td>1班</td>
+
+                  </tr>
+                  <tr>
+                    <td class="info_stutit"><i class="layui-icon layui-icon-table icon_info"></i>年级：</td>
+                    <td>初中一年级</td>
+
+                  </tr>
+                </tbody>
+              </table>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="layui-col-xs9 layui-col-sm9 layui-col-md9 theform_stu">
+        <div class="theform-head">
+          <div class="waitingfor"><img src="img/u43.svg"><span class="wait_txt">待完成考试</span></div>
+          <form class="layui-form" action="">
+            <div class="layui-input-block exam_status">
+              <select name="interest" lay-filter="aihao">
+                <option value="">选择试卷状态</option>
+                <option value="0">全部</option>
+                <option value="1">已测</option>
+                <option value="2">未测</option>
+               
+              </select>
+            </div>
+
+
+          </form>
+
+        </div>
+        <div class="exam_box">
+          <div class="exam_info">
+            <div class="exam_infotitle">
+              <p class="exam_tit">第二套中学生心理健康测评卷</p>
+            </div>
+
+            <span>测评时间：2019-08-01 ~ 2019-08-05</span>
+            <span class="exam_zt">测评状态：<b class="exam_state">未测</b></span>
+            <div class="btn_begin">
+              <a href="测评页面.html" class="layui-btn beginTest">开始测评</a>
+            </div>
+          </div>
+          <div class="exam_info">
+            <div class="exam_infotitle">
+              <p class="exam_tit">第二套中学生心理健康测评卷</p>
+            </div>
+
+            <span>测评时间：2019-08-01 ~ 2019-08-05</span>
+            <span class="exam_zt">测评状态：<b class="exam_state">未测</b></span>
+            <div class="btn_begin">
+              <a href="测评页面.html" class="layui-btn beginTest">开始测评</a>
+            </div>
+          </div>
+          <div class="exam_info">
+            <div class="exam_infotitle">
+              <p class="exam_tit">第二套中学生心理健康测评卷</p>
+            </div>
+
+            <span>测评时间：2019-08-01 ~ 2019-08-05</span>
+            <span class="exam_zt">测评状态：<b class="exam_state1">已测</b></span>
+            <div class="btn_begin">
+              <a href="#" class="layui-btn layui-btn-disabled">开始测评</a>
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+
+
+    </div>
+    <div class="push">
+      <!-- not put anything here -->
+    </div>
+  </div>
+  <div class="foot">
+    <p>copyright&nbsp;思贤心理咨询</p>
+  </div>
+</body>
+<script src="layui/layui.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</html>

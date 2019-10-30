@@ -1,0 +1,590 @@
+.main {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /*IE6不识别min-height*/
+    position: relative;
+    width: 100%;
+    margin: 0 auto -48px;
+    background-color: #fff;
+    /*margin-bottom的负值等于footer高度*/
+}
+
+html,
+body {
+    background-color: rgba(242, 242, 242, 1);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
+}
+
+.head {
+    width: 100%;
+    height: 70px;
+    background: rgba(94, 170, 183, 1);
+    position: relative;
+}
+
+.head-logo {
+    height: 70px;
+}
+
+.head-logo img {
+    width: 200px;
+    height: auto;
+    padding: 14px 30px;
+}
+
+.user-pic {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0 15px;
+}
+
+.user-pic img {
+    width: 100%;
+    height: 100%;
+}
+
+.head-user {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.user-name {
+    font-size: 16px;
+    color: #333333;
+}
+
+.quit {
+    color: #fff;
+    font-size: 16px;
+    margin: 0 40px;
+    cursor: pointer;
+}
+
+.school {
+    color: #38666E;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px 0;
+}
+
+.school span {
+    letter-spacing: 10px;
+    font-size: 20px;
+}
+
+.body-container {
+    width: 1280px;
+    margin: 16px auto;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.tuichu{
+    color: #fff;
+}
+.push,
+.foot {
+    height: 48px;
+    clear: both;
+}
+
+.foot {
+    width: 100%;
+    background: rgba(51, 51, 51, 1);
+    bottom: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 48px;
+    position: relative;
+}
+.theform {
+    width: 100%;
+    height: 760px;
+    border-radius: 5px;
+    border: 1px solid rgba(94, 170, 183, 1);
+    box-shadow: 1px 1px 5px rgba(94, 170, 183, 0.298039215686275);
+    background: rgba(255, 255, 255, 1);
+    position: relative;
+}
+
+.theform-head {
+    background: rgba(94, 170, 183, 1);
+    height: 48px;
+    position: relative;
+}
+.waitingfor{
+    height: 43px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    color: #fff;
+}
+.wait_txt{
+    font-size: 16px;
+    margin-left: 10px;
+    line-height: 40px;
+}
+.exam_time{
+    padding: 0 20px;
+}
+.q_topic{
+    color:#5EAAB7 ;
+    padding: 0 5px;
+}
+.theform_stu{
+    
+    border-radius: 5px;
+    border: 1px solid rgba(94, 170, 183, 1);
+    box-shadow: 1px 1px 5px rgba(94, 170, 183, 0.298039215686275);
+    background: rgba(255, 255, 255, 1);
+    position: relative;
+    margin-left: 20px;
+    
+}
+.stuform-head{
+    background: rgba(94, 170, 183, 1);
+    height: 48px;
+    border-radius: 5px;
+}
+.stu_info{
+    text-align: center;
+    margin: 0 auto;
+    line-height: 48px;
+    color: #fff;
+}
+.ellipse_one {
+    border-width: 0px;
+    position: absolute;
+    left: 36px;
+    top: 36px;
+    width: 6px;
+    height: 6px;
+    display: flex;
+    opacity: 0.6;
+}
+.ellipse_o {
+    border-width: 0px;
+    position: absolute;
+    left: 33px;
+    top: 33px;
+    width: 12px;
+    height: 12px;
+    display: flex;
+}
+.ellipse_two {
+    border-width: 0px;
+    position: absolute;
+    left: 273px;
+    top: 36px;
+    width: 6px;
+    height: 6px;
+    display: flex;
+    opacity: 0.6;
+}
+.ellipse_t {
+    border-width: 0px;
+    position: absolute;
+    left: 270px;
+    top: 33px;
+    width: 12px;
+    height: 12px;
+    display: flex;
+}
+.box_one {
+    border-width: 0px;
+    position: absolute;
+    left: 38px;
+    top: 38px;
+    width: 3px;
+    height: 35px;
+    display: flex;
+}
+.thread {
+    border-width: 0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 3px;
+    height: 40px;
+    background: inherit;
+    background-color: rgba(94, 170, 183, 1);
+    border: none;
+    border-radius: 2px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.box_two {
+    border-width: 0px;
+    position: absolute;
+    left: 275px;
+    top: 38px;
+    width: 3px;
+    height: 35px;
+    display: flex;
+}
+.stuform-body{
+    background-color: rgba(94, 170, 183, 1);
+    margin-top: 18px;
+    border-radius: 5px;
+}
+.ellipse_three {
+    border-width: 0px;
+    position: absolute;
+    left: 36px;
+    top: 73px;
+    width: 6px;
+    height: 6px;
+    display: flex;
+    opacity: 0.6;
+}
+.ellipse_thr {
+    border-width: 0px;
+    position: absolute;
+    left: 33px;
+    top: 70px;
+    width: 12px;
+    height: 12px;
+    display: flex;
+}
+.ellipse_four {
+    border-width: 0px;
+    position: absolute;
+    left: 273px;
+    top: 73px;
+    width: 6px;
+    height: 6px;
+    display: flex;
+    opacity: 0.6;
+}
+.ellipse_f {
+    border-width: 0px;
+    position: absolute;
+    left: 270px;
+    top: 70px;
+    width: 12px;
+    height: 12px;
+    display: flex;
+}
+.stu_head{
+    width: 100px;
+    height: 100px;
+   
+    margin: 0 auto;
+    padding: 60px 40px 20px 40px;
+}
+.stu_head img{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+.info_box{
+    padding: 20px;
+}
+ 
+
+.info_table td{
+    line-height: 40px;
+    
+}
+.icon_info{
+    color: rgba(94, 170, 183, 1);
+    padding: 0 7px;
+}
+.layui-form-select dl dd.layui-this {
+    background-color:  rgba(94, 170, 183, 1);
+    color: #fff;
+}
+.layui-table[lay-skin=row] td, .layui-table[lay-skin=row] th {
+    border-width: 0 0 0 0;
+}
+.info_stu{
+    background-color: #eee;
+    height: 735px;
+}
+.info_stutit{
+    font-weight: bold;
+}
+.exam_status{
+    width: 240px;
+    float: right;
+   padding: 5px 15px;
+}
+.exam_box{
+
+    padding: 15px;
+    background-color: #fff;
+    
+}
+.exam_info{
+   
+    height: 100px;
+    background-color: #F7FBFC;
+    margin-bottom: 30px;
+    border: 1px solid #CFE6EA;
+    padding: 10px;
+   
+}
+.exam_tit{
+    font-size: 18px;
+    color: #666666;
+    line-height: 30px;
+}
+.exam_infotitle{
+    text-align: center;
+}
+.exam_zt{
+    float: right;
+}
+.beginTest{
+    background-color: #fff;
+    border: 1px solid rgba(94, 170, 183, 1);
+    color: rgba(94, 170, 183, 1);
+    border-radius: 5px;
+    
+}
+.beginTest:hover{
+    background-color: rgba(94, 170, 183, 1);
+    border: 1px solid rgba(94, 170, 183, 1);
+    color:#fff;
+    border-radius: 5px;
+    
+}
+.btn_begin{
+    padding: 10px 0;
+    text-align: center;
+}
+.exam_state{
+    color:#5EAAB7;
+}
+.exam_state1{
+    color: #04A751;
+}
+.stu_info_box {
+    padding: 10px 10px 40px 10px;
+    height: 200px;
+}
+.stu_head {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    padding: 35px;
+}
+.stu_stuInfo{
+    height: 670px;
+}
+
+
+
+.exam_stuInfo{
+    border: #5EAAB7 1px solid;
+    background-color: #fff;
+    border-radius: 5px;
+  
+   
+}
+.exam_stu_head{
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    padding: 10px;
+}
+.exam_stu_head img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.exam_info_box{
+    padding: 0 10px ;
+    height: 200px;
+   
+    
+}
+.layui-table[lay-skin=row] {
+    border: none;
+    border-radius: 5px;
+}
+.exam_info_table td, .exam_info_table th {
+    position: relative;
+    padding: 9px 5px;
+    min-height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+}
+.exam_num{
+    
+    border: #5EAAB7 1px solid;
+    background-color: #fff;
+    padding: 10px;
+    display: block;
+    overflow: hidden;
+
+}
+.datika{
+    height: 50px;
+    background-color: #5EAAB7;
+    margin-top: 15px;
+    line-height: 50px;
+    color: #fff;
+}
+
+.q_num{
+    float: right;
+    padding: 0 10px;
+}
+.q_icon{
+    color: #fff;
+    padding: 0 8px;
+}
+.qselect{
+    color:#666;
+}
+.qtit{
+    font-weight: 400;
+}
+.exam_number{
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    border: 1px solid #e4e4e4;
+    text-align: center;
+    color: #666666;
+    line-height: 25px;
+    position: relative;
+    float: left;
+    margin: 5px;
+}
+.exam_number:hover{
+   
+    border: 1px solid #5EAAB7;
+}
+.exam_number1{
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    border: 1px solid  #ff6633 ;
+    text-align: center;
+    color: #666666;
+    line-height: 25px;
+    position: relative;
+    float: left;
+    margin: 5px;
+}
+.exam_number2{
+    height: 25px;
+    width: 25px;
+    background-color: #CFE6EA;
+    border: 1px solid  #5EAAB7 ;
+    text-align: center;
+    color: #666666;
+    line-height: 25px;
+    position: relative;
+    float: left;
+    margin: 5px;
+}
+#u_countDown {
+  height:70px;
+  margin-top: 15px;
+ 
+}
+#u_countDown_div {
+  border-width:0px;
+  height:95px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 1);
+  box-sizing:border-box;
+  border-width:1px;
+  border-style:solid;
+  border-color:rgba(94, 170, 183, 1);
+  border-radius:4px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+}
+.time_container{
+    text-align: center;
+    line-height: 45px;
+    margin-top: 20px;
+}
+.ys1{
+	color: #ff6633;
+  font-weight: bold;
+  font-size: 16px;
+ 
+  }
+  .t_co{
+    color: #333333;
+    font-weight: 400;
+    letter-spacing: 9px;
+    margin-left: 3px;
+  }
+  .exam_title{
+   
+      text-align: center;
+      font-size: 18px;
+      line-height: 30px;
+      
+  }
+  .exam-head{
+      height:40px;
+     background-color: #eee;
+      padding: 10px;
+  }
+  .btn_save{
+      background-color:#5EAAB7 ;
+      border-radius: 5px;
+      float: right;
+  }
+  .btn_save:hover{
+    background-color:#fff ;
+    border-radius: 5px;
+    color: #5EAAB7;
+    float: right;
+}
+.layui-elem-field legend {
+    margin-left: 20px;
+    padding: 0 10px;
+    font-size: 16px;
+    font-weight: 300;
+}
+.layui-input-block {
+    margin-left: 30px;
+    min-height: 36px;
+}
+.layui-form-radio {
+    padding-right: 50px;
+}
+.layui-form-radio>i {
+    font-size: 14px;
+}
+.layui-elem-field {
+    margin-bottom: 20px;
+}
+.btn_over{
+    padding: 20px;
+    margin: 0 auto;
+}
+.btn_tijiao{
+    background-color: #5EAAB7;
+}
+.jiaoshi{
+    padding-right: 0;
+}
+.exit{
+    color: #fff;
+}

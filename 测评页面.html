@@ -1,0 +1,415 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测评页面</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/student.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="head">
+            <div class="layui-row">
+                <div class="layui-col-xs5 layui-col-sm5 layui-col-md5 head-logo">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 school"><span>昆明市明通小学</span></div>
+                <div class="head-user">
+                    <div class="user-pic">
+                        <img src="img/default-head.svg" alt="">
+                    </div>
+                    <div class="user-name"><span>金某某同学，欢迎您</span></div>
+                    <div class="quit"><a href="登录.html"><span class="exit">退出</span></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="body-container">
+            <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 info_stu">
+                <div class="exam_stuInfo">
+                    <div class="exam_stu_head">
+                        <img src="img/u66.svg">
+                    </div>
+                    <div class="exam_info_box">
+                        <table class="layui-table  exam_info_table" lay-skin="row">
+                            <colgroup>
+                                <col width="50">
+                                <col width="130">
+
+                            </colgroup>
+
+                            <tbody>
+                                <tr>
+                                    <td class="info_stutit">姓名：</td>
+                                    <td>金某某</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="info_stutit">性别：</td>
+                                    <td>男</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="info_stutit">学号：</td>
+                                    <td>KMYTZX20190203</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="info_stutit">班级：</td>
+                                    <td>1班</td>
+
+                                </tr>
+                                <tr>
+                                    <td class="info_stutit">年级：</td>
+                                    <td>初中一年级</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="datika"><i class="layui-icon layui-icon-tabs q_icon"></i><b class="q_dati">答题卡</b><span class="q_num">共30题</span></div>
+                <div class="exam_num">
+                    
+                    <div id="firstDiv" class="exam_number">
+                        <span>1</span>
+                    </div>
+                    <div  id="firstDiv2" class="exam_number">
+                        <span>2</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>3</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>4</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>5</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>6</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>7</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>8</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>9</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>10</span>
+
+                    </div>
+                    <div class="exam_number">
+                        <span>11</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>12</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>13</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>14</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>15</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>16</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>17</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>18</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>19</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>20</span>
+
+                    </div>
+
+                    <div class="exam_number">
+                        <span>21</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>22</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>23</span>
+                    </div>
+                    
+                    <div class="exam_number">
+                        <span>24</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>25</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>26</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>27</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>28</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>29</span>
+                    </div>
+                    <div class="exam_number">
+                        <span>30</span>
+
+                    </div>
+
+
+                </div>
+                <div id="u_countDown" class="ax_default" data-left="115" data-top="375" data-width="190" data-height="229">
+                        <div class="datika"><i class="layui-icon layui-icon-log q_icon"></i><b class="q_dati">答题时间剩余</b></div>
+                    <div id="u_countDown_div" class="">
+                        
+                        <div class="time_container">
+                            <div class="container timeBar ys1" data="7200"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="layui-col-xs10 layui-col-sm10 layui-col-md10 theform_stu ">
+                <div class="exam-head">
+                    <span class="wait_txt"><i class="layui-icon layui-icon-list q_topic" style="font-size: 24px;font-weight: 700;"></i>  第二套中学生心理健康测评卷</span>
+                    <span class="exam_time">(考试时间：120分钟)</span>
+                    <span class="exam_save"><a href="#" class="layui-btn btn_save">保存</a></span>
+                </div>
+                
+                <div class="exam_box">
+                    <fieldset class="layui-elem-field">
+                        <legend><span class="qid">1、</span><b class="qtit">老师在向全班提问时，你是否会觉得是在提问自己而感到不安？</b></legend>
+                        <div class="layui-field-box">
+                            <form class="layui-form" action="">
+                                <div class="layui-input-block qselect">
+                                    <input type="radio" name="t" value="男" title="A、是" lay-filter="aaa" />
+                                    <input type="radio" name="t" value="女" title="B、否" lay-filter="aaa" />
+                                </div>
+                            </form>
+                        </div>
+                    </fieldset>
+                    <fieldset class="layui-elem-field">
+                        <legend><span  class="qid">2、</span><b class="qtit">是否认为学校里得到的学习成绩总是不大可靠的？</b></legend>
+                        <div class="layui-field-box">
+                            <form class="layui-form" action="">
+                                <div class="layui-input-block qselect">
+                                    <input type="radio" name="sex1" value="男" title="A、是" lay-filter="bbb" >
+                                    <input type="radio" name="sex1" value="女" title="B、否" lay-filter="bbb" >
+
+                                </div>
+                            </form>
+                        </div>
+                    </fieldset>
+                    <fieldset class="layui-elem-field">
+                        <legend><span  class="qid">3、</span><b class="qtit">考试时，当你想不起来原先掌握的知识时，你是否会感到焦虑？</b></legend>
+                        <div class="layui-field-box">
+                            <form class="layui-form" action="">
+                                <div class="layui-input-block qselect">
+                                    <input type="radio" name="sex" value="男" title="A、是">
+                                    <input type="radio" name="sex" value="女" title="B、否">
+
+                                </div>
+                            </form>
+                        </div>
+                    </fieldset>
+                    <fieldset class="layui-elem-field">
+                        <legend><span  class="qid">4、</span><b class="qtit">感到人们对您不友好，不喜欢您？</b></legend>
+                        <div class="layui-field-box ">
+                            <form class="layui-form" action="">
+                                <div class="layui-input-block qselect">
+                                    <input type="radio" name="sex" value="男" title="A、没有：自觉并无该项问题（症状）">
+                                    <input type="radio" name="sex" value="女" title="B、很轻：自觉有该问题，但发生的并不频繁">
+                                    <input type="radio" name="sex" value="男" title="C、中等：自觉有该症状，其严重程度为轻到中度">
+                                    <input type="radio" name="sex" value="女" title="D、偏重：自觉常有该项症状，其程度为中到严重">
+                                    <input type="radio" name="sex" value="女" title="E、严重：自觉该症状的频度和强度都十分严重">
+
+                                </div>
+                            </form>
+                        </div>
+                    </fieldset>
+                    <fieldset class="layui-elem-field">
+                        <legend><span  class="qid">5、</span><b class="qtit">当别人看着您或谈论您时感到不自在</b></legend>
+                        <div class="layui-field-box">
+                            <form class="layui-form" action="">
+                                <div class="layui-input-block qselect">
+                                    <input type="radio" name="sex" value="男" title="A、没有：自觉并无该项问题（症状）">
+                                    <input type="radio" name="sex" value="女" title="B、很轻：自觉有该问题，但发生的并不频繁">
+                                    <input type="radio" name="sex" value="男" title="C、中等：自觉有该症状，其严重程度为轻到中度">
+                                    <input type="radio" name="sex" value="女" title="D、偏重：自觉常有该项症状，其程度为中到严重">
+                                    <input type="radio" name="sex" value="女" title="E、严重：自觉该症状的频度和强度都十分严重">
+
+                                </div>
+                            </form>
+                        </div>
+                    </fieldset>
+                    <fieldset class="layui-elem-field">
+                        <legend><span  class="qid">6、</span><b class="qtit">感到对别人神经过敏</b></legend>
+                        <div class="layui-field-box ">
+                            <form class="layui-form" action="">
+                                <div class="layui-input-block qselect">
+                                    <input type="radio" name="sex" value="男" title="A、没有：自觉并无该项问题（症状）">
+                                    <input type="radio" name="sex" value="女" title="B、很轻：自觉有该问题，但发生的并不频繁">
+                                    <input type="radio" name="sex" value="男" title="C、中等：自觉有该症状，其严重程度为轻到中度">
+                                    <input type="radio" name="sex" value="女" title="D、偏重：自觉常有该项症状，其程度为中到严重">
+                                    <input type="radio" name="sex" value="女" title="E、严重：自觉该症状的频度和强度都十分严重">
+
+                                </div>
+                            </form>
+                        </div>
+                    </fieldset>
+                    <fieldset class="layui-elem-field">
+                        <legend><span  class="qid">7、</span><b class="qtit">我想结束自己的生命</b></legend>
+                        <div class="layui-field-box">
+                            <form class="layui-form" action="">
+                                <div class="layui-input-block qselect">
+                                    <input type="radio" name="sex" value="男" title="A、没有：自觉并无该项问题（症状）">
+                                    <input type="radio" name="sex" value="女" title="B、很轻：自觉有该问题，但发生的并不频繁">
+                                    <input type="radio" name="sex" value="男" title="C、中等：自觉有该症状，其严重程度为轻到中度">
+                                    <input type="radio" name="sex" value="女" title="D、偏重：自觉常有该项症状，其程度为中到严重">
+                                    <input type="radio" name="sex" value="女" title="E、严重：自觉该症状的频度和强度都十分严重">
+
+                                </div>
+                            </form>
+                        </div>
+                    </fieldset>
+                    <fieldset class="layui-elem-field">
+                            <legend><span  class="qid">7、</span><b class="qtit">我想结束自己的生命</b></legend>
+                            <div class="layui-field-box">
+                                <form class="layui-form" action="">
+                                    <div class="layui-input-block qselect">
+                                        <input type="radio" name="sex" value="男" title="A、没有：自觉并无该项问题（症状）">
+                                        <input type="radio" name="sex" value="女" title="B、很轻：自觉有该问题，但发生的并不频繁">
+                                        <input type="radio" name="sex" value="男" title="C、中等：自觉有该症状，其严重程度为轻到中度">
+                                        <input type="radio" name="sex" value="女" title="D、偏重：自觉常有该项症状，其程度为中到严重">
+                                        <input type="radio" name="sex" value="女" title="E、严重：自觉该症状的频度和强度都十分严重">
+    
+                                    </div>
+                                </form>
+                            </div>
+                        </fieldset>
+                        <fieldset class="layui-elem-field">
+                                <legend><span  class="qid">7、</span><b class="qtit">我想结束自己的生命</b></legend>
+                                <div class="layui-field-box">
+                                    <form class="layui-form" action="">
+                                        <div class="layui-input-block qselect">
+                                            <input type="radio" name="sex" value="男" title="A、没有：自觉并无该项问题（症状）">
+                                            <input type="radio" name="sex" value="女" title="B、很轻：自觉有该问题，但发生的并不频繁">
+                                            <input type="radio" name="sex" value="男" title="C、中等：自觉有该症状，其严重程度为轻到中度">
+                                            <input type="radio" name="sex" value="女" title="D、偏重：自觉常有该项症状，其程度为中到严重">
+                                            <input type="radio" name="sex" value="女" title="E、严重：自觉该症状的频度和强度都十分严重">
+        
+                                        </div>
+                                    </form>
+                                </div>
+                            </fieldset>
+                            <fieldset class="layui-elem-field">
+                                    <legend><span  class="qid">7、</span><b class="qtit">我想结束自己的生命</b></legend>
+                                    <div class="layui-field-box">
+                                        <form class="layui-form" action="">
+                                            <div class="layui-input-block qselect">
+                                                <input type="radio" name="sex" value="男" title="A、没有：自觉并无该项问题（症状）">
+                                                <input type="radio" name="sex" value="女" title="B、很轻：自觉有该问题，但发生的并不频繁">
+                                                <input type="radio" name="sex" value="男" title="C、中等：自觉有该症状，其严重程度为轻到中度">
+                                                <input type="radio" name="sex" value="女" title="D、偏重：自觉常有该项症状，其程度为中到严重">
+                                                <input type="radio" name="sex" value="女" title="E、严重：自觉该症状的频度和强度都十分严重">
+            
+                                            </div>
+                                        </form>
+                                    </div>
+                                </fieldset>
+                    <div style="width: 210px;" class="btn_over">
+                        <button type="button" class="layui-btn layui-btn-fluid btn_tijiao" id="btn">交卷</button>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+        <div class="push">
+            <!-- not put anything here -->
+        </div>
+    </div>
+    <div class="foot">
+        <p>copyright&nbsp;思贤心理咨询</p>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script src="layui/layui.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/countdown.js"></script>
+<script>
+    $(function () {
+        $(".timeBar").each(function () {
+            $(this).countdownsync({
+                dayTag: "",
+                hourTag: "<label class='tt hh dib vam'>00</label><span><span class='t_co'>时</span>",
+                minTag: "<label class='tt mm dib vam'>00</label><span class='t_co'>分</span>",
+                secTag: "<label class='tt ss dib vam'>00</label><span class='t_co'>秒</span>",
+                dayClass: ".dd",
+                hourClass: ".hh",
+                minClass: ".mm",
+                secClass: ".ss",
+                isDefault: false,
+                showTemp: 1
+
+            }, function () {
+                location.reload();
+            });
+        });
+    });
+
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate', 'element', 'jquery'], function () {
+        var form = layui.form;
+        layer = layui.layer,
+            element = layui.element,
+            $ = layui.jquery;
+        form.on('radio(aaa)', function (data) {
+
+            var firstDiv = document.getElementById("firstDiv");
+            firstDiv.className = "exam_number2";
+            form.render();
+        });
+
+
+        $(document).on('click', '#btn', function () {
+            var tradio = $("input[name='sex1']:checked").val();
+            if(tradio == undefined){
+                layer.alert('第二题还未选择', {
+                icon: 5,
+                title: "提示"
+                });
+                var firstDiv2 = document.getElementById("firstDiv2");
+                firstDiv2.className = "exam_number1";
+                form.render();
+            }
+            console.log(tradio);
+        });
+    });
+
+</script>
+
+</html>

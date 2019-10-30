@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .layui-form-radio {
+             padding-right: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main hv-center">
+        <div class="login-bg"><img src="img/login-bg.jpg" alt=""></div>
+        <div class="login-all">
+            <div class="login-body">
+                <div class="login-words">
+                    <div class="login-logo">
+                        <img src="img/login-logo.png" alt="">
+                    </div>
+                    <div class="ll-words">
+                        <div>
+                            <h1>心理健康在线测评系统</h1>
+                        </div>
+                        <div>
+                            <p>Mental Health Assessment System</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="login-form">
+                    <div class="lof-tittle">
+                        <h2>登录</h2>
+                    </div>
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label login_tit">用户名：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    placeholder="请输入用户名" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" style="margin-top: 32px;">
+                            <label class="layui-form-label login_tit">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+                            <div class="layui-input-block">
+                                <input type="password" name="title" lay-verify="title" autocomplete="off"
+                                    placeholder="请输入密码" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item" style="margin-top: 32px;">
+                            <label class="layui-form-label login_tit">学&nbsp;&nbsp;&nbsp;&nbsp;校：</label>
+                            <div class="layui-input-block">
+                                <select name="interest" lay-filter="aihao">
+                                    <option value="">请选择学校</option>
+                                    <option value="0">昆明第一中学</option>
+                                    <option value="1">昆明第一中学</option>
+                                    <option value="2">昆明第一中学</option>
+                                    <option value="3">昆明第一中学</option>
+                                    <option value="4">昆明第一中学</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block" style="text-align: right;">
+                                <a href="教师首页.html"><input type="radio" name="sex" value="教师" title="教师" checked="" class="jiaoshi"></a>                               
+                                <a href="学生首页.html"><input type="radio" name="sex" value="学生" title="学生"></a>
+                            </div>
+                        </div>
+                        <div class="layui-form-item login-btn">
+                            <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">登录</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="layui/layui.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</html>

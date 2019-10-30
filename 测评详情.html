@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测评详情</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="head">
+            <div class="layui-row">
+                <div class="layui-col-xs5 layui-col-sm5 layui-col-md5 head-logo">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 school"><span>昆明市明通小学</span></div>
+                <div class="head-user">
+                    <div class="user-pic">
+                        <img src="img/default-head.svg" alt="">
+                    </div>
+                    <div class="user-name"><span>徐某某老师，欢迎您</span></div>
+                    <div class="quit"><a href="登录.html"><span class="tuichu">退出</span></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="body-container">
+            <div class="theform">
+                <div class="theform-head-cpxq">
+                    <img src="img/ceping-detail.svg" alt="">
+                    <span>测评卷详情</span>
+                    <span class="">五年级二班</span>
+                </div>
+                <div class="theform-select">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item ts_body" style="display: flex;">
+                            
+                            <div class="layui-input-block sousuo_txt" style="width: 200px;">
+                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    placeholder="请输入学生姓名" class="layui-input">
+                            </div>
+                            <div class="layui-input-block" style="width: 200px;margin-left: 40px;">
+                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    placeholder="请输入学生学号" class="layui-input">
+                            </div>
+                            <div class="layui-input-block" style="margin-left: 40px;">
+                                <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">查询</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="theform-body">
+                    <div class="table-name">关于学习焦虑模块的特别测评</div>
+                    <table class="layui-table" style="margin-top: 0;">
+                        <colgroup>
+                            <col width="80">
+                            <col width="150">
+                            <col width="230">
+                            <col width="150">
+                            <col width="150">
+                            <col width="150">
+                            <col width="120">
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>姓名</th>
+                                <th>学号</th>
+                                <th>状态</th>
+                                <th>完成题目数</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>金秀贤</td>
+                                <td>KMDSZX201801009</td>
+                                <td><span class="tb_nostart">未开始</span></td>
+                                <td>0/60</td>
+                                <td><div class="layui-btn-group">
+                                    <button type="button" class="layui-btn layui-btn-sm btn_result">
+                                     强制交卷
+                                    </button>
+                                    <button type="button" class="layui-btn layui-btn-sm btn_unresult">
+                                     取消交卷
+                                    </button>
+                                   
+                                  </div></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>金秀贤</td>
+                                <td>KMDSZX201801009</td>
+                                <td><span class="tb_nostart">未开始</span></td>
+                                <td>0/60</td>
+                                <td><div class="layui-btn-group">
+                                    <button type="button" class="layui-btn layui-btn-sm btn_result">
+                                     强制交卷
+                                    </button>
+                                    <button type="button" class="layui-btn layui-btn-sm btn_unresult">
+                                     取消交卷
+                                    </button>
+                                   
+                                  </div></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>金秀贤</td>
+                                <td>KMDSZX201801009</td>
+                        
+                                <td><span class="tb_finish">已交卷</span></td>
+                                <td>0/60</td>
+                                <td><div class="layui-btn-group">
+                                    <button type="button" class="layui-btn layui-btn-sm btn_result">
+                                     强制交卷
+                                    </button>
+                                    <button type="button" class="layui-btn layui-btn-sm btn_unresult">
+                                     取消交卷
+                                    </button>
+                                   
+                                  </div></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>金秀贤</td>
+                                <td>KMDSZX201801009</td>
+                               
+                                <td><span class="tb_finish">已交卷</span></td>
+                                <td>0/60</td>
+                                <td><div class="layui-btn-group">
+                                    <button type="button" class="layui-btn layui-btn-sm btn_result">
+                                     强制交卷
+                                    </button>
+                                    <button type="button" class="layui-btn layui-btn-sm btn_unresult">
+                                     取消交卷
+                                    </button>
+                                   
+                                  </div></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>金秀贤</td>
+                                <td>KMDSZX201801009</td>
+                               
+                                <td><span class="tb_nostart">未开始</span></td>
+                                <td>0/60</td>
+                                <td><div class="layui-btn-group">
+                                    <button type="button" class="layui-btn layui-btn-sm btn_result">
+                                     强制交卷
+                                    </button>
+                                    <button type="button" class="layui-btn layui-btn-sm btn_unresult">
+                                     取消交卷
+                                    </button>
+                                   
+                                  </div></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>金秀贤</td>
+                                <td>KMDSZX201801009</td>
+                              
+                                <td><span class="tb_beagin">进行中</span></td>
+                                <td>0/60</td>
+                                <td><div class="layui-btn-group">
+                                    <button type="button" class="layui-btn layui-btn-sm btn_result">
+                                     强制交卷
+                                    </button>
+                                    <button type="button" class="layui-btn layui-btn-sm btn_unresult">
+                                     取消交卷
+                                    </button>
+                                   
+                                  </div></td>
+                               
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>金秀贤</td>
+                                <td>KMDSZX201801009</td>
+                              
+                                <td><span class="tb_finish">已交卷</span></td>
+                                <td>0/60</td>
+                                <td><div class="layui-btn-group">
+                                    <button type="button" class="layui-btn layui-btn-sm btn_result">
+                                     强制交卷
+                                    </button>
+                                    <button type="button" class="layui-btn layui-btn-sm btn_unresult">
+                                     取消交卷
+                                    </button>
+                                   
+                                  </div></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>金秀贤</td>
+                                <td>KMDSZX201801009</td>
+                             
+                                <td><span class="tb_finish">已交卷</span></td>
+                                <td>0/60</td>
+                                <td><div class="layui-btn-group">
+                                    <button type="button" class="layui-btn layui-btn-sm btn_result">
+                                     强制交卷
+                                    </button>
+                                    <button type="button" class="layui-btn layui-btn-sm btn_unresult">
+                                     取消交卷
+                                    </button>
+                                   
+                                  </div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div id="demo2" style="position: absolute;left: 15px;bottom: 0;"></div>
+            </div>
+        </div>
+        <div class="push">
+            <!-- not put anything here -->
+        </div>
+    </div>
+    <div class="foot">
+        <p>copyright&nbsp;思贤心理咨询</p>
+    </div>
+</body>
+<script src="layui/layui.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</html>

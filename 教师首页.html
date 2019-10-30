@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>教师首页</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="head">
+            <div class="layui-row">
+                <div class="layui-col-xs5 layui-col-sm5 layui-col-md5 head-logo">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 school"><span>昆明市明通小学</span></div>
+                <div class="head-user">
+                    <div class="user-pic">
+                        <img src="img/default-head.svg" alt="">
+                    </div>
+                    <div class="user-name"><span>徐某某老师，欢迎您</span></div>
+                    <div class="quit"><a href="登录.html"><span>退出</span></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="body-container">
+            <div class="theform">
+                <div class="theform-head">
+                    <div class="th_head"><span>全部考试</span></div>
+                </div>
+                <div class="theform-select">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item ts_body" style="display: flex;">
+                            <div class="layui-input-block" style="width: 200px;margin-left: 0;">
+                                <select name="interest" lay-filter="">
+                                    <option value="0">进行中</option>
+                                    
+                                    <option value="1" selected="">已结束</option>
+                                   
+                                </select>
+                            </div>
+                            <div class="layui-input-block txt_examtit" style="width: 200px;">
+                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    placeholder="请输入测评类型名称" class="layui-input">
+                            </div>
+                            <div class="layui-input-block" style="margin-left: 40px;">
+                                <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">查询</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="theform-body">
+                    <table class="layui-table">
+                        <colgroup>
+                            <col width="80">
+                            <col width="300">
+                            <col width="250">
+                            <col width="220">
+                            <col width="250">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>试卷名称</th>
+                                <th>测评时间</th>
+                                <th>状态</th>
+                                <th>班级完成比例 (实际测评/应测评)</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>2019年1-2年级心理测评（MHT）</td>
+                                <td>2019-2-1~2019-3-1</td>
+                                <td><span class="tb_beagin">进行中</span></td>
+                                <td><span class="num_test">3</span><span class="fg_num">/</span>5</td>
+                                <td><a href="测评班级.html"><span class="tb_detail">进入</span></a></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>2019年3-4年级心理测评（MHT）</td>
+                                <td>2017-11-29~2019-12-29</td>
+                                <td><span class="tb_finish">已结束</span></td>
+                                <td><span class="num_test">6</span><span class="fg_num">/</span>6</td>
+                                <td><a href="测评班级.html"><span class="tb_detail">进入</span></a></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>2019年5-6年级心理测评（MHT）</td>
+                                <td>2019-5-12~2019-5-23</td>
+                                <td><span class="tb_finish">已结束</span></td>
+                                <td><span class="num_test">1</span><span class="fg_num">/</span>3</td>
+                                <td><a href="测评班级.html"><span class="tb_detail">进入</span></a></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>2019年初一年级心理测评（EPQ）</td>
+                                <td>2019-8-1~2019-8-22</td>
+                                <td><span class="tb_beagin">进行中</span></td>
+                                <td><span class="num_test">4</span><span class="fg_num">/</span>4</td>
+                                <td><a href="测评班级.html"><span class="tb_detail">进入</span></a></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>2019年初二年级心理测评（EPQ）</td>
+                                <td>2019-2-12~2019-10-29</td>
+                                <td><span class="tb_beagin">进行中</span></td>
+                                <td><span class="num_test">4</span><span class="fg_num">/</span>4</td>
+                                <td><a href="测评班级.html"><span class="tb_detail">进入</span></a></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>2019年初三年级心理测评（EPQ）</td>
+                                <td>2019-1-1~2019-2-29</td>
+                                <td><span class="tb_beagin">进行中</span></td>
+                                <td><span class="num_test">2</span><span class="fg_num">/</span>5</td>
+                                <td><a href="测评班级.html"><span class="tb_detail">进入</span></a></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>艾森克人格问卷-少年版（EPQ）</td>
+                                <td>2019-2-21~2019-6-19</td>
+                                <td><span class="tb_beagin">进行中</span></td>
+                                <td><span class="num_test">11</span><span class="fg_num">/</span>20</td>
+                                <td><a href="测评班级.html"><span class="tb_detail">进入</span></a></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>艾森克人格问卷-少年版（MHT）</td>
+                                <td>2018-11-29~2019-10-1</td>
+                                <td><span class="tb_finish">已结束</span></td>
+                                <td><span class="num_test">13</span><span class="fg_num">/</span>13</td>
+                                <td><a href="测评班级.html"><span class="tb_detail">进入</span></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div id="demo2" style="position: absolute;left: 15px;bottom: 0;"></div>
+            </div>
+        </div>
+        <div class="push"><!-- not put anything here --></div>
+    </div>
+    <div class="foot">
+        <p>copyright&nbsp;思贤心理咨询</p>
+    </div>
+</body>
+<script src="layui/layui.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</html>
