@@ -212,7 +212,7 @@ layui.use('layer', function () { //独立版的layer无需执行这一句
           time: 200000, //20s后自动关闭
           btn: ['确定', '取消']
         });
-      }
+      },
         setTop: function () {
             var that = this;
             //多窗口模式，层叠置顶
