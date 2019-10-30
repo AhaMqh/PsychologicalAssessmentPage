@@ -529,4 +529,5 @@ body {
 .class_answer .layui-table-cell,
 .layui-table-tool-panel li {
     overflow: initial !important;
+    white-space: pre;
 }
