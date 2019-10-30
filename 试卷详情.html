@@ -18,13 +18,24 @@
                     <img src="img/logo.png" alt="">
                 </div>
                 <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 school"><span>昆明市明通小学</span></div>
-                <div class="head-user">
+                <div class="head-user" id="navbar_edit">
+                        <div class="user-name">
+                           
+                                <span>徐某某老师，欢迎您！</span></div>
                     <div class="user-pic">
-                        <img src="img/default-head.svg" alt="">
+                        <a href="#"  onclick="f('edit');"><img src="img/default-head.svg" alt=""></a>
+                       
                     </div>
-                    <div class="user-name"><span>徐某某老师，欢迎您</span></div>
-                    <div class="quit"><a href="登录.html"><span class="exit">退出</span></a></div>
-                </div>
+                    <i class="layui-icon layui-icon-triangle-d xiala" style="font-size: 16px; color: #fff;"></i>  
+                    <ul class="mainmenu" id="edit">
+                           
+                            <li><a href="#"><span class="edit_info">修改信息</span></a></li>
+                            <li><a href="#"><span class="edit_info" data-method="notice">修改密码</span></a></li>
+                            
+                            <li><a href="登录.html"><span class="edit_info">退出登录</span></a></li>
+                      
+                        
+                    </ul>
             </div>
         </div>
         <div class="body-container">

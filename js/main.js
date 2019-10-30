@@ -213,7 +213,7 @@ layui.use('layer', function () { //独立版的layer无需执行这一句
           btn: ['确定', '取消']
         });
       }
-        setTop: function () {
+        ,setTop: function () {
             var that = this;
             //多窗口模式，层叠置顶
             layer.open({});

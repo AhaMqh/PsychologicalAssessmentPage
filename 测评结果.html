@@ -18,14 +18,26 @@
                     <img src="img/logo.png" alt="">
                 </div>
                 <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 school"><span>昆明市明通小学</span></div>
-                <div class="head-user">
+                <div class="head-user" id="navbar_edit">
+                        <div class="user-name">
+                           
+                                <span>徐某某老师，欢迎您！</span></div>
                     <div class="user-pic">
-                        <img src="img/default-head.svg" alt="">
+                        <a href="#"  onclick="f('edit');"><img src="img/default-head.svg" alt=""></a>
+                       
                     </div>
-                    <div class="user-name"><span>徐某某老师，欢迎您</span></div>
-                    <div class="quit"><a href="登录.html"><span class="tuichu">退出</span></a></div>
-                </div>
+                    <i class="layui-icon layui-icon-triangle-d xiala" style="font-size: 16px; color: #fff;"></i>  
+                    <ul class="mainmenu" id="edit">
+                           
+                            <li><a href="#"><span class="edit_info">修改信息</span></a></li>
+                            <li><a href="#"><span class="edit_info" data-method="notice">修改密码</span></a></li>
+                            
+                            <li><a href="登录.html"><span class="edit_info">退出登录</span></a></li>
+                      
+                        
+                    </ul>
             </div>
+        </div>
         </div>
         <div class="body-container">
             <div class="theform">
@@ -56,7 +68,7 @@
                                 <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">查询</button>
                                 
                             </div>
-                            <div class="classAnswer"><i class="layui-icon layui-icon-tabs" style="font-size: 14px; color: #1E9FFF;"></i><a class="class_as" href="#">  班级答题卡 >> </a></div>
+                            <div class="classAnswer"><i class="layui-icon layui-icon-tabs" style="font-size: 14px; color: #1E9FFF;"></i><a class="class_as" href="班级测评答题卡.html">  班级答题卡 >> </a></div>
                         </div>
                     </form>
                 </div>
@@ -98,9 +110,9 @@
                                
                                 <td><div class="layui-btn-group">
                                         <a href="试卷详情.html"> <button type="button" class="layui-btn layui-btn-sm btn_result"> 答卷详情</button></a>
-                                               <button type="button" class="layui-btn layui-btn-sm btn_result">
+                                        <a href="学生答题卡.html">  <button type="button" class="layui-btn layui-btn-sm btn_result">
                                                 答题卡
-                                               </button>
+                                               </button></a>
                                               
                                    
                                   </div></td>
@@ -118,9 +130,9 @@
                                
                                 <td><div class="layui-btn-group">
                                        <a href="试卷详情.html"> <button type="button" class="layui-btn layui-btn-sm btn_result"> 答卷详情</button></a>
-                                               <button type="button" class="layui-btn layui-btn-sm btn_result">
-                                                答题卡
-                                               </button>
+                                       <a href="学生答题卡.html">  <button type="button" class="layui-btn layui-btn-sm btn_result">
+                                        答题卡
+                                       </button></a>
                                               
                                    
                                   </div></td>
@@ -136,9 +148,9 @@
                                 <td><span class="tb_finish">已结束</span></td>
                                 <td><div class="layui-btn-group">
                                         <a href="试卷详情.html"> <button type="button" class="layui-btn layui-btn-sm btn_result"> 答卷详情</button></a>
-                                               <button type="button" class="layui-btn layui-btn-sm btn_result">
-                                                答题卡
-                                               </button>
+                                        <a href="学生答题卡.html">  <button type="button" class="layui-btn layui-btn-sm btn_result">
+                                            答题卡
+                                           </button></a>
                                               
                                    
                                   </div></td>
@@ -154,10 +166,9 @@
                                 <td><span class="tb_finish">已结束</span></td>
                                 <td><div class="layui-btn-group">
                                         <a href="试卷详情.html"> <button type="button" class="layui-btn layui-btn-sm btn_result"> 答卷详情</button></a>
-                                               <button type="button" class="layui-btn layui-btn-sm btn_result">
-                                                答题卡
-                                               </button>
-                                              
+                                        <a href="学生答题卡.html">  <button type="button" class="layui-btn layui-btn-sm btn_result">
+                                            答题卡
+                                           </button></a>
                                    
                                   </div></td>
                             </tr>
@@ -172,10 +183,9 @@
                                 <td><span class="tb_finish">已结束</span></td>
                                 <td><div class="layui-btn-group">
                                         <a href="试卷详情.html"> <button type="button" class="layui-btn layui-btn-sm btn_result"> 答卷详情</button></a>
-                                               <button type="button" class="layui-btn layui-btn-sm btn_result">
-                                                答题卡
-                                               </button>
-                                              
+                                        <a href="学生答题卡.html">  <button type="button" class="layui-btn layui-btn-sm btn_result">
+                                            答题卡
+                                           </button></a>
                                    
                                   </div></td>
                             </tr>
@@ -190,9 +200,9 @@
                                 <td><span class="tb_finish">已结束</span></td>
                                 <td><div class="layui-btn-group">
                                         <a href="试卷详情.html"> <button type="button" class="layui-btn layui-btn-sm btn_result"> 答卷详情</button></a>
-                                               <button type="button" class="layui-btn layui-btn-sm btn_result">
-                                                答题卡
-                                               </button>
+                                        <a href="学生答题卡.html">  <button type="button" class="layui-btn layui-btn-sm btn_result">
+                                            答题卡
+                                           </button></a>
                                               
                                    
                                   </div></td>
@@ -208,9 +218,9 @@
                                 <td><span class="tb_finish">已结束</span></td>
                                 <td><div class="layui-btn-group">
                                         <a href="试卷详情.html"> <button type="button" class="layui-btn layui-btn-sm btn_result"> 答卷详情</button></a>
-                                               <button type="button" class="layui-btn layui-btn-sm btn_result">
-                                                答题卡
-                                               </button>
+                                        <a href="学生答题卡.html">  <button type="button" class="layui-btn layui-btn-sm btn_result">
+                                            答题卡
+                                           </button></a>
                                               
                                    
                                   </div></td>
@@ -226,9 +236,9 @@
                                 <td><span class="tb_finish">已结束</span></td>
                                 <td><div class="layui-btn-group">
                                         <a href="试卷详情.html"> <button type="button" class="layui-btn layui-btn-sm btn_result"> 答卷详情</button></a>
-                                    <button type="button" class="layui-btn layui-btn-sm btn_result">
-                                     答题卡
-                                    </button>
+                                        <a href="学生答题卡.html">  <button type="button" class="layui-btn layui-btn-sm btn_result">
+                                            答题卡
+                                           </button></a>
                                    
                                   </div></td>
                             </tr>

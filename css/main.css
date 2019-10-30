@@ -529,8 +529,9 @@ body {
 }
 .icon_pwd{
     padding: 0 5px;
-
+}
 /* 班级测评答题卡 */
+
 .theform-body .report-time {
     text-align: right;
     padding: 10px;
@@ -543,4 +544,32 @@ body {
 .class_answer .layui-table-cell,
 .layui-table-tool-panel li {
     overflow: initial !important;
+}
+
+
+/*个人测评*/
+.dati_info{
+    line-height: 50px;
+    font-size: 14px;
+    margin-left: 0;
+    font-weight: 600;
+    text-align: center;
+    color: #555555;
+}
+.dati_info span{
+  padding: 0 30px;
+ 
+}
+.btn_result{
+    background-color: #5EAAB7;
+    border: #5EAAB7 1px solid;
+  
+    
+}
+.layui-btn-group .btn_result {
+    margin-left: 5px!important;
+   
+}
+.btn_daochu{
+    float: right;
 }
