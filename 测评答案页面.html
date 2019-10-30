@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测评页面</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="head">
+            <div class="layui-row">
+                <div class="layui-col-xs5 layui-col-sm5 layui-col-md5 head-logo">
+                    <img src="img/logo.png" alt="">
+                </div>
+                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 school"><span>云南工商学院</span></div>
+                <div class="head-user">
+                    <div class="user-pic">
+                        <img src="img/default-head.svg" alt="">
+                    </div>
+                    <div class="user-name"><span>金某某同学，欢迎您</span></div>
+                    <div class="quit"><a href="登录.html"><span>退出</span></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="body-container">
+
+        </div>
+
+        <div class="layui-col-xs9 layui-col-sm9 layui-col-md9 theform_stu1">
+            <div class="exam-head">
+                <p class="exam_title"><span class="wait_txt">第二套中学生心理健康测评卷</span></p>
+            </div>
+            <div class="exam_box">
+                <fieldset class="layui-elem-field">
+                    <div class="layui-field-box">
+                        <form class="layui-form" action="">
+                            <div class="layui-input-block">
+                                <span style='font-size:30px;margin:30px'>姓名：金某某</span>
+                                <span style='font-size:30px;margin:30px'>性别：男</span>
+                                <span style='font-size:30px;margin:30px'>学号：KMYTZX20190203</span>
+                                <span style='font-size:30px;margin:30px'>班级：1班</span>
+                            </div>
+                        </form>
+                    </div>
+                </fieldset>
+                <table class="layui-table" lay-even="" lay-skin="row">
+                    <colgroup>
+                        <col width="150">
+                        <col width="150">
+                        <col width="150">
+                        <col width="150">
+                        <col width="150">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>第1题</th>
+                            <th>第2题</th>
+                            <th>第3题</th>
+                            <th>第4题</th>
+                            <th>第5题</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>A</th>
+                            <th>C</th>
+                            <th>B</th>
+                            <th>C</th>
+                            <th>D</th>
+                        </tr>
+                        <tr>
+                            <th>第6题</th>
+                            <th>第7题</th>
+                            <th>第8题</th>
+                            <th>第9题</th>
+                            <th>第10题</th>
+                        </tr>
+                        <tr>
+                            <th>C</th>
+                            <th>D</th>
+                            <th>A</th>
+                            <th>C</th>
+                            <th>D</th>
+                        </tr>
+                        <tr>
+                            <th>第11题</th>
+                            <th>第12题</th>
+                            <th>第13题</th>
+                            <th>第14题</th>
+                            <th>第15题</th>
+                        </tr>
+                        <tr>
+                            <th>C</th>
+                            <th>D</th>
+                            <th>A</th>
+                            <th>C</th>
+                            <th>D</th>
+                        </tr>
+                        <tr>
+                            <th>第16题</th>
+                            <th>第17题</th>
+                            <th>第18题</th>
+                            <th>第19题</th>
+                            <th>第20题</th>
+                        </tr>
+                        <tr>
+                            <th>C</th>
+                            <th>D</th>
+                            <th>A</th>
+                            <th>C</th>
+                            <th>D</th>
+                        </tr>
+                        <tr>
+                            <th>第21题</th>
+                            <th>第22题</th>
+                            <th>第23题</th>
+                            <th>第24题</th>
+                            <th>第25题</th>
+                        </tr>
+                        <tr>
+                            <th>C</th>
+                            <th>D</th>
+                            <th>A</th>
+                            <th>C</th>
+                            <th>D</th>
+                        </tr>
+                        <tr>
+                            <th>第26题</th>
+                            <th>第27题</th>
+                            <th>第28题</th>
+                            <th>第29题</th>
+                            <th>第30题</th>
+                        </tr>
+                        <tr>
+                            <th>C</th>
+                            <th>D</th>
+                            <th>A</th>
+                            <th>C</th>
+                            <th>D</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+    <div class="push">
+        <!-- not put anything here -->
+    </div>
+    </div>
+    <div class="foot">
+        <p>copyright&nbsp;思贤心理咨询</p>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script src="layui/layui.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/countdown.js"></script>
+<script>
+    $(function () {
+        $(".timeBar").each(function () {
+            $(this).countdownsync({
+                dayTag: "",
+                hourTag: "<label class='tt hh dib vam'>00</label><span><span class='t_co'>时</span>",
+                minTag: "<label class='tt mm dib vam'>00</label><span class='t_co'>分</span>",
+                secTag: "<label class='tt ss dib vam'>00</label><span class='t_co'>秒</span>",
+                dayClass: ".dd",
+                hourClass: ".hh",
+                minClass: ".mm",
+                secClass: ".ss",
+                isDefault: false,
+                showTemp: 1
+
+            }, function () {
+                location.reload();
+            });
+        });
+    });
+
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate', 'element', 'jquery'], function () {
+        var form = layui.form;
+        layer = layui.layer,
+            element = layui.element,
+            $ = layui.jquery;
+        form.on('radio(aaa)', function (data) {
+
+            var firstDiv = document.getElementById("firstDiv");
+            firstDiv.className = "exam_number2";
+            form.render();
+        });
+
+
+        $(document).on('click', '#btn', function () {
+            var tradio = $("input[name='sex1']:checked").val();
+            if (tradio == undefined) {
+                layer.alert('第二题还未选择', {
+                    icon: 5,
+                    title: "提示"
+                });
+                var firstDiv2 = document.getElementById("firstDiv2");
+                firstDiv2.className = "exam_number1";
+                form.render();
+            }
+            console.log(tradio);
+        });
+    });
+
+</script>
+
+</html>
