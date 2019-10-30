@@ -61,7 +61,7 @@
     border-radius: 4px;
     -moz-box-shadow: 1px 1px 5px rgba(9, 107, 173, 1);
     -webkit-box-shadow: 1px 1px 5px rgba(9, 107, 173, 1);
-    box-shadow: 10px 10px 15px  rgba(9, 107, 173, 1);
+    box-shadow: 10px 10px 15px rgba(9, 107, 173, 1);
     background-color: rgba(234, 255, 240, 1);
     border: none;
     position: absolute;
@@ -83,23 +83,29 @@
     margin-left: 100px;
 }
 
-.login-btn{
+.login-btn {
     text-align: center;
 }
-.login-btn button{
+
+.login-btn button {
     padding: 0 152px;
     border-radius: 5px;
     background: rgba(22, 155, 213, 1);
 }
-.login-form .layui-form-select dl dd.layui-this{
+
+.login-form .layui-form-select dl dd.layui-this {
     background: rgba(94, 170, 183, .7);
 }
-.login-form .layui-form-radio>i:hover, .layui-form-radioed>i{
+
+.login-form .layui-form-radio>i:hover,
+.layui-form-radioed>i {
     color: #797979;
 }
-.login_tit{
+
+.login_tit {
     color: #555555;
 }
+
 /* 登录页--结束 */
 
 
@@ -226,7 +232,8 @@ body {
     top: 5px;
     left: 20px;
 }
-.tuichu{
+
+.tuichu {
     color: #fff;
 }
 
@@ -398,98 +405,114 @@ body {
     cursor: help;
 }
 */
-.txt_examtit{
+.txt_examtit {
     margin-left: 30px;
 }
-.btn_jiaojuan{
+
+.btn_jiaojuan {
     background-color: #5EAAB7;
     border-radius: 5px;
 }
-.sousuo_txt{
+
+.sousuo_txt {
     margin-left: 5px;
 }
-.num_test{
+
+.num_test {
     color: #5EAAB7;
-  
+
 }
-.fg_num{
+
+.fg_num {
     padding: 0 5px;
 }
-.btn_status{
+
+.btn_status {
     padding: 0 10px;
 }
+
 .tb_status {
     color: #555555;
-  background-color: #F7FBFC;
+    background-color: #F7FBFC;
     border-radius: 5px;
     padding: 8px 20px;
     cursor: pointer;
     line-height: 30px;
     border: #5EAAB7 1px solid;
 }
-.t_class td, .t_class th {
+
+.t_class td,
+.t_class th {
     padding: 15px 5px;
-  
+
 }
-.btn_result{
+
+.btn_result {
     background-color: #5EAAB7;
     border: #5EAAB7 1px solid;
-  
-    
+
+
 }
+
 .layui-btn-group .btn_unresult {
-    margin-left:5px!important;
-    margin-right: 0!important;
-     border-left: 1px solid #5EAAB7; 
+    margin-left: 5px !important;
+    margin-right: 0 !important;
+    border-left: 1px solid #5EAAB7;
     border-radius: 0;
-   
+
 }
-.btn_unresult{
+
+.btn_unresult {
     background-color: #F7FBFC;
     border: #5EAAB7 1px solid;
     color: #5EAAB7;
-  
+
 }
-.btn_unresult:hover{
+
+.btn_unresult:hover {
     background-color: #F7FBFC;
     border: #5EAAB7 1px solid;
     color: #5EAAB7;
-  
+
 }
+
 .layui-layer-btn .layui-layer-btn0 {
-    border-color: #5EAAB7!important;
-    background-color: #5EAAB7!important;
+    border-color: #5EAAB7 !important;
+    background-color: #5EAAB7 !important;
     color: #fff;
 }
 
-.mainmenu{
+.mainmenu {
     height: 160px;
     width: 150px;
     background-color: #eee;
     z-index: 100;
     margin-top: 115px;
     position: absolute;
-   display: none;
-   margin-left: 130px;
-}
-.mainmenu li{
-    height: 50px;
-    line-height: 50px;
-    
-   
+    display: none;
+    margin-left: 130px;
 }
 
-.edit_info{
+.mainmenu li {
+    height: 50px;
+    line-height: 50px;
+
+
+}
+
+.edit_info {
     padding: 10px 47px;
     font-size: 14px;
-    
+
 }
-.edit_info:hover{
-    
+
+.edit_info:hover {
+
     background-color: #5EAAB7;
     color: #fff;
 }
-.xiala{
+
+.xiala {
     margin-right: 20px;
 }
 .input_edit{
@@ -506,4 +529,18 @@ body {
 }
 .icon_pwd{
     padding: 0 5px;
+
+/* 班级测评答题卡 */
+.theform-body .report-time {
+    text-align: right;
+    padding: 10px;
+}
+
+.theform-body .report-tittle {
+    margin-top: 20px;
+}
+
+.class_answer .layui-table-cell,
+.layui-table-tool-panel li {
+    overflow: initial !important;
 }
