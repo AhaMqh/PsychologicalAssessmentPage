@@ -456,3 +456,39 @@ body {
     color: #5EAAB7;
   
 }
+.layui-layer-btn .layui-layer-btn0 {
+    border-color: #5EAAB7!important;
+    background-color: #5EAAB7!important;
+    color: #fff;
+}
+
+.mainmenu{
+    height: 160px;
+    width: 150px;
+    background-color: #eee;
+    z-index: 100;
+    margin-top: 115px;
+    position: absolute;
+   display: none;
+   margin-left: 130px;
+}
+.mainmenu li{
+    height: 50px;
+    line-height: 50px;
+    
+   
+}
+
+.edit_info{
+    padding: 10px 47px;
+    font-size: 14px;
+    
+}
+.edit_info:hover{
+    
+    background-color: #5EAAB7;
+    color: #fff;
+}
+.xiala{
+    margin-right: 20px;
+}

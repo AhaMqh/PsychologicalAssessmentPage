@@ -19,7 +19,7 @@ layui.use(['form', 'layedit', 'laydate'], function () {
     form.verify({
         title: function (value) {
             if (value.length < 5) {
-                return '标题至少得5个字符啊';
+                return '请输入字符';
             }
         },
         pass: [
@@ -83,5 +83,45 @@ layui.use(['laypage', 'layer'], function () {
 });
 
 
-
-
+layui.use('layer', function(){ //独立版的layer无需执行这一句
+    var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+    
+    //触发事件
+    var active = {
+      setTop: function(){
+        var that = this; 
+        //多窗口模式，层叠置顶
+        layer.open({
+        });
+      }
+      ,confirmTrans: function(){
+        //配置一个透明的询问框
+        layer.msg('确定要强制交卷吗？', {
+          time: 20000, //20s后自动关闭
+          btn: ['确定', '取消']
+        });
+      }
+      ,cancel: function(){
+        //配置一个透明的询问框
+        layer.msg('确定要取消交卷吗？', {
+          time: 200000, //20s后自动关闭
+          btn: ['确定', '取消']
+        });
+      }
+    };
+    
+    $('#layerDemo .layui-btn').on('click', function(){
+      var othis = $(this), method = othis.data('method');
+      active[method] ? active[method].call(this, othis) : '';
+    });
+    
+  });
+  function f(edit){
+    var obj = document.getElementById(edit);
+    if(obj.style.display=="block"){
+    obj.style.display = "none";  
+    }else{　　　　　　　　　　obj.style.display = "block";
+    }       
+}
+  
+  
