@@ -456,3 +456,16 @@ body {
     color: #5EAAB7;
   
 }
+
+
+/* 班级测评答题卡 */
+.theform-body .report-time{
+    text-align: right;
+    padding: 10px;
+}
+.theform-body .report-tittle{
+    margin-top: 20px;
+}
+.class_answer .layui-table-cell, .layui-table-tool-panel li{
+    overflow: initial !important;
+}

@@ -1,29 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<%@ include file="../perEvaluationResult/importhead.jsp" %>
-<%@ page import="java.text.*" %>
-<%
-	String id = request.getParameter("id");      
-	int checkid = Integer.parseInt(id);
-	VCheckReport checkreprot = DAOFactory.getCheckReportDAO().getVCheckReportByID(checkid);
-	List<TCheckReportItem> list = DAOFactory.getCheckReoprtItemDAO().getCheckReportItemsByCheckID(checkid);
-	
-	//将checkreprot中的itemscorestr字段中存储的字符串转换为list
-	String[] itemscores = {};
-	if(checkreprot.getItemscorestr()!=null){
-		itemscores = checkreprot.getItemscorestr().split("#");
-	}
-	Format f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	Date d = (Date)f.parseObject(checkreprot.getChecktime());
-	Format f2 = new SimpleDateFormat("yyyyMMdd");
-	String checkdate = f2.format(d);
-	//out.println(list.size());
-	request.setAttribute("report", checkreprot);
-	request.setAttribute("scorelist", itemscores);
-	request.setAttribute("itemlist", list);
-	request.setAttribute("checkdate", checkdate);
-
- %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
