@@ -19,7 +19,7 @@ layui.use(['form', 'layedit', 'laydate'], function () {
     form.verify({
         title: function (value) {
             if (value.length < 5) {
-                return '标题至少得5个字符啊';
+                return '请输入字符';
             }
         },
         pass: [
@@ -83,75 +83,128 @@ layui.use(['laypage', 'layer'], function () {
 });
 
 //表格渲染js
-layui.use('table', function(){
+layui.use('table', function () {
     var table = layui.table;
-    
+
     table.render({
-      elem: '#test'
-      ,url:''
-      ,toolbar: true
-      ,totalRow: true
-      ,title: '班级心理测评答题卡'
-      ,cols: [[
-        {field:'name', title:'姓名', width:120, fixed: 'left', unresize: true, sort: true, totalRowText: '合计行'}
-        ,{field:'scorelist', title:'选项'}
-      ]]
-      ,data:[{
-          "name":"李小安",
-          "scorelist":"1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
-      },
-      {
-          "name":"李大宝",
-          "scorelist":"1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
-      },
-      {
-        "name":"李鑫",
-        "scorelist":"1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
-    },
-    {
-        "name":"刘曦",
-        "scorelist":"1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
-    },
-    {
-        "name":"孙大伟",
-        "scorelist":"1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
-    },
-    {
-        "name":"发隋代",
-        "scorelist":"1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
-    },
-    {
-        "name":"刘穗丹",
-        "scorelist":"1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
-    },
-    {
-        "name":"念云飞",
-        "scorelist":"1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
-    },
-    {
-        "name":"蒋劲夫",
-        "scorelist":"1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
-    },
-    {
-        "name":"蔡徐坤",
-        "scorelist":"1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
-    },
+        elem: '#test',
+        url: '',
+        toolbar: true,
+        totalRow: true,
+        title: '班级心理测评答题卡',
+        cols: [
+            [{
+                field: 'name',
+                title: '姓名',
+                width: 120,
+                fixed: 'left',
+                unresize: true,
+                sort: true,
+                totalRowText: '合计行'
+            }, {
+                field: 'scorelist',
+                title: '选项'
+            }]
+        ],
+        data: [{
+                "name": "李小安",
+                "scorelist": "1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
+            },
+            {
+                "name": "李大宝",
+                "scorelist": "1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
+            },
+            {
+                "name": "李鑫",
+                "scorelist": "1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
+            },
+            {
+                "name": "刘曦",
+                "scorelist": "1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
+            },
+            {
+                "name": "孙大伟",
+                "scorelist": "1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
+            },
+            {
+                "name": "发隋代",
+                "scorelist": "1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
+            },
+            {
+                "name": "刘穗丹",
+                "scorelist": "1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
+            },
+            {
+                "name": "念云飞",
+                "scorelist": "1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
+            },
+            {
+                "name": "蒋劲夫",
+                "scorelist": "1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
+            },
+            {
+                "name": "蔡徐坤",
+                "scorelist": "1.A 2.D 3.C 5.A 6.D 7.C 9.A 10.D 11.C 13.A 14.D 15.C 17.A 18.D 19.C 21.A 22.D 23.C 25.A 26.D 27.C 29.A 30.D 31.C 33.A 34.D 35.C 37.A 38.D 39.C 41.A 42.D 43.C 45.A 46.D 47.C 49.A 50.D 51.C 53.A 54.D 55.C 57.A 58.D 59.C 61.A 62.D 63.C 65.A 66.D 67.C 69.A 70.D 71.C 73.A 74.D 75.C 77.A 78.D 79.C "
+            },
 
-    ]
-      ,page: false
-      ,response: {
-        statusCode: 200 //重新规定成功的状态码为 200，table 组件默认为 0
-      }
-      ,parseData: function(res){ //将原始数据解析成 table 组件所规定的数据
-        return {
-          "code": res.status, //解析接口状态
-          "msg": res.message, //解析提示文本
-          "count": res.total, //解析数据长度
-          "data": res.rows.item, //解析数据列表
-        };
-      }
+        ],
+        page: false,
+        response: {
+            statusCode: 200 //重新规定成功的状态码为 200，table 组件默认为 0
+        },
+        parseData: function (res) { //将原始数据解析成 table 组件所规定的数据
+            return {
+                "code": res.status, //解析接口状态
+                "msg": res.message, //解析提示文本
+                "count": res.total, //解析数据长度
+                "data": res.rows.item, //解析数据列表
+            };
+        }
     });
-  });
-  
+});
 
 
+
+layui.use('layer', function () { //独立版的layer无需执行这一句
+    var $ = layui.jquery,
+        layer = layui.layer; //独立版的layer无需执行这一句
+
+    //触发事件
+    var active = {
+        setTop: function () {
+            var that = this;
+            //多窗口模式，层叠置顶
+            layer.open({});
+        },
+        confirmTrans: function () {
+            //配置一个透明的询问框
+            layer.msg('确定要强制交卷吗？', {
+                time: 20000, //20s后自动关闭
+                btn: ['确定', '取消']
+            });
+        },
+        cancel: function () {
+            //配置一个透明的询问框
+            layer.msg('确定要取消交卷吗？', {
+                time: 200000, //20s后自动关闭
+                btn: ['确定', '取消']
+            });
+        }
+    };
+
+    $('#layerDemo .layui-btn').on('click', function () {
+        var othis = $(this),
+            method = othis.data('method');
+        active[method] ? active[method].call(this, othis) : '';
+    });
+
+});
+
+function f(edit) {
+    var obj = document.getElementById(edit);
+    if (obj.style.display == "block") {
+        obj.style.display = "none";
+    } else {
+        obj.style.display = "block";
+    }
+}

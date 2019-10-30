@@ -588,3 +588,16 @@ body {
 .exit{
     color: #fff;
 }
+.examInfo_stu{
+    height: 50px;
+    background-color: #5EAAB7;
+    line-height: 50px;
+    color: #fff;
+}
+.exam_endtime{
+    float:right;
+    line-height: 40px;
+    color: #5EAAB7;
+    padding: 0 10px;
+    font-weight: 600;
+}
