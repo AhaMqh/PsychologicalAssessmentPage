@@ -171,6 +171,48 @@ layui.use('layer', function () { //独立版的layer无需执行这一句
 
     //触发事件
     var active = {
+      setTop: function(){
+        var that = this; 
+        //多窗口模式，层叠置顶
+        layer.open({
+        });
+      } 
+      ,notice: function(){
+        //示范一个公告层
+        layer.open({
+          type: 1
+          ,title: false //不显示标题栏
+          ,closeBtn: false
+          ,area: '300px;'
+          ,shade: 0.8
+          ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+          ,btn: ['确定', '取消']
+          ,btnAlign: 'c'
+          ,moveType: 1 //拖拽模式，0或者1
+          ,content: '<div class="edit_pwd"><i class="layui-icon layui-icon-password icon_pwd"></i>修改密码</div><div style="padding: 20px; line-height: 22px; background-color: #fff; color: #333333; ">旧密码：<br> <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="" class="layui-input input_edit"><br>新密码：<br><input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="" class="layui-input input_edit"><br>确认新密码：<br><input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="" class="layui-input input_edit"></div>'
+          ,success: function(layero){
+            var btn = layero.find('.layui-layer-btn');
+            btn.find('.layui-layer-btn0').attr({
+              href: '登录.html'
+              ,target: '_blank'
+            });
+          }
+        });
+      }
+      ,confirmTrans: function(){
+        //配置一个透明的询问框
+        layer.msg('确定要强制交卷吗？', {
+          time: 20000, //20s后自动关闭
+          btn: ['确定', '取消']
+        });
+      }
+      ,cancel: function(){
+        //配置一个透明的询问框
+        layer.msg('确定要取消交卷吗？', {
+          time: 200000, //20s后自动关闭
+          btn: ['确定', '取消']
+        });
+      }
         setTop: function () {
             var that = this;
             //多窗口模式，层叠置顶
@@ -197,9 +239,13 @@ layui.use('layer', function () { //独立版的layer无需执行这一句
             method = othis.data('method');
         active[method] ? active[method].call(this, othis) : '';
     });
-
-});
-
+    $('#navbar_edit .edit_info').on('click', function(){
+        var othis = $(this), method = othis.data('method');
+        active[method] ? active[method].call(this, othis) : '';
+      });
+    
+  });
+ 
 function f(edit) {
     var obj = document.getElementById(edit);
     if (obj.style.display == "block") {

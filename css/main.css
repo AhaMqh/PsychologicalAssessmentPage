@@ -515,6 +515,20 @@ body {
 .xiala {
     margin-right: 20px;
 }
+.input_edit{
+    margin-top: 6px;
+    border: #5EAAB7 1px solid;
+}
+.edit_pwd{
+    background-color: #5EAAB7;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+.icon_pwd{
+    padding: 0 5px;
 
 /* 班级测评答题卡 */
 .theform-body .report-time {
