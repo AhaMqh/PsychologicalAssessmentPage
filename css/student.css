@@ -601,3 +601,57 @@ body {
     padding: 0 10px;
     font-weight: 600;
 }
+.mainmenu {
+    height: 160px;
+    width: 150px;
+    background-color: #eee;
+    z-index: 100;
+    margin-top: 115px;
+    position: absolute;
+    display: none;
+    margin-left: 130px;
+}
+
+.mainmenu li {
+    height: 50px;
+    line-height: 50px;
+
+
+}
+
+.edit_info {
+    padding: 10px 47px;
+    font-size: 14px;
+
+}
+
+.edit_info:hover {
+
+    background-color: #5EAAB7;
+    color: #fff;
+}
+
+.xiala {
+    margin-right: 20px;
+}
+.input_edit{
+    margin-top: 6px;
+    border: #5EAAB7 1px solid;
+}
+.edit_pwd{
+    background-color: #5EAAB7;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+.icon_pwd{
+    padding: 0 5px;
+}
+.layui-layer-btn .layui-layer-btn0 {
+    border-color: #5EAAB7 !important;
+    background-color: #5EAAB7 !important;
+    color: #fff;
+}
+
