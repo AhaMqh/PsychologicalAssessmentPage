@@ -545,6 +545,9 @@ body {
     overflow: initial !important;
     white-space: pre;
 }
+.report-time span{
+    margin: 0 10px;
+}
 
 
 /*个人测评*/
