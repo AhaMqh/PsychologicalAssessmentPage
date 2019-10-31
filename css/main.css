@@ -541,9 +541,9 @@ body {
     margin-top: 20px;
 }
 
-.class_answer .layui-table-cell,
-.layui-table-tool-panel li {
+.class_answer .layui-table-cell{
     overflow: initial !important;
+    white-space: pre;
 }
 
 
