@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/student.css">
 </head>
 
-<body>
+<body onload="start">
     <div class="main">
         <div class="head">
             <div class="layui-row">
@@ -55,7 +55,7 @@
                                 <col width="130">
 
                             </colgroup>
-
+                           
                             <tbody>
                                 <tr>
                                     <td class="info_stutit">姓名：</td>
@@ -190,12 +190,33 @@
                 </div>
                 <div id="u_countDown" class="ax_default" data-left="115" data-top="375" data-width="190"
                     data-height="229">
-                    <div class="datika"><i class="layui-icon layui-icon-log q_icon"></i><b class="q_dati">答题时间剩余</b>
+                    <div class="datika"><i class="layui-icon layui-icon-log q_icon"></i><b class="q_dati">答题时间</b>
                     </div>
                     <div id="u_countDown_div" class="">
 
-                        <div class="time_container">
-                            <div class="container timeBar ys1" data="7200"></div>
+                        <div class="mainbox">
+                            <input type="checkbox" id="start" hidden>
+                            <input type="checkbox" id="stop" hidden>
+                            <input type="checkbox" id="reset" hidden>
+                            <div class="timer">
+                                <div class="time-card" data-type="hours" data-max="24">
+                                    <div class="time-card-count"></div>
+                                    <div class="time-card-label">时</div>
+                                </div>
+                                <span class="colon">:</span>
+                                <div class="time-card" data-type="minutes" data-max="60">
+                                    <div class="time-card-count"></div>
+                                    <div class="time-card-label">分</div>
+                                </div>
+                                <span class="colon">:</span>
+                                <div class="time-card" data-type="seconds" data-max="60">
+                                    <div class="time-card-count"></div>
+                                    <div class="time-card-label">秒</div>
+                                </div>
+                            </div>
+                           
+                                
+                          
                         </div>
 
                     </div>
@@ -377,28 +398,7 @@
 <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 <script src="layui/layui.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript" src="js/countdown.js"></script>
-<script>
-    $(function () {
-        $(".timeBar").each(function () {
-            $(this).countdownsync({
-                dayTag: "",
-                hourTag: "<label class='tt hh dib vam'>00</label><span><span class='t_co'>时</span>",
-                minTag: "<label class='tt mm dib vam'>00</label><span class='t_co'>分</span>",
-                secTag: "<label class='tt ss dib vam'>00</label><span class='t_co'>秒</span>",
-                dayClass: ".dd",
-                hourClass: ".hh",
-                minClass: ".mm",
-                secClass: ".ss",
-                isDefault: false,
-                showTemp: 1
 
-            }, function () {
-                location.reload();
-            });
-        });
-    });
-</script>
 <script>
     layui.use(['form', 'layedit', 'laydate', 'element', 'jquery'], function () {
         var form = layui.form;
