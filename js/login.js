@@ -1,4 +1,3 @@
-alert(conf.apiurl);
 
 //将页面执行脚本单独写在外部js中，在html的head中进行引用，由于牵扯到dom的操作，所以要使用window.onload来包装一下
 window.onload = function(){
@@ -22,10 +21,14 @@ window.onload = function(){
     // });
 
     eventUtil.addEventHandle($('#testbtn')[0],'click',function(e){
+        layui.use(['table','layer'], function(){
+            loading = layer.load(2, {
+                shade: [0.4, '#fff'] //0.1透明度的白色背景
+            });
+          })
 
         myAjax('post',conf.apiurl+'/login/loginteacher',{username:'xuzhenlin13012312345',pwd:'959080a7b579e9d8ed7b5709bb161341',schoolname:'云南昆明新闻路小学'},function(res){
-            console.log(res);
-            alert(res.msg);
+            layer.closeAll('loading');
         },'json');
     });
 }
