@@ -20,4 +20,12 @@ window.onload = function(){
     //     eventUtil.preventDefault(e);//禁止默认行为
     //     eventUtil.stopPropagation(e);//停止传播冒泡
     // });
+
+    eventUtil.addEventHandle($('#testbtn')[0],'click',function(e){
+
+        myAjax('post',conf.apiurl+'/login/loginteacher',{username:'xuzhenlin13012312345',pwd:'959080a7b579e9d8ed7b5709bb161341',schoolname:'云南昆明新闻路小学'},function(res){
+            console.log(res);
+            alert(res.msg);
+        },'json');
+    });
 }
