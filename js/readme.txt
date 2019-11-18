@@ -19,11 +19,6 @@ window.onload = function(){
     });
 }
 
-loading弹窗弹出：
-layui.use(['table','layer'], function(){
-            loading = layer.load(2, {
-                shade: [0.4, '#fff'] //0.1透明度的白色背景
-            });
-          })
-
-loading弹窗关闭：layer.closeAll('loading');
+layui弹窗调用方法：
+tan.方法名 例如loading弹窗tan.loading()
+关闭弹窗：tan.closew()
