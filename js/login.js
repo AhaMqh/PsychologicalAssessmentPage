@@ -1,5 +1,3 @@
-alert(conf.apiurl);
-
 //将页面执行脚本单独写在外部js中，在html的head中进行引用，由于牵扯到dom的操作，所以要使用window.onload来包装一下
 window.onload = function(){
     // var div = document.getElementById('testbtn');
