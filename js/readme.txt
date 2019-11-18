@@ -18,3 +18,12 @@ window.onload = function(){
         },'json');
     });
 }
+
+loading弹窗弹出：
+layui.use(['table','layer'], function(){
+            loading = layer.load(2, {
+                shade: [0.4, '#fff'] //0.1透明度的白色背景
+            });
+          })
+
+loading弹窗关闭：layer.closeAll('loading');
