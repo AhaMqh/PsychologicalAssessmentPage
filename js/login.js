@@ -19,15 +19,62 @@ window.onload = function(){
     //     eventUtil.stopPropagation(e);//停止传播冒泡
     // });
 
-    eventUtil.addEventHandle($('#testbtn')[0],'click',function(e){
-        layui.use(['table','layer'], function(){
-            loading = layer.load(2, {
-                shade: [0.4, '#fff'] //0.1透明度的白色背景
-            });
-          })
 
-        myAjax('post',conf.apiurl+'/login/loginteacher',{username:'xuzhenlin13012312345',pwd:'959080a7b579e9d8ed7b5709bb161341',schoolname:'云南昆明新闻路小学'},function(res){
-            layer.closeAll('loading');
-        },'json');
-    });
+    // layui.use(['form','table','layer'], function () {
+    //     var form = layui.form;
+    // form.verify({
+    //     username: function(username){
+
+    //     if(username==null || username==""){
+    //     return '请输入用户名';
+    //     }
+    //     },pwd: function(pwd){
+
+    //         if(pwd==null || pwd==""){
+    //         return '请输入密码';
+    //         }
+    //         },schoolname: function(schoolname){
+
+    //             if(schoolname==null || schoolname==""){
+    //             return '请选择学校！';
+    //             }
+    //             }
+
+              // )}
+    
+   
+
+// })
+    eventUtil.addEventHandle($('.btnlogin')[0],'click',function(e){
+        var username = $('.username').val();
+        var pwd = $('.pwd').val();
+        var schoolname = $('.schoolname option:selected');
+        var scname = schoolname.text();
+        
+      
+
+        if (!username == "" && !pwd == "" && !scname=="") {
+            
+            layui.use(['table','layer'], function(){
+                loading = layer.load(2, {
+                    shade: [0.4, '#fff'] //0.1透明度的白色背景
+                 });
+
+                 myAjax('post',conf.apiurl+'/login/loginteacher',{username:username,pwd:pwd,schoolname:scname},function(res){
+                    
+                     if (res.code==10001) {
+                        window.location.href = "教师首页.html";
+                        layer.closeAll('loading');
+                     }else{
+
+                     }
+                 },'json');
+             })
+        
+        }else{
+            alert ("11111");
+        }
+        
+
+})
 }
