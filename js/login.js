@@ -1,5 +1,9 @@
 //将页面执行脚本单独写在外部js中，在html的head中进行引用，由于牵扯到dom的操作，所以要使用window.onload来包装一下
 window.onload = function(){
+  
+      
+       
+
     // var div = document.getElementById('testbtn');
     // var a = document.getElementsByClassName('layui-btn');
     // eventUtil.addEventHandle($('#testbtn')[0],'click',function(e){
@@ -50,7 +54,7 @@ window.onload = function(){
         var pwd = $('.pwd').val();
         var schoolname = $('.schoolname option:selected');
         var scname = schoolname.text();
-        
+        var usertype=$('input[name="usertype"]:checked').val();//获取选中的单选的值
       
 
         if (!username == "" && !pwd == "" && !scname=="") {
@@ -59,16 +63,28 @@ window.onload = function(){
                 loading = layer.load(2, {
                     shade: [0.4, '#fff'] //0.1透明度的白色背景
                  });
-
-                 myAjax('post',conf.apiurl+'/login/loginteacher',{username:username,pwd:pwd,schoolname:scname},function(res){
+      if(usertype=="教师"){
+        myAjax('post',conf.apiurl+'/login/loginteacher',{username:username,pwd:pwd,schoolname:scname},function(res){
                     
-                     if (res.code==10001) {
-                        window.location.href = "教师首页.html";
-                        layer.closeAll('loading');
-                     }else{
+            if (res.code==10001) {
+               window.location.href = "教师首页.html";
+               layer.closeAll('loading');
+            }else{
 
-                     }
-                 },'json');
+            }
+        },'json');
+      }else{
+        myAjax('post',conf.apiurl+'/login/loginstudent',{stuid:username,pwd:pwd,schoolname:scname},function(res){
+                    
+            if (res.code==10001) {
+               window.location.href = "学生首页.html";
+               layer.closeAll('loading');
+            }else{
+
+            }
+        },'json');
+      }
+                
              })
         
         }else{
