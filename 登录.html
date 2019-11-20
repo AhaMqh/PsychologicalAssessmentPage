@@ -33,26 +33,27 @@
                         <h2>登录</h2>
                     </div>
                     <form class="layui-form" action="">
+                            <div class="layui-form-mid layui-word-aux tips"><i class="layui-icon layui-icon-close-fill"></i> 你输入的账号或密码错误，请重新登录！</div>
                         <div class="layui-form-item">
                             <label class="layui-form-label login_tit">用户名：</label>
                             <div class="layui-input-block">
-                                <input type="text" name="title" lay-verify="title" autocomplete="off"
-                                    placeholder="请输入用户名" class="layui-input">
+                                <input type="text" name="title" autocomplete="off"
+                                    placeholder="请输入用户名" class="layui-input username">
                             </div>
                         </div>
                         <div class="layui-form-item" style="margin-top: 32px;">
                             <label class="layui-form-label login_tit">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
                             <div class="layui-input-block">
-                                <input type="password" name="title" lay-verify="title" autocomplete="off"
-                                    placeholder="请输入密码" class="layui-input">
+                                <input type="password" name="title" autocomplete="off"
+                                    placeholder="请输入密码" class="layui-input pwd">
                             </div>
                         </div>
                         <div class="layui-form-item" style="margin-top: 32px;">
                             <label class="layui-form-label login_tit">学&nbsp;&nbsp;&nbsp;&nbsp;校：</label>
                             <div class="layui-input-block">
-                                <select name="interest" lay-filter="aihao">
+                                <select name="interest" class="schoolname">
                                     <option value="">请选择学校</option>
-                                    <option value="0">昆明第一中学</option>
+                                    <option value="0">云南昆明新闻路小学</option>
                                     <option value="1">昆明第一中学</option>
                                     <option value="2">昆明第一中学</option>
                                     <option value="3">昆明第一中学</option>
@@ -62,13 +63,13 @@
                         </div>
                         <div class="layui-form-item">
                             <div class="layui-input-block" style="text-align: right;">
-                                <a href="教师首页.html"><input type="radio" name="sex" value="教师" title="教师" checked=""
-                                        class="jiaoshi"></a>
-                                <a href="学生首页.html"><input type="radio" name="sex" value="学生" title="学生"></a>
+                               <input type="radio" name="usertype" value="教师" title="教师" checked=""
+                                        class="jiaoshi">
+                               <input type="radio" name="usertype" value="学生" title="学生">
                             </div>
                         </div>
                         <div class="layui-form-item login-btn">
-                            <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">登录</button>
+                            <button type="button" class="layui-btn btnlogin" lay-submit="">登录</button>
                         </div>
                     </form>
                 </div>

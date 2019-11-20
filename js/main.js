@@ -281,3 +281,14 @@ function f(edit) {
         obj.style.display = "block";
     }
 }
+
+
+function exitsys(){
+    tan.loading();
+    myAjax('post', conf.apiurl + '/loginout/exit',{},function (res) {
+        if (res.code==10001) {
+            layer.closeAll('loading');
+            window.location.href = "/登录.html";            
+        }
+    },'json')
+}

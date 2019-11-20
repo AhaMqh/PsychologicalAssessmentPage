@@ -1,5 +1,12 @@
 //将页面执行脚本单独写在外部js中，在html的head中进行引用，由于牵扯到dom的操作，所以要使用window.onload来包装一下
-window.onload = function(){
+$(".username").focus(function(){
+    $(".tips").hide();
+  });
+window.onload = function () {
+
+
+
+
     // var div = document.getElementById('testbtn');
     // var a = document.getElementsByClassName('layui-btn');
     // eventUtil.addEventHandle($('#testbtn')[0],'click',function(e){
@@ -19,15 +26,88 @@ window.onload = function(){
     //     eventUtil.stopPropagation(e);//停止传播冒泡
     // });
 
-    eventUtil.addEventHandle($('#testbtn')[0],'click',function(e){
-        layui.use(['table','layer'], function(){
-            loading = layer.load(2, {
-                shade: [0.4, '#fff'] //0.1透明度的白色背景
-            });
-          })
 
-        myAjax('post',conf.apiurl+'/login/loginteacher',{username:'xuzhenlin13012312345',pwd:'959080a7b579e9d8ed7b5709bb161341',schoolname:'云南昆明新闻路小学'},function(res){
-            layer.closeAll('loading');
-        },'json');
-    });
+    // layui.use(['form','table','layer'], function () {
+    //     var form = layui.form;
+    // form.verify({
+    //     username: function(username){
+
+    //     if(username==null || username==""){
+    //     return '请输入用户名';
+    //     }
+    //     },pwd: function(pwd){
+
+    //         if(pwd==null || pwd==""){
+    //         return '请输入密码';
+    //         }
+    //         },schoolname: function(schoolname){
+
+    //             if(schoolname==null || schoolname==""){
+    //             return '请选择学校！';
+    //             }
+    //             }
+
+    // )}
+
+
+
+    // })
+    eventUtil.addEventHandle($('.btnlogin')[0], 'click', function (e) {
+        var username = $('.username').val();
+        var pwd = $('.pwd').val();
+        var schoolnum = $('.schoolname').val();
+        var schoolname = $('.schoolname option:selected');
+        var scname = schoolname.text();
+        var usertype = $('input[name="usertype"]:checked').val();//获取选中的单选的值
+        var tip = $('.tips');
+
+        console.log(schoolnum);
+        if (username == "") {
+            tan.tips("请输入用户名", 2000)
+        } else if (pwd == "") {
+            tan.tips("请输入密码", 2000)
+        } else if (schoolnum == null || schoolnum == '') {
+            tan.tips("请选择学校", 2000)
+        } else if (!username == "" && !pwd == "" && !scname == "") {
+
+            layui.use(['table', 'layer'], function () {
+                loading = layer.load(2, {
+                    shade: [0.4, '#fff'] //0.1透明度的白色背景
+                });
+                if (usertype == "教师") {
+                    myAjax('post', conf.apiurl + '/login/loginteacher', { username: username, pwd: pwd, schoolname: scname }, function (res) {
+
+                        if (res.code == 10001) {
+                            window.location.href = "教师首页.html";
+                            layer.closeAll('loading');
+                        } else if (res.code == 10002) {
+                            $(".tips").show();
+                            layer.closeAll('loading');
+                            $(".username").val("");
+                            $(".pwd").val("");
+
+                        }
+                    }, 'json');
+                } else {
+                    myAjax('post', conf.apiurl + '/login/loginstudent', { stuid: username, pwd: pwd, schoolname: scname }, function (res) {
+
+                        if (res.code == 10001) {
+                            window.location.href = "学生首页.html";
+                            layer.closeAll('loading');
+                        } else if (res.code == 10002) {
+                            $(".tips").show();
+                            layer.closeAll('loading');
+                            $(".username").val("");
+                            $(".pwd").val("");
+                        }
+                    }, 'json');
+                }
+
+            })
+
+        }
+
+    })
 }
+
+
