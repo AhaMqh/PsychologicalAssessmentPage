@@ -11,6 +11,11 @@
     position: fixed;
   top:35%;
 }
+.tips{
+    color: crimson !important;
+    left: 25%;
+    display: none;
+}
 
 .login-bg {
     width: 100%;

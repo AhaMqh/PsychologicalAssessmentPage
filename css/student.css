@@ -607,10 +607,10 @@ body {
     width: 150px;
     background-color: #eee;
     z-index: 100;
-    margin-top: 115px;
+   top:100%;
+   left: 50%;
     position: absolute;
     display: none;
-    margin-left: 125px;
 }
 
 .mainmenu li {

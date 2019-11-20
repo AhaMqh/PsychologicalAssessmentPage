@@ -1,8 +1,11 @@
 //将页面执行脚本单独写在外部js中，在html的head中进行引用，由于牵扯到dom的操作，所以要使用window.onload来包装一下
-window.onload = function(){
-  
-      
-       
+$(".username").focus(function(){
+    $(".tips").hide();
+  });
+window.onload = function () {
+
+
+
 
     // var div = document.getElementById('testbtn');
     // var a = document.getElementsByClassName('layui-btn');
@@ -44,53 +47,67 @@ window.onload = function(){
     //             }
     //             }
 
-              // )}
-    
-   
+    // )}
 
-// })
-    eventUtil.addEventHandle($('.btnlogin')[0],'click',function(e){
+
+
+    // })
+    eventUtil.addEventHandle($('.btnlogin')[0], 'click', function (e) {
         var username = $('.username').val();
         var pwd = $('.pwd').val();
+        var schoolnum = $('.schoolname').val();
         var schoolname = $('.schoolname option:selected');
         var scname = schoolname.text();
-        var usertype=$('input[name="usertype"]:checked').val();//获取选中的单选的值
-      
+        var usertype = $('input[name="usertype"]:checked').val();//获取选中的单选的值
+        var tip = $('.tips');
 
-        if (!username == "" && !pwd == "" && !scname=="") {
-            
-            layui.use(['table','layer'], function(){
+        console.log(schoolnum);
+        if (username == "") {
+            tan.tips("请输入用户名", 2000)
+        } else if (pwd == "") {
+            tan.tips("请输入密码", 2000)
+        } else if (schoolnum == null || schoolnum == '') {
+            tan.tips("请选择学校", 2000)
+        } else if (!username == "" && !pwd == "" && !scname == "") {
+
+            layui.use(['table', 'layer'], function () {
                 loading = layer.load(2, {
                     shade: [0.4, '#fff'] //0.1透明度的白色背景
-                 });
-      if(usertype=="教师"){
-        myAjax('post',conf.apiurl+'/login/loginteacher',{username:username,pwd:pwd,schoolname:scname},function(res){
-                    
-            if (res.code==10001) {
-               window.location.href = "教师首页.html";
-               layer.closeAll('loading');
-            }else{
+                });
+                if (usertype == "教师") {
+                    myAjax('post', conf.apiurl + '/login/loginteacher', { username: username, pwd: pwd, schoolname: scname }, function (res) {
 
-            }
-        },'json');
-      }else{
-        myAjax('post',conf.apiurl+'/login/loginstudent',{stuid:username,pwd:pwd,schoolname:scname},function(res){
-                    
-            if (res.code==10001) {
-               window.location.href = "学生首页.html";
-               layer.closeAll('loading');
-            }else{
+                        if (res.code == 10001) {
+                            window.location.href = "教师首页.html";
+                            layer.closeAll('loading');
+                        } else if (res.code == 10002) {
+                            $(".tips").show();
+                            layer.closeAll('loading');
+                            $(".username").val("");
+                            $(".pwd").val("");
 
-            }
-        },'json');
-      }
-                
-             })
-        
-        }else{
-            alert ("11111");
+                        }
+                    }, 'json');
+                } else {
+                    myAjax('post', conf.apiurl + '/login/loginstudent', { stuid: username, pwd: pwd, schoolname: scname }, function (res) {
+
+                        if (res.code == 10001) {
+                            window.location.href = "学生首页.html";
+                            layer.closeAll('loading');
+                        } else if (res.code == 10002) {
+                            $(".tips").show();
+                            layer.closeAll('loading');
+                            $(".username").val("");
+                            $(".pwd").val("");
+                        }
+                    }, 'json');
+                }
+
+            })
+
         }
-        
 
-})
+    })
 }
+
+
