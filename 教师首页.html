@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
+<body id="tags" name="teaindex">
     <div class="main">
         <div class="head">
             <div class="layui-row">
@@ -70,94 +70,13 @@
                     </form>
                 </div>
                 <div class="theform-body">
-                    <table class="layui-table">
-                        <colgroup>
-                            <col width="80">
-                            <col width="300">
-                            <col width="250">
-                            <col width="220">
-                            <col width="250">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>序号</th>
-                                <th>试卷名称</th>
-                                <th>测评时间</th>
-                                <th>状态</th>
-                                <th>班级完成比例 (实际测评/应测评)</th>
-                                <th>操作</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>2019年1-2年级心理测评（MHT）</td>
-                                <td>2019-2-1~2019-3-1</td>
-                                <td><span class="tb_beagin">进行中</span></td>
-                                <td><span class="num_test">3</span><span class="fg_num">/</span>5</td>
-                                <td><a href="测评班级.html"><span class="tb_detail">进入</span></a></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>2019年3-4年级心理测评（MHT）</td>
-                                <td>2017-11-29~2019-12-29</td>
-                                <td><span class="tb_finish">已结束</span></td>
-                                <td><span class="num_test">6</span><span class="fg_num">/</span>6</td>
-                                <td><a href="测评班级.html"><span class="tb_detail">进入</span></a></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>2019年5-6年级心理测评（MHT）</td>
-                                <td>2019-5-12~2019-5-23</td>
-                                <td><span class="tb_finish">已结束</span></td>
-                                <td><span class="num_test">1</span><span class="fg_num">/</span>3</td>
-                                <td><a href="测评班级.html"><span class="tb_detail">进入</span></a></td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>2019年初一年级心理测评（EPQ）</td>
-                                <td>2019-8-1~2019-8-22</td>
-                                <td><span class="tb_beagin">进行中</span></td>
-                                <td><span class="num_test">4</span><span class="fg_num">/</span>4</td>
-                                <td><a href="测评班级.html"><span class="tb_detail">进入</span></a></td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>2019年初二年级心理测评（EPQ）</td>
-                                <td>2019-2-12~2019-10-29</td>
-                                <td><span class="tb_beagin">进行中</span></td>
-                                <td><span class="num_test">4</span><span class="fg_num">/</span>4</td>
-                                <td><a href="测评班级.html"><span class="tb_detail">进入</span></a></td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>2019年初三年级心理测评（EPQ）</td>
-                                <td>2019-1-1~2019-2-29</td>
-                                <td><span class="tb_beagin">进行中</span></td>
-                                <td><span class="num_test">2</span><span class="fg_num">/</span>5</td>
-                                <td><a href="测评班级.html"><span class="tb_detail">进入</span></a></td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>艾森克人格问卷-少年版（EPQ）</td>
-                                <td>2019-2-21~2019-6-19</td>
-                                <td><span class="tb_beagin">进行中</span></td>
-                                <td><span class="num_test">11</span><span class="fg_num">/</span>20</td>
-                                <td><a href="测评班级.html"><span class="tb_detail">进入</span></a></td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>艾森克人格问卷-少年版（MHT）</td>
-                                <td>2018-11-29~2019-10-1</td>
-                                <td><span class="tb_finish">已结束</span></td>
-                                <td><span class="num_test">13</span><span class="fg_num">/</span>13</td>
-                                <td><a href="测评班级.html"><span class="tb_detail">进入</span></a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
+                    <!-- 表格开始 -->
+                    <table class="layui-hide" name="project" id="project" lay-filter="project"></table>
+                    <!-- 表格结束 -->
+                    <script type="text/html" id="barDemo">
+                        <a class="layui-btn layui-btn-xs" id="edit" lay-event="edit">进入</a>
+                    </script>
                 </div>
-                <div id="demo2" style="position: absolute;left: 15px;bottom: 0;"></div>
             </div>
         </div>
         <div class="push">
@@ -169,6 +88,6 @@
     </div>
 </body>
 <script src="layui/layui.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+<script src="js/PublicVariable.js"></script>
 
 </html>
