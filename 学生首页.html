@@ -12,16 +12,16 @@
 
 <body id="tags" name="stuhomepage">
   <div class="main">
-    <div class="head">
+    <div class="head stuinfo1" v-cloak>
       <div class="layui-row">
         <div class="layui-col-xs5 layui-col-sm5 layui-col-md5 head-logo">
           <img src="img/logo.png" alt="">
         </div>
-        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 school"><span>昆明市明通小学</span></div>
+        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 school"><span>{{schoolName}}</span></div>
         <div class="head-user" id="navbar_edit">
           <div class="user-name">
 
-            <span>金某某学生，欢迎您！</span></div>
+            <span>{{realName}}同学，欢迎您！</span></div>
           <div class="user-pic">
             <a href="#" onclick="f('edit');"><img src="img/default-head.svg" alt=""> <i
                 class="layui-icon layui-icon-triangle-d xiala" style="font-size: 16px; color: #fff;"></i> </a>
@@ -94,7 +94,7 @@
 
           </div>
 
-          <div class="stu_stuInfo">
+          <div class="stu_stuInfo stuinfo2" v-cloak>
             <div class="stu_head">
               <img src="img/u17.svg">
             </div>
@@ -103,33 +103,31 @@
                 <colgroup>
                   <col width="80">
                   <col width="170">
-
                 </colgroup>
-
                 <tbody>
                   <tr>
                     <td class="info_stutit"><i class="layui-icon layui-icon-username icon_info"></i> 姓名：</td>
-                    <td>金某某</td>
+                    <td>{{realName}}</td>
 
                   </tr>
                   <tr>
                     <td class="info_stutit"><i class="layui-icon layui-icon-male icon_info"></i> 性别：</td>
-                    <td>男</td>
+                    <td>{{sex}}</td>
 
                   </tr>
                   <tr>
                     <td class="info_stutit"><i class="layui-icon layui-icon-note icon_info"></i>学号：</td>
-                    <td>KMYTZX20190203</td>
+                    <td>{{classid}}</td>
 
                   </tr>
                   <tr>
                     <td class="info_stutit"><i class="layui-icon layui-icon-user icon_info"></i>班级：</td>
-                    <td>1班</td>
+                    <td>{{className}}</td>
 
                   </tr>
                   <tr>
                     <td class="info_stutit"><i class="layui-icon layui-icon-table icon_info"></i>年级：</td>
-                    <td>初中一年级</td>
+                    <td>{{gradename}}</td>
 
                   </tr>
                 </tbody>
@@ -146,12 +144,12 @@
           <div class="waitingfor"><img src="img/u43.svg"><span class="wait_txt">待完成考试</span></div>
           <form class="layui-form" action="">
             <div class="layui-input-block exam_status">
-              <select name="interest" lay-filter="aihao">
-                <option value="">选择试卷状态</option>
-                <option value="0">全部</option>
+              <select name="interest" class="exselect_sta" lay-filter="exselect_sta">
+                <option value="10" selected>选择试卷状态</option>
+                <option value="10">全部</option>
                 <option value="1">已测</option>
-                <option value="2">未测</option>
-
+                <option value="0">未测</option>
+                <option value="2">测试中</option>
               </select>
             </div>
 
@@ -159,42 +157,22 @@
           </form>
 
         </div>
-        <div class="exam_box">
-          <div class="exam_info">
+        <div class="exam_box" id="examplans">
+          <div class="exam_info" v-for="plan in theplans">
             <div class="exam_infotitle">
-              <p class="exam_tit">第二套中学生心理健康测评卷</p>
+              <p class="exam_tit">{{plan.examname}}</p>
             </div>
-
-            <span>测评时间：2019-08-01 ~ 2019-08-05</span>
-            <span class="exam_zt">测评状态：<b class="exam_state">未测</b></span>
+            <span>测评时间：{{plan.starttime}} ~ {{plan.endtime}}</span>
+            <span class="exam_zt">
+              测评状态：<b class="exam_state" v-if="plan.examtype == 0">未测</b>
+              <b class="exam_state" v-else-if="plan.examtype == 1">已测</b>
+              <b class="exam_state" v-else-if="plan.examtype == 2">测试中</b>
+            </span>
             <div class="btn_begin">
               <a href="测评页面.html" class="layui-btn beginTest">开始测评</a>
             </div>
           </div>
-          <div class="exam_info">
-            <div class="exam_infotitle">
-              <p class="exam_tit">第二套中学生心理健康测评卷</p>
-            </div>
-
-            <span>测评时间：2019-08-01 ~ 2019-08-05</span>
-            <span class="exam_zt">测评状态：<b class="exam_state">未测</b></span>
-            <div class="btn_begin">
-              <a href="测评页面.html" class="layui-btn beginTest">开始测评</a>
-            </div>
-          </div>
-          <div class="exam_info">
-            <div class="exam_infotitle">
-              <p class="exam_tit">第二套中学生心理健康测评卷</p>
-            </div>
-
-            <span>测评时间：2019-08-01 ~ 2019-08-05</span>
-            <span class="exam_zt">测评状态：<b class="exam_state1">已测</b></span>
-            <div class="btn_begin">
-              <a href="#" class="layui-btn layui-btn-disabled">开始测评</a>
-            </div>
-          </div>
-
-
+          <div id="sexamplan" style="position: absolute;left: 15px;bottom: 0;"></div>
         </div>
 
 
