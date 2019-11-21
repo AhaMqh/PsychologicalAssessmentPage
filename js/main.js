@@ -81,6 +81,9 @@ layui.use(['laypage', 'layer'], function () {
     })
     //调用分页查看layui分页文档
 });
+layui.use('element', function(){
+    var element = layui.element;
+  });
 
 //表格渲染js
 layui.use('table', function () {

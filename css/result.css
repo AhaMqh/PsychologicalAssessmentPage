@@ -27,7 +27,8 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-
+    min-width: 950px;
+    overflow: auto;
 }
 
 .head {
@@ -90,8 +91,8 @@ body {
 }
 
 .school span {
-    letter-spacing: 10px;
-    font-size: 20px;
+    letter-spacing: 4px;
+    font-size: 1.3em;
 }
 
 .body-container {
@@ -279,10 +280,13 @@ body {
     font-size: 14px;
 }
 .classAnswer{
-  margin-left: 550px;
+    top: 12%;
+    display: flex;
+    position: absolute;
+    left:85%;
 }
 .class_as{
-    line-height: 100px;
+ 
     font-size: 14px;
     color: #5EAAB7;
     font-weight: 600;

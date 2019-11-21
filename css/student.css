@@ -16,6 +16,8 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
+    min-width: 950px;
+    overflow: auto;
 
 }
 
@@ -80,10 +82,9 @@ body {
 }
 
 .school span {
-    letter-spacing: 10px;
-    font-size: 20px;
+    letter-spacing: 4px;
+    font-size: 1.3em;
 }
-
 .body-container {
     width: 1280px;
     margin: 16px auto;
@@ -412,7 +413,7 @@ body {
 }
 .exam_info_box{
     padding: 0 10px ;
-    height: 200px;
+    height: auto;
    
     
 }
@@ -426,6 +427,7 @@ body {
     min-height: 20px;
     line-height: 20px;
     font-size: 14px;
+    display: inline-block;
 }
 .exam_num{
     
