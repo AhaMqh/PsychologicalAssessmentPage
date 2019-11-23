@@ -12,34 +12,9 @@
 
 <body id="tags" name="stuhomepage">
   <div class="main">
-    <div class="head stuinfo1" v-cloak>
-      <div class="layui-row">
-        <div class="layui-col-xs5 layui-col-sm5 layui-col-md5 head-logo">
-          <img src="img/logo.png" alt="">
-        </div>
-        <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 school"><span>{{schoolName}}</span></div>
-        <div class="head-user" id="navbar_edit">
-          <div class="user-name">
+    <!-- 导航栏 -->
+    <div class="headpage"></div>
 
-            <span>{{realName}}同学，欢迎您！</span></div>
-          <div class="user-pic">
-            <a href="#" onclick="f('edit');"><img src="img/default-head.svg" alt=""> <i
-                class="layui-icon layui-icon-triangle-d xiala" style="font-size: 16px; color: #fff;"></i> </a>
-
-          </div>
-
-          <ul class="mainmenu layui-anim layui-anim-scaleSpring" id="edit">
-
-            <li><a href="#"><span class="edit_info">修改信息</span></a></li>
-            <li><a href="#"><span class="edit_info" data-method="notice">修改密码</span></a></li>
-            <li><a href="登录.html"><span class="edit_info">退出登录</span></a></li>
-
-
-          </ul>
-
-        </div>
-      </div>
-    </div>
     <div class="body-container">
       <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 info_stu">
         <div class="stuform-head">
@@ -169,7 +144,7 @@
               <b class="exam_state" v-else-if="plan.examtype == 2">测试中</b>
             </span>
             <div class="btn_begin">
-              <a href="测评页面.html" class="layui-btn beginTest">开始测评</a>
+              <button class="layui-btn beginTest" v-bind:planstudentid="plan.planstudentid" type="button" onclick="examstatu(this);">开始测评</button>
             </div>
           </div>
           <div id="sexamplan" style="position: absolute;left: 15px;bottom: 0;"></div>
@@ -185,9 +160,9 @@
       <!-- not put anything here -->
     </div>
   </div>
-  <div class="foot">
-    <p>copyright&nbsp;思贤心理咨询</p>
-  </div>
+
+  <!-- 页脚 -->
+  <div class="footpage"></div>
 </body>
 <script src="layui/layui.js"></script>
 <script type="text/javascript" src="js/PublicVariable.js"></script>

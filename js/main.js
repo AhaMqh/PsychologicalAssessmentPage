@@ -1,3 +1,7 @@
+//引入公共的导航和页脚
+$(".headpage").load("header.html");
+$(".footpage").load("footer.html");
+
 layui.use(['form', 'layedit', 'laydate'], function () {
     var form = layui.form,
         layer = layui.layer,
@@ -285,7 +289,23 @@ function f(edit) {
     }
 }
 
+this.myAjax('post', conf.apiurl + '/studenthome/getuserinfo', {
+    stuid: 7
+}, function (res) {
+    if (res.code == 10001) {            
+        var stuinfor2 = new Vue({
+            el: '.stuinfo1',
+            data: res.resultObject
+        })
+        tan.closew();
+    } else {
+        tan.tips(res.msg, 1000);
+    }
+}, 'json');
 
+
+
+//修改学生状态
 function exitsys(){
     tan.loading();
     myAjax('post', conf.apiurl + '/loginout/exit',{},function (res) {
