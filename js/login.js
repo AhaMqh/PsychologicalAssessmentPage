@@ -71,18 +71,16 @@ window.onload = function () {
       } else if (!username == "" && !pwd == "" && !scname == "") {
 
           layui.use(['table', 'layer'], function () {
-              loading = layer.load(2, {
-                  shade: [0.4, '#fff'] //0.1透明度的白色背景
-              });
+              tan.loading();
               if (usertype == "教师") {
                   myAjax('post', conf.apiurl + '/login/loginteacher', { username: username, pwd: pwd, schoolname: scname }, function (res) {
 
                       if (res.code == 10001) {
                           window.location.href = "教师首页.html";
-                          layer.closeAll('loading');
-                      } else if (res.code == 10002) {
-                          $(".tips").show();
-                          layer.closeAll('loading');
+                          tan.closew();
+                      } else{
+                          tan.closew();
+                          $(".tips").show();                          
                           $(".username").val("");
                           $(".pwd").val("");
 
@@ -93,10 +91,10 @@ window.onload = function () {
 
                       if (res.code == 10001) {
                           window.location.href = "学生首页.html";
-                          layer.closeAll('loading');
-                      } else if (res.code == 10002) {
-                          $(".tips").show();
-                          layer.closeAll('loading');
+                          tan.closew();
+                      } else{
+                          tan.closew();
+                          $(".tips").show();                         
                           $(".username").val("");
                           $(".pwd").val("");
                       }

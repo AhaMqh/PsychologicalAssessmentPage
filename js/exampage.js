@@ -1,5 +1,18 @@
 // 学生考试测评页面js
 window.onload = function () {
+    //获取登录学生session
+    myAjax('post', conf.apiurl + '/login/getloginstu', {}, function (res) {
+        if (res.code == 10001) {            
+            var stuinfor1 = new Vue({
+                el: '.stuinfo1',
+                data: res.resultObject
+            })
+            tan.closew();
+        } else {
+            tan.tips(res.msg, 1000);
+        }
+    }, 'json');
+    
     layui.use(['form', 'layedit', 'laydate', 'element', 'jquery'], function () {
         var form = layui.form;
         layer = layui.layer,

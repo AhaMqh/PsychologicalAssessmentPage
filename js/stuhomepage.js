@@ -1,19 +1,38 @@
 // 学生首页js
 window.onload = function () {
+
     tan.loading();
-    this.myAjax('post', conf.apiurl + '/studenthome/getuserinfo', {
-        stuid: 7
-    }, function (res) {
-        if (res.code == 10001) {            
+    //获取登录学生session
+    myAjax('post', conf.apiurl + '/login/getloginstu', {}, function (res) {
+        if (res.code == 10001) {
+            var stuinfor1 = new Vue({
+                el: '.stuinfo1',
+                data: res.resultObject
+            })
             var stuinfor2 = new Vue({
                 el: '.stuinfo2',
                 data: res.resultObject
             })
             tan.closew();
         } else {
+            tan.closew();
             tan.tips(res.msg, 1000);
         }
     }, 'json');
+
+    // this.myAjax('post', conf.apiurl + '/studenthome/getuserinfo', {
+    //     stuid: 7
+    // }, function (res) {
+    //     if (res.code == 10001) {
+    //         var stuinfor2 = new Vue({
+    //             el: '.stuinfo2',
+    //             data: res.resultObject
+    //         })
+    //         tan.closew();
+    //     } else {
+    //         tan.tips(res.msg, 1000);
+    //     }
+    // }, 'json');
 
 
     var examplans = new Vue({
@@ -100,13 +119,13 @@ function examstatu(e) {
     myAjax('post', conf.apiurl + '/studenthome/changeexamstatu', {
         planstudentid: $(e).attr("planstudentid")
     }, function (res) {
-        if(res.code==10001){           
-            setTimeout(function(){
-                window.location.href="测评页面.html"
-            },1500)
-        }else{
+        if (res.code == 10001) {
+            setTimeout(function () {
+                window.location.href = "测评页面.html"
+            }, 1500)
+        } else {
             tan.closew();
-            tan.tips(res.msg,1500);
+            tan.tips(res.msg, 1500);
         }
     }, 'json');
 }
