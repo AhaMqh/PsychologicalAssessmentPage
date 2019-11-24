@@ -52,30 +52,30 @@
                     <form class="layui-form" action="">
                         <div class="layui-form-item ts_body" style="display: flex;">
                             <div class="layui-input-block" style="width: 200px;margin-left: 0;">
-                                <select name="interest" lay-filter="">
-                                    <option value="0"  selected="">请选择试题状态</option>
-                                    <option value="1">进行中</option>
-                                    <option value="2">已结束</option>
-
+                                <select name="queryrole" id="queryrole" class="queryrole" lay-filter="queryrole">
+                                    <option value="10" selected>选择考试状态</option>
+                                    <option value="10">全部</option>
+                                    <option value="0">进行中</option>
+                                    <option value="1">已结束</option>
                                 </select>
                             </div>
                             <div class="layui-input-block txt_examtit" style="width: 200px;">
-                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                <input type="text" name="title" id="title" lay-verify="title" autocomplete="off"
                                     placeholder="请输入测评类型名称" class="layui-input">
                             </div>
                             <div class="layui-input-block" style="margin-left: 40px;">
-                                <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">查询</button>
+					            <button id="btnselfrontinfo" type="button" class="layui-btn layui-bg-blue">查询</button>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="theform-body">
-                    <!-- 表格开始 -->
-                    <table class="layui-hide" name="project" id="project" lay-filter="project"></table>
-                    <!-- 表格结束 -->
-                    <script type="text/html" id="barDemo">
-                        <a class="layui-btn layui-btn-xs" id="edit" lay-event="edit">进入</a>
-                    </script>
+                <!-- 表格开始 -->
+                <table class="layui-hide" name="table" id="table" lay-filter="table"></table>
+                <!-- 表格结束 -->
+                <script type="text/html" id="barDemo">
+                    <a class="layui-btn layui-btn-xs" id="edit" lay-event="edit">进入</a>
+                </script>
                 </div>
             </div>
         </div>
@@ -88,7 +88,6 @@
     </div>
 </body>
 <script src="layui/layui.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
 <script src="js/PublicVariable.js"></script>
 
 </html>
