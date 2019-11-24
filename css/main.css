@@ -135,6 +135,8 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
+    min-width: 950px;
+    overflow: auto;
 
 }
 
@@ -197,8 +199,8 @@ body {
 }
 
 .school span {
-    letter-spacing: 10px;
-    font-size: 20px;
+    letter-spacing: 4px;
+    font-size: 1.3em;
 }
 
 .body-container {
@@ -584,4 +586,7 @@ body {
 }
 .btn_daochu{
     float: right;
+}
+.pro_bar{
+    background-color: #5EAAB7 !important;
 }
