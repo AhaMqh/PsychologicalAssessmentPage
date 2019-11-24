@@ -74,8 +74,12 @@ window.onload = function () {
               loading = layer.load(2, {
                   shade: [0.4, '#fff'] //0.1透明度的白色背景
               });
+              var enpwd = hex_md5(fix(Encryption_key,pwd));
+                $("#inppassword").val(enpwd);
+                
+
               if (usertype == "教师") {
-                  myAjax('post', conf.apiurl + '/login/loginteacher', { username: username, pwd: pwd, schoolname: scname }, function (res) {
+                  myAjax('post', conf.apiurl + '/login/loginteacher', { username: username, pwd: enpwd, schoolname: scname }, function (res) {
 
                       if (res.code == 10001) {
                           window.location.href = "教师首页.html";
@@ -89,7 +93,7 @@ window.onload = function () {
                       }
                   }, 'json');
               } else {
-                  myAjax('post', conf.apiurl + '/login/loginstudent', { stuid: username, pwd: pwd, schoolname: scname }, function (res) {
+                  myAjax('post', conf.apiurl + '/login/loginstudent', { stuid: username, pwd: enpwd, schoolname: scname }, function (res) {
 
                       if (res.code == 10001) {
                           window.location.href = "学生首页.html";

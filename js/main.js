@@ -289,19 +289,19 @@ function f(edit) {
     }
 }
 
-this.myAjax('post', conf.apiurl + '/studenthome/getuserinfo', {
-    stuid: 7
-}, function (res) {
-    if (res.code == 10001) {            
-        var stuinfor2 = new Vue({
-            el: '.stuinfo1',
-            data: res.resultObject
-        })
-        tan.closew();
-    } else {
-        tan.tips(res.msg, 1000);
-    }
-}, 'json');
+// this.myAjax('post', conf.apiurl + '/studenthome/getuserinfo', {
+//     stuid: 7
+// }, function (res) {
+//     if (res.code == 10001) {            
+//         var stuinfor2 = new Vue({
+//             el: '.stuinfo1',
+//             data: res.resultObject
+//         })
+//         tan.closew();
+//     } else {
+//         tan.tips(res.msg, 1000);
+//     }
+// }, 'json');
 
 
 
