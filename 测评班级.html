@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
+<body id="tags" name="teaclass">
     <div class="main">
         <div class="head">
             <div class="layui-row">
@@ -76,107 +76,9 @@
                 </div>
                 <div class="theform-body">
                     <div class="table-name">2019年1-2年级心理测评（MHT）</div>
-                    <table class="layui-table t_class" style="margin-top: 0;">
-                        <colgroup>
-                            <col width="80">
-                            <col width="200">
-                            <col width="230">
-                            <col width="320">
-                            <col width="200">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>序号</th>
-                                <th>年级</th>
-                                <th>班级</th>
-                                <th>测评人数比例 (实际测评/应测评)</th>
-                                <th>状态</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-
-                                <td>一年级</td>
-                                <td>1班</td>
-                                <td><div class="layui-progress" lay-showPercent="true">
-                                    <div class="layui-progress-bar pro_bar" lay-percent="40/40"></div>
-                                  </div></td>
-                                <td><a href="测评结果.html"><span class="tb_finish">已结束</span></a></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-
-                                <td>一年级</td>
-                                <td>2班</td>
-                                <td><div class="layui-progress" lay-showPercent="true">
-                                    <div class="layui-progress-bar pro_bar" lay-percent="28/56"></div>
-                                  </div></td>
-                                <td><a href="测评详情.html"><span class="tb_beagin">进行中</span></a></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-
-                                <td>一年级</td>
-                                <td>3班</td>
-                                <td><div class="layui-progress" lay-showPercent="true">
-                                    <div class="layui-progress-bar pro_bar" lay-percent="0/31"></div>
-                                  </div></td>
-                                <td><span class="tb_nostart">未开始</span></td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-
-                                <td>二年级</td>
-                                <td>1班</td>
-                                <td><div class="layui-progress" lay-showPercent="true">
-                                    <div class="layui-progress-bar pro_bar" lay-percent="67/80"></div>
-                                  </div></td>
-                                <td><a href="测评详情.html"><span class="tb_beagin">进行中</span></a></td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-
-                                <td>二年级</td>
-                                <td>2班</td>
-                                <td><div class="layui-progress" lay-showPercent="true">
-                                    <div class="layui-progress-bar pro_bar" lay-percent="46/46"></div>
-                                  </div></td>
-                                <td><a href="测评结果.html"><span class="tb_finish">已结束</span></a></td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-
-                                <td>二年级</td>
-                                <td>3班</td>
-                                <td><div class="layui-progress" lay-showPercent="true">
-                                    <div class="layui-progress-bar pro_bar" lay-percent="35/35"></div>
-                                  </div></td>
-                                <td><a href="测评结果.html"><span class="tb_finish">已结束</span></a></td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-
-                                <td>二年级</td>
-                                <td>4班</td>
-                                <td><div class="layui-progress" lay-showPercent="true">
-                                    <div class="layui-progress-bar pro_bar" lay-percent="41/53"></div>
-                                  </div></td>
-                                <td><a href="测评详情.html"><span class="tb_beagin">进行中</span></a></td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-
-                                <td>二年级</td>
-                                <td>5班</td>
-                                <td><div class="layui-progress" lay-showPercent="true">
-                                    <div class="layui-progress-bar pro_bar" lay-percent="0/55"></div>
-                                  </div></td>
-                                <td><span class="tb_nostart">未开始</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
+                    <!-- 表格开始 -->
+                    <table class="layui-hide" name="project" id="project" lay-filter="project"></table>
+                    <!-- 表格结束 -->
                 </div>
                 <div id="demo2" style="position: absolute;left: 15px;bottom: 0;"></div>
             </div>
@@ -190,6 +92,6 @@
     </div>
 </body>
 <script src="layui/layui.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+<script src="js/PublicVariable.js"></script>
 
 </html>
