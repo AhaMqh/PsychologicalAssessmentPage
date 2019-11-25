@@ -136,6 +136,9 @@ function myAjax(method, url, data, callback, type) {
         }
     };
 
+    //请求是否应带有授权信息，如 cookie 或授权 header 头。
+    xhr.withCredentials = true;
+
     //判断data是否有数据
     var param = '';
     //这里使用stringify方法将js对象格式化为json字符串

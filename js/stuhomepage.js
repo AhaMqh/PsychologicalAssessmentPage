@@ -3,7 +3,7 @@ window.onload = function () {
 
     tan.loading();
     //获取登录学生session
-    myAjax('post', conf.apiurl + '/login/getloginstu', {}, function (res) {
+    myAjax("get", conf.apiurl + '/login/getloginstu', {}, function (res) {
         if (res.code == 10001) {
             var stuinfor1 = new Vue({
                 el: '.stuinfo1',
