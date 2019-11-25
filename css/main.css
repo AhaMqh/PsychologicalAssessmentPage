@@ -325,7 +325,16 @@ body {
     line-height: 48px;
     position: relative;
 }
-
+.layui-table-cell {
+    height: 40px;
+    line-height: 40px;
+  
+}
+.btn_enter{
+    height: 30px;
+    line-height: 30px;
+    background-color: #5EAAB7;
+}
 /* 教师首页--结束 */
 
 
@@ -588,5 +597,13 @@ body {
     float: right;
 }
 .pro_bar{
+    top:18px;
+    
+}
+.pro_b{
     background-color: #5EAAB7 !important;
+}
+.layui-progress-text {
+    top: -28px;
+  letter-spacing: 4px;
 }
