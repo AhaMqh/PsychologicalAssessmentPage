@@ -20,9 +20,9 @@ window.onload = function(){
 			      ,{field : 'stuid', title:'学号', align:'center'}
 			      ,{field : 'realName', title:'学生姓名', align:'center'}
 				  ,{field : 'sex',title : '性别',align : 'center'}
-				  ,{field : 'paperName',title : '评测试卷名称',align : 'center'}
 				  ,{field : 'examstartime',title : '测评时间',align : 'center'}
 				  ,{field : 'eplanstudenttype',title : '状态',align : 'center'}
+				  ,{title : '缺考标记',toolbar : '#markbar',align : 'center'}
                   ,{title : '操作',toolbar : '#barDemo',align : 'center',}
 			     ] 
 			 ],

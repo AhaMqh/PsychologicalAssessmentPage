@@ -1,3 +1,10 @@
+//引入公共的导航和页脚
+if ($(".headpage")!=null) {
+    $(".headpage").load("header.html");
+    $(".footpage").load("footer.html");
+}
+
+
 //在这里面写好变量或者函数的封装，然后在其他js中调用
 var conf = {
     apiurl: "http://localhost:8080/SchoolPsychologicalAssessmentWeb",
@@ -11,10 +18,7 @@ if (js_name != null) {
 }
 
 //name为要添加的js路径，model为是否开启
-var all_js = [{
-        name: 'PokioPlugin/jquery-3.3.1.min.js',
-        model: true
-    },
+var all_js = [
     {
         name: 'PokioPlugin/vue.js',
         model: true

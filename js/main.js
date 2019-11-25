@@ -1,6 +1,4 @@
-//引入公共的导航和页脚
-$(".headpage").load("header.html");
-$(".footpage").load("footer.html");
+
 
 layui.use(['form', 'layedit', 'laydate'], function () {
     var form = layui.form,
