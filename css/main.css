@@ -137,7 +137,6 @@ body {
     height: 100%;
     min-width: 950px;
     overflow: auto;
-    
 
 }
 
@@ -181,6 +180,7 @@ body {
 .user-name {
     font-size: 16px;
     color: #333333;
+    width: 210px;
 }
 
 .quit {
@@ -335,7 +335,6 @@ body {
     height: 30px;
     line-height: 30px;
     background-color: #5EAAB7;
-    width: 80px;
 }
 /* 教师首页--结束 */
 
@@ -501,12 +500,12 @@ body {
 }
 
 .mainmenu {
-    height: 160px;
+    height: 195px;
     width: 150px;
     background-color: #eee;
     z-index: 100;
    top:100%;
-   left: 50%;
+   left: 52%;
     position: absolute;
     display: none;
    

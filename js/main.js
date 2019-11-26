@@ -276,15 +276,27 @@ layui.use('layer', function () { //独立版的layer无需执行这一句
 
 });
 
-function f(edit) {
-    var obj = document.getElementById(edit);
-    if (obj.style.display == "block") {
-        obj.style.display = "none";
-    } else {
-        obj.style.display = "block";
-    }
+　var myDiv = $("#edit");
+$(function ()
+{
+$("#btn_oprator").click(function (event) 
+{
+showDiv();//调用显示DIV方法
+$(document).one("click", function () 
+{//对document绑定一个影藏Div方法
+$(myDiv).hide();
+}); 
+event.stopPropagation();//阻止事件向上冒泡
+});
+$(myDiv).click(function (event) 
+{
+event.stopPropagation();//阻止事件向上冒泡
+});
+});
+　　　　function showDiv() 
+{
+$(myDiv).fadeIn();
 }
-
 // myAjax('post', conf.apiurl + '/login/getloginstu', {}, function (res) {
 //     if (res.code == 10001) {            
 //         var stuinfor1 = new Vue({
