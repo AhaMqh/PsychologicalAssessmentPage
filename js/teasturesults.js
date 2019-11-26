@@ -12,7 +12,6 @@ window.onload = function(){
 			id:'project',
 			url : 'http://localhost:8080/SchoolPsychologicalAssessmentWeb/teastu/getteastudent?eplanid=1&classid=KMMDZX2019090102001',
 			title : '后台通知管理数据表',
-			height: "full-160",
 			skin : 'line',
 			even : true,
 			cols : [ 

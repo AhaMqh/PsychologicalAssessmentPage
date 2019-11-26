@@ -12,7 +12,6 @@ window.onload = function(){
 			id:'project',
 			url : 'http://localhost:8080/SchoolPsychologicalAssessmentWeb/teaclass/geteplanclasslist?eplanid=1',
 			title : '后台通知管理数据表',
-			height: "full-160",
 			skin : 'line',
 			even : true,
 			cols : [ 
