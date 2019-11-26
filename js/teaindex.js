@@ -34,14 +34,13 @@ window.onload = function(){
 					id: 'table',
 					url: url,
 					title: '后台管理员用户数据表',
-				
 					even: true,
 					cols: [ 
-			     [ {field : 'eplanid', title:'编号', align:'center',width : 80}
-			      ,{field : 'examname', title:'试卷名称', align:'center',width : 300}
-				  ,{field : 'starttime',title : '测评时间',align : 'center'}
-				  ,{field : 'examtpye',title : '状态',align : 'center',width : 150}
-				  ,{title:'人数完成比例 (实际测评/应测评)',align:'center'
+			     [ {field : 'eplanid', title:'编号', align:'center',width : 60}
+			      ,{field : 'examname', title:'试卷名称', align:'center',width : 290}
+				  ,{field : 'starttime',title : '测评时间',align : 'center',width : 300}
+				  ,{field : 'examtpye',title : '状态',align : 'center',width : 120}
+				  ,{title:'人数完成比例 (实际测评/应测评)',align:'center',width : 290
 				  ,templet : function(p){
 					  var core = p.bili;
 					  var html = '<div class="layui-progress pro_bar" lay-showPercent="true">'
@@ -50,7 +49,7 @@ window.onload = function(){
 					  html += '</div>'
 					  return html;
 				  },
-				},{title : '操作',toolbar : '#barDemo',align : 'center',width : 150}
+				},{title : '操作',toolbar : '#barDemo',align : 'center'}
 			     ] 
 			 ],
 					page: {
