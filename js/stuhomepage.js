@@ -20,21 +20,6 @@ window.onload = function () {
         }
     }, 'json');
 
-    // this.myAjax('post', conf.apiurl + '/studenthome/getuserinfo', {
-    //     stuid: 7
-    // }, function (res) {
-    //     if (res.code == 10001) {
-    //         var stuinfor2 = new Vue({
-    //             el: '.stuinfo2',
-    //             data: res.resultObject
-    //         })
-    //         tan.closew();
-    //     } else {
-    //         tan.tips(res.msg, 1000);
-    //     }
-    // }, 'json');
-
-
     var examplans = new Vue({
         el: '#examplans',
         data: {
@@ -47,7 +32,6 @@ window.onload = function () {
             reqplan: function () {
                 var _this = this;
                 myAjax('post', conf.apiurl + '/studenthome/getexamplanlist', {
-                        studentid: 976,
                         examtype: $('.exselect_sta').val(),
                         page: 1,
                         limit: 4
@@ -56,16 +40,16 @@ window.onload = function () {
                         if (res.code == 10001) {
                             _this.theplans = res.resultObject;
                             page(res.resultObject.length);
-                            console.log(_this.theplans)
+                            tan.closew();
                         } else {
+                            tan.closew();
                             tan.tips(res.msg);
                         }
                     }, 'json');
             },
-            reqplanselect: function (tstuid, texamtype, tpage, tlimit) {
+            reqplanselect: function (texamtype, tpage, tlimit) {
                 var _this = this;
                 myAjax('post', conf.apiurl + '/studenthome/getexamplanlist', {
-                    studentid: tstuid,
                     examtype: texamtype,
                     page: tpage,
                     limit: tlimit
@@ -86,7 +70,8 @@ window.onload = function () {
     layui.use(['form'], function () {
         form = layui.form;
         form.on('select(exselect_sta)', function (data) {
-            examplans.reqplan();
+            tan.loading();
+            examplans.reqplan();       
         });
     });
     //layui分页方法
@@ -105,7 +90,7 @@ window.onload = function () {
                 if (!first) {
                     //do something
                     tan.loading();
-                    examplans.reqplanselect(976, $('.exselect_sta').val(), obj.curr, obj.limit);
+                    examplans.reqplanselect($('.exselect_sta').val(), obj.curr, obj.limit);
                 }
             }
         });
