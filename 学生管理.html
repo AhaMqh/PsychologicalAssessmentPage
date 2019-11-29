@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>学生管理</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/result.css">
+    <link rel="stylesheet" href="css/public.css">
+    <script src="PokioPlugin/jquery-3.3.1.min.js"></script>
+    
+</head>
+
+<body  id="tags" >
+    <div class="main">
+        <!-- 导航栏 -->
+    <div class="headpage"></div>
+        <div class="body-container">
+            <div class="theform">
+                <div class="theform-head-cpxq">
+                    <img src="img/ceping-detail.svg" alt="">
+                    <span>学生管理</span>
+                </div>
+                <div class="theform-select">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item ts_body" style="display: flex;">
+                            <div class="layui-input-block" style="width: 200px;margin-left: 0;">
+                                <select name="interest" lay-filter="">
+                                    <option value="0" selected="">请选择班级</option>
+                                    <option value="1">一年级一班</option>
+                                    <option value="2">一年级二班</option>
+                                  
+                                </select>
+                            </div>
+
+                            <div class="layui-input-block txt_examtit" style="width: 200px;">
+                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    placeholder="请输入学生姓名或学号" class="layui-input">
+                            </div>
+                            <div class="layui-input-block " style="margin-left: 40px;">
+                                <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">查询</button>
+
+                            </div>
+                           
+                        </div>
+                    </form>
+                </div>
+                <div class="theform-body">
+                    <div class="table-name">班级学生管理 <button class="layui-btn   layui-btn-sm resetpwd">班级批量重置</button></div>
+                  
+                    <table class="layui-table" style="margin-top: 0;">
+                        <colgroup>
+                            <col width="80">
+                            <col width="370">
+                            <col width="280">
+                           
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>学号</th>
+                                <th>学生姓名</th>
+                                <th>性别</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>KMDSZX2018010011</td>
+                                <td>梁林昌</td>
+                                <td>男</td>
+                                <td>
+                                   
+                                      <button type="button"
+                                                class="layui-btn layui-btn-sm btn_unresult">
+                                                重置密码
+                                            </button>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>KMDSZX2018010034</td>
+                                <td>尹晓航</td>
+                                <td>男</td>
+                                <td>
+                                   
+                                    <button type="button"
+                                              class="layui-btn layui-btn-sm btn_unresult">
+                                              重置密码
+                                          </button>
+
+                              </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>KMDSZX201801001</td>
+                                <td>孟秋洪</td>
+                                <td>女</td>
+                                <td>
+                                   
+                                    <button type="button"
+                                              class="layui-btn layui-btn-sm btn_unresult">
+                                              重置密码
+                                          </button>
+
+                              </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>KMDSZX201801007</td>
+                                <td>李小二</td>
+                                <td>女</td>
+                                <td>
+                                   
+                                    <button type="button"
+                                              class="layui-btn layui-btn-sm btn_unresult">
+                                              重置密码
+                                          </button>
+
+                              </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>KMDSZX2018010022</td>
+                                <td>金某某</td>
+                                <td>男</td>
+                                <td>
+                                   
+                                    <button type="button"
+                                              class="layui-btn layui-btn-sm btn_unresult">
+                                              重置密码
+                                          </button>
+
+                              </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>KMDSZX2018010015</td>
+                                <td>王大柱</span></td>
+                                <td>女</td>
+                                <td>
+                                   
+                                    <button type="button"
+                                              class="layui-btn layui-btn-sm btn_unresult">
+                                              重置密码
+                                          </button>
+
+                              </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>KMDSZX2018010011</td>
+                                <td>李四</td>
+                                <td>男</td>
+                                <td>
+                                   
+                                    <button type="button"
+                                              class="layui-btn layui-btn-sm btn_unresult">
+                                              重置密码
+                                          </button>
+
+                              </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>KMDSZX2018010053</td>
+                                <td>张三</td>
+                                <td>男</td>
+                                <td>
+                                   
+                                    <button type="button"
+                                              class="layui-btn layui-btn-sm btn_unresult">
+                                              重置密码
+                                          </button>
+
+                              </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div id="demo2" style="position: absolute;left: 15px;bottom: 0;"></div>
+            </div>
+        </div>
+        <div class="push">
+            <!-- not put anything here -->
+        </div>
+    </div>
+     <!-- 页脚 -->
+  <div class="footpage"></div>
+</body>
+<script src="layui/layui.js"></script>
+<script src="js/PublicVariable.js"></script>
+
+</html>

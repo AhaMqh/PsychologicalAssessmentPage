@@ -117,92 +117,6 @@
 
 
 /* 教师首页--开始 */
-.main {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    /*IE6不识别min-height*/
-    position: relative;
-    width: 100%;
-    margin: 0 auto -48px;
-    background-color: #fff;
-    /*margin-bottom的负值等于footer高度*/
-}
-
-html,
-body {
-    background-color: rgba(242, 242, 242, 1);
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    min-width: 950px;
-    overflow: auto;
-
-}
-
-.head {
-    width: 100%;
-    height: 70px;
-    background: rgba(94, 170, 183, 1);
-    position: relative;
-}
-
-.head-logo {
-    height: 70px;
-}
-
-.head-logo img {
-    width: 200px;
-    height: auto;
-    padding: 14px 30px;
-}
-
-.user-pic {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin: 0 65px 0 10px;}
-
-.user-pic img {
-    width: 100%;
-    height: 100%;
-}
-
-.head-user {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.user-name {
-    font-size: 16px;
-    color: #333333;
-    width: 210px;
-}
-
-.quit {
-    color: #fff;
-    font-size: 16px;
-    margin: 0 40px;
-    cursor: pointer;
-}
-
-.school {
-    color: #38666E;
-    display: flex;
-    align-self: center;
-    justify-content: center;
-    height: 100%;
-    padding: 20px 0;
-}
-
-.school span {
-    letter-spacing: 4px;
-    font-size: 1.3em;
-}
 
 .body-container {
     width: 1280px;
@@ -241,9 +155,7 @@ body {
     left: 20px;
 }
 
-.tuichu {
-    color: #fff;
-}
+
 
 .th_head span {
     font-size: 16px;
@@ -310,22 +222,7 @@ body {
     line-height: 30px;
 }
 
-.push,
-.foot {
-    height: 48px;
-    clear: both;
-}
 
-.foot {
-    width: 100%;
-    background: rgba(51, 51, 51, 1);
-    bottom: 0;
-    color: #fff;
-    text-align: center;
-    font-size: 16px;
-    line-height: 48px;
-    position: relative;
-}
 .layui-table-cell {
     height: 40px;
     line-height: 40px;
@@ -499,43 +396,7 @@ body {
     color: #fff;
 }
 
-.mainmenu {
-    height: 195px;
-    width: 150px;
-    background-color: #eee;
-    z-index: 100;
-   top:100%;
-   left: 52%;
-    position: absolute;
-    display: none;
-   
-}
 
-.mainmenu li {
-    height: 50px;
-    line-height: 50px;
-
-
-}
-
-.edit_info {
-    padding: 10px 47px;
-    font-size: 14px;
-
-}
-
-.edit_info:hover {
-
-    background-color: #5EAAB7;
-    color: #fff;
-}
-
-.xiala {
-  
-    position: absolute;
-    line-height: 55px;
-    padding: 0 5px;
-}
 .input_edit{
     margin-top: 6px;
     border: #5EAAB7 1px solid;
@@ -584,12 +445,7 @@ body {
   padding: 0 30px;
  
 }
-.btn_result{
-    background-color: #5EAAB7;
-    border: #5EAAB7 1px solid;
-  
-    
-}
+
 .layui-btn-group .btn_result {
     margin-left: 5px!important;
    
