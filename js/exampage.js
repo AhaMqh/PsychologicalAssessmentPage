@@ -145,7 +145,7 @@ window.onload = function () {
     }
 
     //点击保存按钮保存试卷
-    this.eventUtil.addEventHandle($(".exam_save")[0], 'click', function (e) {
+    eventUtil.addEventHandle($(".exam_save")[0], 'click', function (e) {
         tan.loading();
         savepaper();
     })
@@ -179,11 +179,17 @@ window.onload = function () {
                 return false;
             }
         }
+        tan.loading();
         myAjax("post", conf.apiurl + "/studentexam/handexams", {
             answerList: JSON.stringify(backanswer)
         }, function (res) {
-            tan.closew();
-            tan.tips(res.msg, 1500);
+            if (res.code == 10001) {
+                tan.tips(res.msg, 1500);
+                setTimeout(window.location.href = "学生首页.html", 3000);
+            } else {
+                tan.closew();
+                tan.tips(res.msg, 1500);
+            }
         }, 'json')
     }
 
