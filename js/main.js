@@ -81,9 +81,9 @@ layui.use(['laypage', 'layer'], function () {
     })
     //调用分页查看layui分页文档
 });
-layui.use('element', function(){
+layui.use('element', function () {
     var element = layui.element;
-  });
+});
 
 //表格渲染js
 layui.use('table', function () {
@@ -125,53 +125,53 @@ layui.use('table', function () {
         ],
         data: [{
                 "name": "李小安",
-                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    "
-                ,"stunum":"KMYTZX20190203"
+                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    ",
+                "stunum": "KMYTZX20190203"
             },
             {
                 "name": "李大宝",
-                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    "
-                ,"stunum":"KMYTZX20190203"
+                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    ",
+                "stunum": "KMYTZX20190203"
             },
             {
                 "name": "李鑫",
-                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    "
-                ,"stunum":"KMYTZX20190203"
+                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    ",
+                "stunum": "KMYTZX20190203"
             },
             {
                 "name": "刘曦",
-                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    "
-                ,"stunum":"KMYTZX20190203"
+                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    ",
+                "stunum": "KMYTZX20190203"
             },
             {
                 "name": "孙大伟",
-                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    "
-                ,"stunum":"KMYTZX20190203"
+                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    ",
+                "stunum": "KMYTZX20190203"
             },
             {
                 "name": "发隋代",
-                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    "
-                ,"stunum":"KMYTZX20190203"
+                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    ",
+                "stunum": "KMYTZX20190203"
             },
             {
                 "name": "刘穗丹",
-                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    "
-                ,"stunum":"KMYTZX20190203"
+                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    ",
+                "stunum": "KMYTZX20190203"
             },
             {
                 "name": "念云飞",
-                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    "
-                ,"stunum":"KMYTZX20190203"
+                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    ",
+                "stunum": "KMYTZX20190203"
             },
             {
                 "name": "蒋劲夫",
-                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    "
-                ,"stunum":"KMYTZX20190203"
+                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    ",
+                "stunum": "KMYTZX20190203"
             },
             {
                 "name": "蔡徐坤",
-                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    "
-                ,"stunum":"KMYTZX20190203"
+                "scorelist": "1.A    2.D    3.C    5.A    6.D    7.C    9.A    10.D    11.C    13.A    14.D    15.C    17.A    18.D    19.C    21.A    22.D    23.C    25.A    26.D    27.C    29.A    30.D    31.C    33.A    34.D    35.C    37.A    38.D    39.C    41.A    42.D    43.C    45.A    46.D    47.C    49.A    50.D    51.C    53.A    54.D    55.C    57.A    58.D    59.C    61.A    62.D    63.C    65.A    66.D    67.C    69.A    70.D    71.C    73.A    74.D    75.C    77.A    78.D    79.C    ",
+                "stunum": "KMYTZX20190203"
             },
 
         ],
@@ -276,27 +276,7 @@ layui.use('layer', function () { //独立版的layer无需执行这一句
 
 });
 
-　var myDiv = $("#edit");
-$(function ()
-{
-$("#btn_oprator").click(function (event) 
-{
-showDiv();//调用显示DIV方法
-$(document).one("click", function () 
-{//对document绑定一个影藏Div方法
-$(myDiv).hide();
-}); 
-event.stopPropagation();//阻止事件向上冒泡
-});
-$(myDiv).click(function (event) 
-{
-event.stopPropagation();//阻止事件向上冒泡
-});
-});
-　　　　function showDiv() 
-{
-$(myDiv).fadeIn();
-}
+
 // myAjax('post', conf.apiurl + '/login/getloginstu', {}, function (res) {
 //     if (res.code == 10001) {            
 //         var stuinfor1 = new Vue({
@@ -309,15 +289,17 @@ $(myDiv).fadeIn();
 //     }
 // }, 'json');
 
-
-
-//修改学生状态
-function exitsys(){
+//退出登录
+function exitsys() {
     tan.loading();
-    myAjax('post', conf.apiurl + '/loginout/exit',{},function (res) {
-        if (res.code==10001) {
+    myAjax('post', conf.apiurl + '/loginout/exit', {}, function (res) {
+        if (res.code == 10001) {
             layer.closeAll('loading');
-            window.location.href = "/登录.html";            
+            window.location.href = "/登录.html";
         }
-    },'json')
+    }, 'json')
+}
+//菜单展开收起
+function shedit(){
+    $("#edit").slideToggle(300);
 }

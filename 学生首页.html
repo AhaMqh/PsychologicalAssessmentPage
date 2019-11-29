@@ -140,12 +140,12 @@
             </div>
             <span>测评时间：{{plan.starttime}} ~ {{plan.endtime}}</span>
             <span class="exam_zt">
-              测评状态：<b class="exam_state" v-if="plan.examtype == 0">未测</b>
-              <b class="exam_state" v-else-if="plan.examtype == 1">已测</b>
-              <b class="exam_state" v-else-if="plan.examtype == 2">测试中</b>
+              测评状态：<b class="exam_state" v-if="plan.eplanstudenttype == 0">未测</b>
+              <b class="exam_state" v-else-if="plan.eplanstudenttype == 1">已测</b>
+              <b class="exam_state" v-else-if="plan.eplanstudenttype == 2">测试中</b>
             </span>
             <div class="btn_begin">
-              <button class="layui-btn beginTest" v-bind:planstudentid="plan.planstudentid" type="button" onclick="examstatu(this);">开始测评</button>
+              <button class="layui-btn beginTest" v-if="plan.eplanstudenttype !=1" v-bind:planstudentid="plan.planstudentid" type="button" onclick="examstatu(this);">开始测评</button>
             </div>
           </div>
           <div id="sexamplan" style="position: absolute;left: 15px;bottom: 0;"></div>
