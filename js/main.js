@@ -228,6 +228,7 @@ layui.use('layer', function () { //独立版的layer无需执行这一句
                 }
             });
         },
+        
         confirmTrans: function () {
             //配置一个透明的询问框
             layer.msg('确定要强制交卷吗？', {
