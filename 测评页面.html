@@ -65,7 +65,8 @@
                     <div class="datika"><i class="layui-icon layui-icon-tabs q_icon"></i><b class="q_dati">答题卡</b><span
                             class="q_num">共{{contnum.length}}题</span></div>
                     <div class="exam_num">
-                        <div class="exam_number" v-for="(num,index) in contnum">
+                        <div class="exam_number" v-for="(num,index) in contnum"
+                            :class="['anser'+(index+1),{choisetab:num.choiceoption!=0&&num.choiceoption!=null}]" v-bind:gotoid="'anserid'+(index+1)" onclick="gotofornum(this);">
                             <span v-html="index+1"></span>
                         </div>
                     </div>
@@ -108,45 +109,27 @@
 
             </div>
 
-            <div class="layui-col-xs10 layui-col-sm10 layui-col-md10 theform_stu" id="papercontant">
+            <div class="layui-col-xs10 layui-col-sm10 layui-col-md10 theform_stu">
                 <div class="exam-head">
-                    <span class="wait_txt"><i class="layui-icon layui-icon-list q_topic"
-                            style="font-size: 24px;font-weight: 700;"></i> 第二套中学生心理健康测评卷</span>
-                    <span class="exam_time">(考试时间：120分钟)</span>
+                    <span class="wait_txt planbaseinfo1"><i class="layui-icon layui-icon-list q_topic"
+                            style="font-size: 24px;font-weight: 700;"></i>{{examname}}</span>
+                    <!-- <span class="exam_time">(考试时间：120分钟)</span> -->
                     <span class="exam_save"><a href="#" class="layui-btn btn_save">保存</a></span>
                 </div>
 
-                <div class="exam_box">
-                    <!-- <fieldset class="layui-elem-field">
-                        <legend><span class="qid">1、</span><b class="qtit">老师在向全班提问时，你是否会觉得是在提问自己而感到不安？</b></legend>
-                        <div class="layui-field-box">
-                            <form class="layui-form" action="">
-                                <div class="layui-input-block qselect">
-                                    <input type="radio" name="t" value="男" title="A、是" lay-filter="aaa" />
-                                    <input type="radio" name="t" value="女" title="B、否" lay-filter="aaa" />
-                                </div>
-                            </form>
-                        </div>
-                    </fieldset>
-                    <fieldset class="layui-elem-field">
-                        <legend><span class="qid">2、</span><b class="qtit">是否认为学校里得到的学习成绩总是不大可靠的？</b></legend>
-                        <div class="layui-field-box">
-                            <form class="layui-form" action="">
-                                <div class="layui-input-block qselect">
-                                    <input type="radio" name="sex1" value="男" title="A、是" lay-filter="bbb">
-                                    <input type="radio" name="sex1" value="女" title="B、否" lay-filter="bbb">
+                <div class="exam_box" id="papercontant">
+                    <input type="hidden" id="quesnum" v-bind:value="titall.length" />
 
-                                </div>
-                            </form>
-                        </div>
-                    </fieldset> -->
-                    <fieldset class="layui-elem-field" v-for="tit in titall">
-                        <legend v-html="tit.titcont"></legend>
+                    <fieldset class="layui-elem-field" v-for="(tit,num) in titall">
+                        <legend v-html="tit.titcont" v-bind:id="'anserid'+(num+1)"></legend>
                         <div class="layui-field-box">
                             <form class="layui-form" action="">
                                 <div class="layui-input-block qselect">
-                                        <input name="anser" v-for="(ans,index) in tit.answerall" type="radio"
-                                        v-bind:value="ans.optioncontentscore" v-bind:title="ans.ABCoptionCotent" v-bind={checked:ans.ifcheck}>
+                                    <input v-bind:name="'anser'+(num+1)" v-bind:planstudentid="tit.planstudentid"
+                                        v-bind:answerid="tit.answerid" v-for="(ans,index) in tit.answerall" type="radio"
+                                        v-bind:optionscore="ans.optioncontentscore" v-bind:useranswer="ans.useranswer"
+                                        v-bind:title="ans.ABCoptionCotent" v-bind={checked:ans.ifcheck}
+                                        v-bind:choiceoption="index+1">
                                 </div>
                             </form>
                         </div>

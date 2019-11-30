@@ -71,7 +71,7 @@ window.onload = function () {
         form = layui.form;
         form.on('select(exselect_sta)', function (data) {
             tan.loading();
-            examplans.reqplan();       
+            examplans.reqplan();
         });
     });
     //layui分页方法
@@ -100,6 +100,7 @@ window.onload = function () {
 //点击开始考试方法
 function examstatu(e) {
     // console.log($(e).attr("planstudentid"))取出点击标签的自定义属性
+    console.log($(e));
     tan.loading();
     myAjax('post', conf.apiurl + '/studenthome/changeexamstatu', {
         planstudentid: $(e).attr("planstudentid")

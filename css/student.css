@@ -11,39 +11,46 @@
     left: 20px;
     color: #fff;
 }
-.wait_txt{
+
+.wait_txt {
     font-size: 16px;
     margin-left: 10px;
     line-height: 40px;
 }
-.exam_time{
+
+.exam_time {
     padding: 0 20px;
 }
-.q_topic{
-    color:#5EAAB7 ;
+
+.q_topic {
+    color: #5EAAB7;
     padding: 0 5px;
 }
-.theform_stu{
-    
+
+.theform_stu {
+
     border-radius: 5px;
     border: 1px solid rgba(94, 170, 183, 1);
     box-shadow: 1px 1px 5px rgba(94, 170, 183, 0.298039215686275);
     background: rgba(255, 255, 255, 1);
     position: relative;
     margin-left: 20px;
-    
+
 }
-.stuform-head{
+
+.stuform-head {
     background: rgba(94, 170, 183, 1);
     height: 48px;
     border-radius: 5px;
 }
-.stu_info{
+
+.stu_info {
     text-align: center;
     margin: 0 auto;
     line-height: 48px;
     color: #fff;
 }
+
 .ellipse_one {
     border-width: 0px;
     position: absolute;
@@ -54,6 +61,7 @@
     display: flex;
     opacity: 0.6;
 }
+
 .ellipse_o {
     border-width: 0px;
     position: absolute;
@@ -63,6 +71,7 @@
     height: 12px;
     display: flex;
 }
+
 .ellipse_two {
     border-width: 0px;
     position: absolute;
@@ -73,6 +82,7 @@
     display: flex;
     opacity: 0.6;
 }
+
 .ellipse_t {
     border-width: 0px;
     position: absolute;
@@ -82,6 +92,7 @@
     height: 12px;
     display: flex;
 }
+
 .box_one {
     border-width: 0px;
     position: absolute;
@@ -91,6 +102,7 @@
     height: 35px;
     display: flex;
 }
+
 .thread {
     border-width: 0px;
     position: absolute;
@@ -106,6 +118,7 @@
     -webkit-box-shadow: none;
     box-shadow: none;
 }
+
 .box_two {
     border-width: 0px;
     position: absolute;
@@ -115,11 +128,13 @@
     height: 35px;
     display: flex;
 }
-.stuform-body{
+
+.stuform-body {
     background-color: rgba(94, 170, 183, 1);
     margin-top: 18px;
     border-radius: 5px;
 }
+
 .ellipse_three {
     border-width: 0px;
     position: absolute;
@@ -130,6 +145,7 @@
     display: flex;
     opacity: 0.6;
 }
+
 .ellipse_thr {
     border-width: 0px;
     position: absolute;
@@ -139,6 +155,7 @@
     height: 12px;
     display: flex;
 }
+
 .ellipse_four {
     border-width: 0px;
     position: absolute;
@@ -149,6 +166,7 @@
     display: flex;
     opacity: 0.6;
 }
+
 .ellipse_f {
     border-width: 0px;
     position: absolute;
@@ -158,146 +176,180 @@
     height: 12px;
     display: flex;
 }
-.stu_head{
+
+.stu_head {
     width: 100px;
     height: 100px;
-   
+
     margin: 0 auto;
     padding: 60px 40px 20px 40px;
 }
-.stu_head img{
+
+.stu_head img {
     position: relative;
     height: 100%;
     width: 100%;
     border-radius: 50%;
 }
-.info_box{
+
+.info_box {
     padding: 20px;
 }
- 
 
-.info_table td{
+
+.info_table td {
     line-height: 40px;
-    
+
 }
-.icon_info{
+
+.icon_info {
     color: rgba(94, 170, 183, 1);
     padding: 0 7px;
 }
+
 .layui-form-select dl dd.layui-this {
-    background-color:  rgba(94, 170, 183, 1);
+    background-color: rgba(94, 170, 183, 1);
     color: #fff;
 }
-.layui-table[lay-skin=row] td, .layui-table[lay-skin=row] th {
+
+.layui-table[lay-skin=row] td,
+.layui-table[lay-skin=row] th {
     border-width: 0 0 0 0;
 }
-.info_stu{
-    background-color: #eee;
+
+.info_stu {
+    /* background-color: #eee; */
     height: 735px;
 }
-.info_stutit{
+
+.info_stutit {
     font-weight: bold;
 }
-.exam_status{
+
+.exam_status {
     width: 240px;
     float: right;
-   padding: 5px 15px;
+    padding: 5px 15px;
 }
-.exam_box{
+
+.exam_box {
 
     padding: 15px;
     background-color: #fff;
-    
+
 }
-.exam_info{
-   
+
+.exam_info {
+
     height: 100px;
     background-color: #F7FBFC;
     margin-bottom: 30px;
     border: 1px solid #CFE6EA;
     padding: 10px;
-   
+
 }
-.exam_tit{
+
+.choisetab {
+    background-color: #5EAAB7 !important;
+    color: #fff !important;
+}
+
+.exam_tit {
     font-size: 18px;
     color: #666666;
     line-height: 30px;
 }
-.exam_infotitle{
+
+.exam_infotitle {
     text-align: center;
 }
-.exam_zt{
+
+.exam_zt {
     float: right;
 }
-.beginTest{
+
+.beginTest {
     background-color: #fff;
     border: 1px solid rgba(94, 170, 183, 1);
     color: rgba(94, 170, 183, 1);
     border-radius: 5px;
-    
+
 }
-.beginTest:hover{
+
+.beginTest:hover {
     background-color: rgba(94, 170, 183, 1);
     border: 1px solid rgba(94, 170, 183, 1);
-    color:#fff;
+    color: #fff;
     border-radius: 5px;
-    
+
 }
-.btn_begin{
+
+.btn_begin {
     padding: 10px 0;
     text-align: center;
 }
-.exam_state{
-    color:#5EAAB7;
+
+.exam_state {
+    color: #5EAAB7;
 }
-.exam_state1{
+
+.exam_state1 {
     color: #04A751;
 }
+
 .stu_info_box {
     padding: 10px 10px 40px 10px;
     height: 200px;
 }
+
 .stu_head {
     height: 100px;
     width: 100px;
     margin: 0 auto;
     padding: 35px;
 }
-.stu_stuInfo{
+
+.stu_stuInfo {
     height: 670px;
 }
 
 
 
-.exam_stuInfo{
+.exam_stuInfo {
     border: #5EAAB7 1px solid;
     background-color: #fff;
     border-radius: 5px;
-  
-   
+
+
 }
-.exam_stu_head{
+
+.exam_stu_head {
     height: 100px;
     width: 100px;
     margin: 0 auto;
     padding: 10px;
 }
-.exam_stu_head img{
+
+.exam_stu_head img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
 }
-.exam_info_box{
-    padding: 0 10px ;
+
+.exam_info_box {
+    padding: 0 10px;
     height: auto;
-   
-    
+
+
 }
+
 .layui-table[lay-skin=row] {
     border: none;
     border-radius: 5px;
 }
-.exam_info_table td, .exam_info_table th {
+
+.exam_info_table td,
+.exam_info_table th {
     position: relative;
     padding: 9px 5px;
     min-height: 20px;
@@ -305,8 +357,9 @@
     font-size: 14px;
     display: inline-block;
 }
-.exam_num{
-    
+
+.exam_num {
+
     border: #5EAAB7 1px solid;
     background-color: #fff;
     padding: 10px;
@@ -314,7 +367,8 @@
     overflow: hidden;
 
 }
-.datika{
+
+.datika {
     height: 50px;
     background-color: #5EAAB7;
     margin-top: 15px;
@@ -322,21 +376,25 @@
     color: #fff;
 }
 
-.q_num{
+.q_num {
     float: right;
     padding: 0 10px;
 }
-.q_icon{
+
+.q_icon {
     color: #fff;
     padding: 0 8px;
 }
-.qselect{
-    color:#666;
+
+.qselect {
+    color: #666;
 }
-.qtit{
+
+.qtit {
     font-weight: 400;
 }
-.exam_number{
+
+.exam_number {
     height: 25px;
     width: 25px;
     background-color: #fff;
@@ -348,15 +406,17 @@
     float: left;
     margin: 5px;
 }
-.exam_number:hover{
-   
+
+.exam_number:hover {
+
     border: 1px solid #5EAAB7;
 }
-.exam_number1{
+
+.exam_number1 {
     height: 25px;
     width: 25px;
     background-color: #fff;
-    border: 1px solid  #ff6633 ;
+    border: 1px solid #ff6633;
     text-align: center;
     color: #666666;
     line-height: 25px;
@@ -364,11 +424,12 @@
     float: left;
     margin: 5px;
 }
-.exam_number2{
+
+.exam_number2 {
     height: 25px;
     width: 25px;
     background-color: #CFE6EA;
-    border: 1px solid  #5EAAB7 ;
+    border: 1px solid #5EAAB7;
     text-align: center;
     color: #666666;
     line-height: 25px;
@@ -376,105 +437,125 @@
     float: left;
     margin: 5px;
 }
+
 #u_countDown {
-  height:70px;
-  margin-top: 15px;
- 
+    height: 70px;
+    margin-top: 15px;
+
 }
+
 #u_countDown_div {
-  border-width:0px;
-  height:95px;
-  background:inherit;
-  background-color:rgba(255, 255, 255, 1);
-  box-sizing:border-box;
-  border-width:1px;
-  border-style:solid;
-  border-color:rgba(94, 170, 183, 1);
-  border-radius:4px;
-  -moz-box-shadow:none;
-  -webkit-box-shadow:none;
-  box-shadow:none;
+    border-width: 0px;
+    height: 95px;
+    background: inherit;
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(94, 170, 183, 1);
+    border-radius: 4px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
-.time_container{
+
+.time_container {
     text-align: center;
     line-height: 45px;
     margin-top: 20px;
 }
-.ys1{
-	color: #ff6633;
-  font-weight: bold;
-  font-size: 16px;
- 
-  }
-  .t_co{
+
+.ys1 {
+    color: #ff6633;
+    font-weight: bold;
+    font-size: 16px;
+
+}
+
+.t_co {
     color: #333333;
     font-weight: 400;
     letter-spacing: 9px;
     margin-left: 3px;
-  }
-  .exam_title{
-   
-      text-align: center;
-      font-size: 18px;
-      line-height: 30px;
-      
-  }
-  .exam-head{
-      height:40px;
-     background-color: #eee;
-      padding: 10px;
-  }
-  .btn_save{
-      background-color:#5EAAB7 ;
-      border-radius: 5px;
-      float: right;
-  }
-  .btn_save:hover{
-    background-color:#fff ;
+}
+
+.exam_title {
+
+    text-align: center;
+    font-size: 18px;
+    line-height: 30px;
+
+}
+
+.exam-head {
+    height: 40px;
+    background-color: #eee;
+    padding: 10px;
+}
+
+.btn_save {
+    background-color: #5EAAB7;
+    border-radius: 5px;
+    float: right;
+}
+
+.btn_save:hover {
+    background-color: #fff;
     border-radius: 5px;
     color: #5EAAB7;
     float: right;
 }
+
 .layui-elem-field legend {
     margin-left: 20px;
     padding: 0 10px;
     font-size: 16px;
     font-weight: 300;
 }
+
 .layui-input-block {
     margin-left: 30px;
     min-height: 36px;
 }
+
 .layui-form-radio {
     padding-right: 50px;
 }
+
 .layui-form-radio>i {
     font-size: 14px;
 }
+
 .layui-elem-field {
     margin-bottom: 20px;
 }
-.btn_over{
+
+.btn_over {
     padding: 20px;
     margin: 0 auto;
 }
-.btn_tijiao{
+
+.btn_tijiao {
     background-color: #5EAAB7;
 }
-.jiaoshi{
+
+.jiaoshi {
     padding-right: 0;
 }
-.exit{
+
+.exit {
     color: #fff;
 }
-.examInfo_stu{
+
+.examInfo_stu {
     height: 50px;
     background-color: #5EAAB7;
     line-height: 50px;
     color: #fff;
 }
-.exam_endtime{
-    float:right;
+
+.exam_endtime {
+    float: right;
     line-height: 40px;
     color: #5EAAB7;
     padding: 0 10px;
@@ -486,7 +567,8 @@
     margin-top: 6px;
     border: #5EAAB7 1px solid;
 }
-.edit_pwd{
+
+.edit_pwd {
     background-color: #5EAAB7;
     height: 50px;
     line-height: 50px;
@@ -494,14 +576,17 @@
     font-weight: 600;
     color: #fff;
 }
-.icon_pwd{
+
+.icon_pwd {
     padding: 0 5px;
 }
+
 .layui-layer-btn .layui-layer-btn0 {
     border-color: #5EAAB7 !important;
     background-color: #5EAAB7 !important;
     color: #fff;
 }
+
 .mainbox {
     width: 200px;
     height: 125px;
@@ -539,7 +624,7 @@
 }
 
 .time-card-label {
-    font-size:12px;
+    font-size: 12px;
     text-transform: uppercase;
     opacity: 0.7;
     margin-top: -20px;
@@ -599,4 +684,3 @@
         transform: translateY(-100%);
     }
 }
-
