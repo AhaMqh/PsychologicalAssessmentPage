@@ -229,6 +229,7 @@ layui.use('layer', function () { //独立版的layer无需执行这一句
             });
         },
         
+        
         confirmTrans: function () {
             //配置一个透明的询问框
             layer.msg('确定要强制交卷吗？', {
@@ -301,6 +302,58 @@ function exitsys() {
     }, 'json')
 }
 //菜单展开收起
-function shedit(){
-    $("#edit").slideToggle(300);
-}
+$(function(){
+    $(".user-pic").click(function(event){
+      var e=window.event || event;
+      if(e.stopPropagation){
+        e.stopPropagation();
+      }else{
+        e.cancelBubble = true;
+      }  
+      $("#edit").show();
+    });
+    $("#edit").click(function(event){
+      var e=window.event || event;
+      if(e.stopPropagation){
+        e.stopPropagation();
+      }else{
+        e.cancelBubble = true;
+      }
+    });
+    document.onclick = function(){
+      $("#edit").hide();
+    };
+  })
+  $(".resetpwd").click(function () {
+  layer.open({
+    skin: 'demo-class',
+    type:1,
+    area:['500px','260px'],
+     title: '班级密码重置'
+     ,content: $("#modifypwd"),
+     shade: 0.6,
+     btn: ['确认', '取消']
+     ,
+   cancel: function(layero,index){ 
+      layer.closeAll();
+     }
+   
+   })
+})
+$(".btn_unresult").click(function () {
+    layer.open({
+      skin: 'demo-class',
+      type:1,
+      area:['500px','190px'],
+       title: '重置学生密码'
+       ,content: $("#modifypwd_single"),
+       shade: 0.6,
+       btn: ['确认', '取消']
+       ,
+     cancel: function(layero,index){ 
+        layer.closeAll();
+       }
+     
+     })
+  })
+  
