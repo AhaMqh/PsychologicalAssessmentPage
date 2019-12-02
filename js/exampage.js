@@ -1,6 +1,29 @@
 // 学生考试测评页面js
 window.onload = function () {
+    
     //获取登录学生session
+    jQuery(function($){
+        $(".user-pic").click(function(event){
+            var e=window.event || event;
+            if(e.stopPropagation){
+              e.stopPropagation();
+            }else{
+              e.cancelBubble = true;
+            }  
+            $("#manage_sys").show();
+          });
+          $("#manage_sys").click(function(event){
+            var e=window.event || event;
+            if(e.stopPropagation){
+              e.stopPropagation();
+            }else{
+              e.cancelBubble = true;
+            }
+          });
+          document.onclick = function(){
+            $("#manage_sys").hide();
+          };
+        })
     myAjax('post', conf.apiurl + '/login/getloginstu', {}, function (res) {
         if (res.code == 10001) {
             var stuinfor1 = new Vue({
@@ -25,6 +48,8 @@ window.onload = function () {
                 data: res.resultObject
             })
             tan.closew();
+
+            //试卷已做时间显示
             datatime = res.resultObject.examstartime;
             setInterval(function(){
                 BirthDay = new Date(datatime); //这个日期是可以修改的  
@@ -40,7 +65,7 @@ window.onload = function () {
                 e_minsold = (e_hrsold - hrsold) * 60;
                 minsold = Math.floor((e_hrsold - hrsold) * 60);
                 seconds = Math.floor((e_minsold - minsold) * 60);
-                showtime.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+                showtime.innerHTML = daysold + "<span class='inin'>天</span>" + hrsold + "<span class='inin'>时</span>" + minsold + "<span class='inin'>分</span>" + seconds + "<span class='inin'>秒</span>";
                     },1000)
         } else {
             tan.tips(res.msg, 1000);

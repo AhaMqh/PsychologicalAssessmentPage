@@ -1,7 +1,9 @@
 // 学生首页js
 window.onload = function () {
 
+
     tan.loading();
+        
     //获取登录学生session
     myAjax("get", conf.apiurl + '/login/getloginstu', {}, function (res) {
         if (res.code == 10001) {
