@@ -140,6 +140,7 @@
    margin-right: 10px;
    margin-top: 10px;
    background-color: #5EAAB7;
+   font-weight: normal;
 }
 .btn_unresult {
     background-color: #F7FBFC;
@@ -151,4 +152,15 @@
     color: #fff;
     opacity: 1;
 }
+.layui-form-select dl dd.layui-this {
+    background-color: #5EAAB7;
+    color: #fff;
+}
+body .demo-class .layui-layer-title{background:#5EAAB7; color:#333;font-weight: 600;}
+
+.reset{
+    padding: 0 30px 0 0;
+    margin-top: 30px;
+}
+
 
