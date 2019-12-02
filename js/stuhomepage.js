@@ -19,6 +19,7 @@ window.onload = function () {
         } else {
             tan.closew();
             tan.tips(res.msg, 1000);
+            setTimeout(window.location.href = "登录.html", 3000);
         }
     }, 'json');
 
