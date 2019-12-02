@@ -17,6 +17,7 @@ window.onload = function () {
         }
     }, 'json');
 
+    var datatime;
     myAjax('post', conf.apiurl + "/studentexam/getplanbaseinfo", {}, function (res) {
         if (res.code == 10001) {
             var planbaseinfo1 = new Vue({
@@ -24,6 +25,23 @@ window.onload = function () {
                 data: res.resultObject
             })
             tan.closew();
+            datatime = res.resultObject.examstartime;
+            setInterval(function(){
+                BirthDay = new Date(datatime); //这个日期是可以修改的  
+                today = new Date();
+                timeold = (today.getTime() - BirthDay.getTime());
+                sectimeold = timeold / 1000
+                secondsold = Math.floor(sectimeold);
+                msPerDay = 24 * 60 * 60 * 1000
+                e_daysold = timeold / msPerDay
+                daysold = Math.floor(e_daysold);
+                e_hrsold = (e_daysold - daysold) * 24;
+                hrsold = Math.floor(e_hrsold);
+                e_minsold = (e_hrsold - hrsold) * 60;
+                minsold = Math.floor((e_hrsold - hrsold) * 60);
+                seconds = Math.floor((e_minsold - minsold) * 60);
+                showtime.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+                    },1000)
         } else {
             tan.tips(res.msg, 1000);
         }
@@ -201,7 +219,6 @@ window.onload = function () {
             scrollTop: howlong
         }, 1000);
     }
-
 }
 
 

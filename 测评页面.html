@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="layui/css/layui.css">
     <link rel="stylesheet" href="css/public.css">
     <link rel="stylesheet" href="css/student.css">
-    
+
     <script src="PokioPlugin/jquery-3.3.1.min.js"></script>
 </head>
 
@@ -66,7 +66,8 @@
                             class="q_num">共{{contnum.length}}题</span></div>
                     <div class="exam_num">
                         <div class="exam_number" v-for="(num,index) in contnum"
-                            :class="['anser'+(index+1),{choisetab:num.choiceoption!=0&&num.choiceoption!=null}]" v-bind:gotoid="'anserid'+(index+1)" onclick="gotofornum(this);">
+                            :class="['anser'+(index+1),{choisetab:num.choiceoption!=0&&num.choiceoption!=null}]"
+                            v-bind:gotoid="'anserid'+(index+1)" onclick="gotofornum(this);">
                             <span v-html="index+1"></span>
                         </div>
                     </div>
@@ -76,30 +77,9 @@
                     <div class="datika"><i class="layui-icon layui-icon-log q_icon"></i><b class="q_dati">答题时间</b>
                     </div>
                     <div id="u_countDown_div" class="">
-
                         <div class="mainbox">
-                            <input type="checkbox" id="start" hidden>
-                            <input type="checkbox" id="stop" hidden>
-                            <input type="checkbox" id="reset" hidden>
-                            <div class="timer">
-                                <div class="time-card" data-type="hours" data-max="24">
-                                    <div class="time-card-count"></div>
-                                    <div class="time-card-label">时</div>
-                                </div>
-                                <span class="colon">:</span>
-                                <div class="time-card" data-type="minutes" data-max="60">
-                                    <div class="time-card-count"></div>
-                                    <div class="time-card-label">分</div>
-                                </div>
-                                <span class="colon">:</span>
-                                <div class="time-card" data-type="seconds" data-max="60">
-                                    <div class="time-card-count"></div>
-                                    <div class="time-card-label">秒</div>
-                                </div>
+                            <div class="timer" id="showtime">
                             </div>
-
-
-
                         </div>
 
                     </div>

@@ -405,6 +405,7 @@
     position: relative;
     float: left;
     margin: 5px;
+    cursor: pointer;
 }
 
 .exam_number:hover {
