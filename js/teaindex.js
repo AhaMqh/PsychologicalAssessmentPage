@@ -21,14 +21,13 @@ window.onload = function(){
 				var type = +$("#queryrole").val();
 				var strwhere = document.getElementById("title").value; 
 				var value = strwhere.value;
-				if (type != 10 && !strwhere==undefined) {
+				if (type != 10 && !strwhere=="") {
 					url = conf.apiurl + "/teaindex/geteplanliststrwhere?type=" + type + "&strwhere = " + value;
-				}else if(type != 10 && strwhere==undefined){
+				}else if(type != 10 && strwhere==""){
 					url = conf.apiurl + "/teaindex/geteplanliststrwhere?type=" + type+ "&strwhere = ''";
-				}else if(!strwhere==undefined){
+				}else if(!strwhere==""){
 					url = conf.apiurl + "/teaindex/geteplanliststrwhere?type=10 & strwhere = " + value;
 				}
-				alert(url)
 				table.render({
 					elem: '#table',
 					id: 'table',
@@ -39,7 +38,19 @@ window.onload = function(){
 			     [ {field : 'eplanid', title:'编号', align:'center',width : 60}
 			      ,{field : 'examname', title:'试卷名称', align:'center',width : 290}
 				  ,{field : 'starttime',title : '测评时间',align : 'center',width : 300}
-				  ,{field : 'examtpye',title : '状态',align : 'center',width : 120}
+				  ,{field : 'examtpye',title : '状态',align : 'center',width : 120
+					,templet : function(p){
+						var core = p.examtpye;
+						if(core==0){
+						var html = '<a><span class="tb_beagin">进行中</span></a>'
+						return html;
+						}else{
+						var html = '<a><span class="tb_finish">已结束</span></a>'
+						return html;
+						}
+						
+					},
+				}
 				  ,{title:'人数完成比例 (实际测评/应测评)',align:'center',width : 290
 				  ,templet : function(p){
 					  var core = p.bili;
@@ -52,16 +63,8 @@ window.onload = function(){
 				},{title : '操作',toolbar : '#barDemo',align : 'center'}
 			     ] 
 			 ],
-					page: {
-						layout: ['prev', 'page', 'next', 'skip', 'count', 'limit'],
-						groups: 5,
-						limit: 10,
-						limits: [10, 20, 30, 40, 50],
-						theme: '#1E9FFF',
-					},
-					done : function(){
-						element.render();
-					}
+					
+			 page: true,
 				});
 			}
 			/*点击查询加载表格数据结束*/
@@ -69,14 +72,8 @@ window.onload = function(){
 		table.on('tool(table)',function(obj){
 			var data = obj.data;
 			if(obj.event === 'edit'){
-			layer.msg('ID：'+ data.id + ' 的查看操作');
-			} else if(obj.event === 'del'){
-			layer.confirm('真的删除行么', function(index){
-				obj.del();
-				layer.close(index);
-			});
-			} else if(obj.event === 'edit'){
-			layer.alert('编辑行：<br>'+ JSON.stringify(data))
+				var epid = data.eplanid;
+				location.href = "../测评班级.html?eplanid=" + epid;
 			}
 		});
 

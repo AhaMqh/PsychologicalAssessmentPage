@@ -5,7 +5,15 @@ window.onload = function(){
 			layer = layui.layer, $ = layui.jquery,
 			laydate = layui.laydate, laytpl = layui.laytpl,
 			element = layui.element;
-	
+		var url = location.search; //获取url中"?"符后的字串 ?vm_id=2
+            var id;
+	            if(url.indexOf("?") != -1) {
+	            str = url.substr(1);
+	            strs = str.split("=");
+				console.log(strs);
+	            id = strs[1];
+        }
+
 		/*加载表格*/
 		table.render({
 			elem : '#project',
@@ -21,7 +29,21 @@ window.onload = function(){
 				  ,{field : 'sex',title : '性别',align : 'center'}
 				  ,{field : 'paperName',title : '评测试卷名称',align : 'center'}
 				  ,{field : 'examstartime',title : '测评时间',align : 'center'}
-				  ,{field : 'eplanstudenttype',title : '状态',align : 'center'}
+				  ,{field : 'eplanstudenttype',title : '状态',align : 'center'
+					,templet : function(p){
+						var core = p.eplanstudenttype;
+						if(core==0){
+						var html = '<a id="edit1" lay-event="edit1"><span class="tb_nostart">未开始</span></a>'
+						return html;
+						}else if(core==1){
+						var html = '<a id="edit2" lay-event="edit2"><span class="tb_finish">已结束</span></a>'
+						return html;
+						}else{
+						var html = '<a id="edit3" lay-event="edit3"><span class="tb_beagin">进行中</span></a>'
+						return html;
+						}
+						
+					},}
                   ,{title : '操作',toolbar : '#barDemo',align : 'center',}
 			     ] 
 			 ],
