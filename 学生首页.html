@@ -124,9 +124,9 @@
               <select name="interest" class="exselect_sta" lay-filter="exselect_sta">
                 <option value="10" selected>选择试卷状态</option>
                 <option value="10">全部</option>
-                <option value="1">已测</option>
-                <option value="0">未测</option>
-                <option value="2">测试中</option>
+                <option value="1">已测评</option>
+                <option value="0">未测评</option>
+                <option value="2">测评中</option>
               </select>
             </div>
 
@@ -141,9 +141,9 @@
             </div>
             <span>测评时间：{{plan.starttime}} ~ {{plan.endtime}}</span>
             <span class="exam_zt">
-              测评状态：<b class="exam_state" v-if="plan.eplanstudenttype == 0">未测</b>
-              <b class="exam_state" v-else-if="plan.eplanstudenttype == 1">已测</b>
-              <b class="exam_state" v-else-if="plan.eplanstudenttype == 2">测试中</b>
+              测评状态：<b class="tb_nostart" v-if="plan.eplanstudenttype == 0">未测评</b>
+              <span class="tb_finish" v-else-if="plan.eplanstudenttype == 1">已测评</span>
+              <span class="tb_beagin" v-else-if="plan.eplanstudenttype == 2">测评中</span>
             </span>
             <div class="btn_begin">
               <button class="layui-btn beginTest" v-if="plan.eplanstudenttype !=1" v-bind:planstudentid="plan.planstudentid" type="button" onclick="examstatu(this);">开始测评</button>
