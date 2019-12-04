@@ -27,12 +27,12 @@
                     <form class="layui-form" action="">
                         <div class="layui-form-item ts_body" style="display: flex;">
                             
-                            <div class="layui-input-block" style="width: 200px;margin-left: 5px;">
-                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                            <div class="layui-input-block txt_examtit" style="width: 200px;">
+                                <input type="text" name="title" id="title" lay-verify="title" autocomplete="off"
                                     placeholder="请输入学生姓名或学号" class="layui-input">
                             </div>
-                            <div class="layui-input-block" style="margin-left: 40px;">
-                                <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">查询</button>
+                            <div class="layui-input-block " style="margin-left: 40px;">
+					            <button id="btnselfrontinfo" type="button" class="layui-btn " >查询</button>
                             </div>
                         </div>
                     </form>
@@ -47,8 +47,8 @@
                     </script>
                     <script type="text/html" id="barDemo">
                         
-                        <a class="layui-btn layui-btn-xs" id="edit" lay-event="edit" data-method="confirmTrans">强制交卷</a>
-                        <a class="layui-btn layui-btn-xs" id="edit" lay-event="edit" data-method="confirmTrans">取消交卷</a>
+                        <a class="layui-btn layui-btn-xs" id="edit1" lay-event="edit1" data-method="confirmTrans">强制交卷</a>
+                        <a class="layui-btn layui-btn-xs" id="edit2" lay-event="edit2" data-method="cancel">取消交卷</a>
                     </script>
 
                 </div>

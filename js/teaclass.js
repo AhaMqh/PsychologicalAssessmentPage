@@ -11,7 +11,6 @@ window.onload = function(){
 	            if(url.indexOf("?") != -1) {
 	            str = url.substr(1);
 	            strs = str.split("=");
-				console.log(strs);
 	            id = strs[1];
             }
 
@@ -36,7 +35,7 @@ function querylist() {
 			cols : [ 
 			     [ {field : 'eplanid', title:'编号', align:'center'}
 			      ,{field : 'classid', title:'编号', align:'center', hide:true}
-			      ,{field : 'period', title:'年级', align:'center'}
+			      ,{field : 'gradename', title:'年级', align:'center'}
 				  ,{field : 'className',title : '班级',align : 'center'}
 				  ,{field : 'bili',title : '测评人数比例 (实际测评/应测评)',align : 'center'
 				  ,templet : function(p){
@@ -69,6 +68,21 @@ function querylist() {
 			 page: true,
 		});
 	}
+	tan.loading();
+			//获取登录老师session
+			myAjax("get", conf.apiurl + '/login/getlogintea', {}, function (res) {
+				if (res.code == 10001) {
+					var stuinfor1 = new Vue({
+						el: '.stuinfo1',
+						data: res.resultObject
+					})
+					tan.closew();
+				} else {
+					tan.closew();
+					tan.tips(res.msg, 1000);
+					setTimeout(window.location.href = "登录.html", 3000);
+				}
+			}, 'json');
 		//监听工具条
 		table.on('tool(project)',function(obj){
 			var data = obj.data;
@@ -78,7 +92,9 @@ function querylist() {
 				title: "提示"
 				});
 			} else if(obj.event === 'edit2'){
-				window.location.href = "测评结果.html"
+				var epid = data.eplanid;
+				var classiid = data.classid;
+				window.location.href = "测评结果.html?eplanid="+epid+"=classid="+classiid;
 			} else if(obj.event === 'edit3'){
 				window.location.href = "测评详情.html"
 			}

@@ -58,7 +58,7 @@ window.onload = function () {
                 myAjax('post', conf.apiurl + '/studenthome/getexamplanlist', {
                         examtype: $('.exselect_sta').val(),
                         page: 1,
-                        limit: 4
+                        limit: 4,
                     },
                     function (res) {
                         if (res.code == 10001) {
