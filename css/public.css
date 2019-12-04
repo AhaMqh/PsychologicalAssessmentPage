@@ -217,3 +217,45 @@ body {
     line-height: 55px;
     padding: 0 5px;
 }
+
+
+.tb_beagin {
+    padding: 8px 10px;
+    border: 1px solid #afd5db;
+    border-radius: 2px;
+    color: #5EAAB7;
+    background: #f7fbfc;
+}
+
+.tb_end {
+    padding: 8px 10px;
+    border: 1px solid #d7d7d7;
+    border-radius: 2px;
+    color: #7F7F7F;
+    background: #f2f2f2;
+}
+
+.tb_detail {
+    color: #fff;
+    background: rgba(94, 170, 183, 1);
+    border-radius: 5px;
+    padding: 8px 20px;
+    cursor: pointer;
+    line-height: 30px;
+}
+.tb_nostart {
+    padding: 8px 10px;
+    border: 1px solid #f4b3bb;
+    border-radius: 2px;
+    color: rgba(217, 0, 27, 0.6);
+    background: #fdf3f4;
+    font-weight: normal;
+}
+
+.tb_finish {
+    padding: 8px 10px;
+    border: 1px solid #d7d7d7;
+    border-radius: 2px;
+    color: #7F7F7F;
+    background: #f2f2f2;
+}

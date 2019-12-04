@@ -2,28 +2,28 @@
 window.onload = function () {
     
     //获取登录学生session
-    jQuery(function($){
-        $(".user-pic").click(function(event){
-            var e=window.event || event;
-            if(e.stopPropagation){
-              e.stopPropagation();
-            }else{
-              e.cancelBubble = true;
-            }  
-            $("#manage_sys").show();
-          });
-          $("#manage_sys").click(function(event){
-            var e=window.event || event;
-            if(e.stopPropagation){
-              e.stopPropagation();
-            }else{
-              e.cancelBubble = true;
-            }
-          });
-          document.onclick = function(){
-            $("#manage_sys").hide();
-          };
-        })
+    // jQuery(function($){
+    //     $(".user-pic").click(function(event){
+    //         var e=window.event || event;
+    //         if(e.stopPropagation){
+    //           e.stopPropagation();
+    //         }else{
+    //           e.cancelBubble = true;
+    //         }  
+    //         $("#manage_sys").show();
+    //       });
+    //       $("#manage_sys").click(function(event){
+    //         var e=window.event || event;
+    //         if(e.stopPropagation){
+    //           e.stopPropagation();
+    //         }else{
+    //           e.cancelBubble = true;
+    //         }
+    //       });
+    //       document.onclick = function(){
+    //         $("#manage_sys").hide();
+    //       };
+    //     })
     myAjax('post', conf.apiurl + '/login/getloginstu', {}, function (res) {
         if (res.code == 10001) {
             var stuinfor1 = new Vue({

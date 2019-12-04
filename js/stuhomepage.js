@@ -3,7 +3,28 @@ window.onload = function () {
 
 
     tan.loading();
-        
+    jQuery(function($){
+        $(".user-pic").click(function(event){
+            var e=window.event || event;
+            if(e.stopPropagation){
+              e.stopPropagation();
+            }else{
+              e.cancelBubble = true;
+            }  
+            $("#manage_sys").show();
+          });
+          $("#manage_sys").click(function(event){
+            var e=window.event || event;
+            if(e.stopPropagation){
+              e.stopPropagation();
+            }else{
+              e.cancelBubble = true;
+            }
+          });
+          document.onclick = function(){
+            $("#manage_sys").hide();
+          };
+        })
     //获取登录学生session
     myAjax("get", conf.apiurl + '/login/getloginstu', {}, function (res) {
         if (res.code == 10001) {
