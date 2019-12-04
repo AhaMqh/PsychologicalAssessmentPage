@@ -42,7 +42,7 @@ window.onload = function () {
                     function (res) {
                         if (res.code == 10001) {
                             _this.theplans = res.resultObject;
-                            page(res.resultObject.length);
+                            page(res.count);
                             tan.closew();
                         } else {
                             tan.closew();
