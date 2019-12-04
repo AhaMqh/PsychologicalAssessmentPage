@@ -111,10 +111,6 @@
     font-weight: 600;
     padding: 0 4px;
 }
-
-
-
-
 .input_edit{
     margin-top: 6px;
     border: #5EAAB7 1px solid;
@@ -135,6 +131,9 @@
     background-color: #5EAAB7 !important;
     color: #fff;
 }
+
+
+/* 学生管理页面----开始----- */
 .resetpwd{
     float: right;
    margin-right: 10px;
