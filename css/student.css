@@ -603,8 +603,9 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 0 0 4em;
+    margin:0 0 2em;
     color: #5EAAB7;
+    font-size: 20px;
 }
 
 .time-card {
@@ -684,4 +685,9 @@
         -webkit-transform: translateY(-100%);
         transform: translateY(-100%);
     }
+}
+.inin{
+    color: #333;
+    padding: 0 6px;
+    font-size: 12px;
 }

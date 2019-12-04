@@ -1,77 +1,42 @@
 // 学生考试测评页面js
 window.onload = function () {
     
-    //获取登录学生session
-    jQuery(function($){
-        $(".user-pic").click(function(event){
-            var e=window.event || event;
-            if(e.stopPropagation){
-              e.stopPropagation();
-            }else{
-              e.cancelBubble = true;
-            }  
-            $("#manage_sys").show();
-          });
-          $("#manage_sys").click(function(event){
-            var e=window.event || event;
-            if(e.stopPropagation){
-              e.stopPropagation();
-            }else{
-              e.cancelBubble = true;
-            }
-          });
-          document.onclick = function(){
-            $("#manage_sys").hide();
-          };
-        })
-    myAjax('post', conf.apiurl + '/login/getloginstu', {}, function (res) {
-        if (res.code == 10001) {
-            var stuinfor1 = new Vue({
-                el: '.stuinfo1',
-                data: res.resultObject
-            })
-            var stuinfor2 = new Vue({
-                el: '.stuinfo2',
-                data: res.resultObject
-            })
-            tan.closew();
-        } else {
-            tan.tips(res.msg, 1000);
-            setTimeout(window.location.href = "登录.html", 3000);
-        }
-    }, 'json');
+    var url = location.search; //获取url中"?"符后的字串 ?vm_id=2
+            var id;
+            var stuid;
+	            if(url.indexOf("?") != -1) {
+	            str = url.substr(1);
+	            strs = str.split("=");
+	            id = strs[1];
+	            stuid = strs[3];
+            }
+
+    myAjax("get", conf.apiurl + '/login/getlogintea', {}, function (res) {
+				if (res.code == 10001) {
+					var stuinfor1 = new Vue({
+						el: '.stuinfo1',
+						data: res.resultObject
+					})
+					tan.closew();
+				} else {
+					tan.closew();
+					tan.tips(res.msg, 1000);
+					setTimeout(window.location.href = "登录.html", 3000);
+				}
+			}, 'json');
 
     var datatime;
-    myAjax('post', conf.apiurl + "/studentexam/getplanbaseinfo", {}, function (res) {
-        if (res.code == 10001) {
-            var planbaseinfo1 = new Vue({
-                el: '.planbaseinfo1',
-                data: res.resultObject
-            })
-            tan.closew();
-
-            //试卷已做时间显示
-            datatime = res.resultObject.examstartime;
-            setInterval(function(){
-                BirthDay = new Date(datatime); //这个日期是可以修改的  
-                today = new Date();
-                timeold = (today.getTime() - BirthDay.getTime());
-                sectimeold = timeold / 1000
-                secondsold = Math.floor(sectimeold);
-                msPerDay = 24 * 60 * 60 * 1000
-                e_daysold = timeold / msPerDay
-                daysold = Math.floor(e_daysold);
-                e_hrsold = (e_daysold - daysold) * 24;
-                hrsold = Math.floor(e_hrsold);
-                e_minsold = (e_hrsold - hrsold) * 60;
-                minsold = Math.floor((e_hrsold - hrsold) * 60);
-                seconds = Math.floor((e_minsold - minsold) * 60);
-                showtime.innerHTML = daysold + "<span class='inin'>天</span>" + hrsold + "<span class='inin'>时</span>" + minsold + "<span class='inin'>分</span>" + seconds + "<span class='inin'>秒</span>";
-                    },1000)
-        } else {
-            tan.tips(res.msg, 1000);
-        }
-    }, 'json');
+    myAjax("get", conf.apiurl + '/teastuexam/getstuinfo', {
+        stuid:stuid
+    }, function (res) {
+				if (res.code == 10001) {
+					var stuinfor2 = new Vue({
+                        el: '.stuinfo2',
+                        data: res.resultObject
+                    })
+                    tan.closew();
+				}
+			}, 'json');
 
     //获取学生试卷（已做题目还原）
     var papercontant = new Vue({
@@ -85,7 +50,10 @@ window.onload = function () {
         methods: {
             gettitall: function () {
                 var _this = this;
-                myAjax('post', conf.apiurl + '/studentexam/getallpapercontents', {}, function (res) {
+                myAjax('post', conf.apiurl + '/teastuexam/getallpaper', {
+                    eplanid:id,
+                    studentid:stuid
+                }, function (res) {
                     var contannum = new Vue({
                         el: '#contannum',
                         data: {
@@ -177,65 +145,6 @@ window.onload = function () {
 
         });
     });
-
-    //单保存试卷
-    function savepaper() {
-        myAjax("post", conf.apiurl + "/studentexam/savestuanswer", {
-            answerList: JSON.stringify(backanswer)
-        }, function (res) {
-            tan.closew();
-            tan.tips(res.msg, 1500);
-        }, 'json')
-    }
-
-    //点击保存按钮保存试卷
-    eventUtil.addEventHandle($(".exam_save")[0], 'click', function (e) {
-        tan.loading();
-        savepaper();
-    })
-
-    //每10分钟自动保存一次
-    setInterval("savepaper()", 1000 * 60 * 10);
-
-    //交卷
-    this.eventUtil.addEventHandle($(".btn_tijiao")[0], 'click', function (e) {
-        checkSur();
-    })
-
-    function checkSur() {
-        for (var i = 1; i <= $("#quesnum").val(); i++) {
-            var objName = "anser" + i;
-            var objNameId = "#anserid" + i;
-            var obj = document.getElementsByName(objName);
-            var objLen = obj.length;
-            var objYN;
-            objYN = false;
-
-            for (var j = 0; j < objLen; j++) {
-                if (obj[j].checked == true) {
-                    objYN = true;
-                    break;
-                }
-            }
-            if (!objYN) {
-                tan.error("请选择第" + i + "题答案");
-                Gtoposition(objNameId);
-                return false;
-            }
-        }
-        tan.loading();
-        myAjax("post", conf.apiurl + "/studentexam/handexams", {
-            answerList: JSON.stringify(backanswer)
-        }, function (res) {
-            if (res.code == 10001) {
-                tan.tips(res.msg, 1500);
-                setTimeout(window.location.href = "学生首页.html", 3000);
-            } else {
-                tan.closew();
-                tan.tips(res.msg, 1500);
-            }
-        }, 'json')
-    }
 
 
     //锚点快速定位题目位置

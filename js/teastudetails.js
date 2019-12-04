@@ -7,23 +7,42 @@ window.onload = function(){
 			element = layui.element;
 		var url = location.search; //获取url中"?"符后的字串 ?vm_id=2
             var id;
+			var classiid;
 	            if(url.indexOf("?") != -1) {
 	            str = url.substr(1);
 	            strs = str.split("=");
 				console.log(strs);
 	            id = strs[1];
+				classiid = strs[3];
         }
+		querylist();
+
+			/* 点击查询对网站用户进行筛选 */
+			$("#btnselfrontinfo").click(function() {
+				querylist(); //调用局部刷新
+
+			});
+
+	function querylist() {
+
+			var url = conf.apiurl + "/teastu/getteastudent?eplanid="+id+'&classid='+classiid;
+			var strwhere = document.getElementById("title").value; 
+			var value = strwhere.value;
+			if(!strwhere==""){
+				url = conf.apiurl + "/teastu/getteastudentstrwhere?eplanid="+id+'&classid='+classiid+'&strwhere='+value;
+			}
 
 		/*加载表格*/
 		table.render({
 			elem : '#project',
 			id:'project',
-			url : 'http://localhost:8080/SchoolPsychologicalAssessmentWeb/teastu/getteastudent?eplanid=1&classid=KMMDZX2019090102001',
+			url : url,
 			title : '后台通知管理数据表',
 			skin : 'line',
 			even : true,
 			cols : [ 
-			     [ {field : 'planstudentid', title:'序号', align:'center'}
+			     [ {field : 'planstudentid', title:'序号', align:'center', hide:true}
+			      ,{field : 'studentid', title:'学号', align:'center', hide:true}
 			      ,{field : 'stuid', title:'学号', align:'center'}
 			      ,{field : 'realName', title:'学生姓名', align:'center'}
 				  ,{field : 'sex',title : '性别',align : 'center'}
@@ -33,13 +52,13 @@ window.onload = function(){
 					,templet : function(p){
 						var core = p.eplanstudenttype;
 						if(core==0){
-						var html = '<a id="edit1" lay-event="edit1"><span class="tb_nostart">未开始</span></a>'
+						var html = '<a><span class="tb_nostart">未开始</span></a>'
 						return html;
 						}else if(core==1){
-						var html = '<a id="edit2" lay-event="edit2"><span class="tb_finish">已结束</span></a>'
+						var html = '<a><span class="tb_finish">已结束</span></a>'
 						return html;
 						}else{
-						var html = '<a id="edit3" lay-event="edit3"><span class="tb_beagin">进行中</span></a>'
+						var html = '<a><span class="tb_beagin">进行中</span></a>'
 						return html;
 						}
 						
@@ -49,11 +68,28 @@ window.onload = function(){
 			 ],
 			 page: true,
 		});
+	}
+	tan.loading();
+			myAjax("get", conf.apiurl + '/login/getlogintea', {}, function (res) {
+				if (res.code == 10001) {
+					var stuinfor1 = new Vue({
+						el: '.stuinfo1',
+						data: res.resultObject
+					})
+					tan.closew();
+				} else {
+					tan.closew();
+					tan.tips(res.msg, 1000);
+					setTimeout(window.location.href = "登录.html", 3000);
+				}
+			}, 'json');
 		//监听工具条
 		table.on('tool(project)',function(obj){
 			var data = obj.data;
-			if(obj.event === 'edit'){
-			layer.msg('ID：'+ data.id + ' 的查看操作');
+			if(obj.event === 'edit1'){
+				var epid = data.eplanid;
+				var stuid = data.studentid;
+				window.location.href = "试卷详情.html?eplanid="+epid+"=stuid="+stuid;
 			} else if(obj.event === 'del'){
 			layer.confirm('真的删除行么', function(index){
 				obj.del();

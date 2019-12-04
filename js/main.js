@@ -310,9 +310,9 @@ $(function(){
       }else{
         e.cancelBubble = true;
       }  
-      $("#edit").show();
+      $("#manage_sys").show();
     });
-    $("#edit").click(function(event){
+    $("#manage_sys").click(function(event){
       var e=window.event || event;
       if(e.stopPropagation){
         e.stopPropagation();
@@ -321,9 +321,10 @@ $(function(){
       }
     });
     document.onclick = function(){
-      $("#edit").hide();
+      $("#manage_sys").hide();
     };
   })
+  
   $(".resetpwd").click(function () {
   layer.open({
     skin: 'demo-class',
