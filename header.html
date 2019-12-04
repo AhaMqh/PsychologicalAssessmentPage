@@ -3,11 +3,10 @@
       <div class="layui-col-xs5 layui-col-sm5 layui-col-md5 head-logo">
         <img src="img/logo.png" alt="">
       </div>
-      <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 school"><span>{{schoolName}}</span></div>
+      <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 school"><span v-html="schoolName"></span></div>
       <div class="head-user" id="navbar_edit">
         <div class="user-name">
-          <span v-if="stuid==null">{{realName}}老师，欢迎您！</span>
-          <span v-if="stuid!=null">{{realName}}同学，欢迎您！</span></div>
+          <span v-html="realName+'，欢迎您！'"></span></div>
         <div class="user-pic">
           <a href="#" id="btn_oprator"><img src="img/default-head.svg" alt=""> <i
               class="layui-icon layui-icon-triangle-d xiala" style="font-size: 16px; color: #fff;"></i> </a>

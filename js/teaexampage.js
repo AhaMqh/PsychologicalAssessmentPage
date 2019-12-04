@@ -11,20 +11,6 @@ window.onload = function () {
 	            stuid = strs[3];
             }
 
-    myAjax("get", conf.apiurl + '/login/getlogintea', {}, function (res) {
-				if (res.code == 10001) {
-					var stuinfor1 = new Vue({
-						el: '.stuinfo1',
-						data: res.resultObject
-					})
-					tan.closew();
-				} else {
-					tan.closew();
-					tan.tips(res.msg, 1000);
-					setTimeout(window.location.href = "登录.html", 3000);
-				}
-			}, 'json');
-
     var datatime;
     myAjax("get", conf.apiurl + '/teastuexam/getstuinfo', {
         stuid:stuid
