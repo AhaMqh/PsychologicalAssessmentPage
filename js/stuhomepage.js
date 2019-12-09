@@ -3,35 +3,9 @@ window.onload = function () {
 
 
     tan.loading();
-    jQuery(function($){
-        $(".user-pic").click(function(event){
-            var e=window.event || event;
-            if(e.stopPropagation){
-              e.stopPropagation();
-            }else{
-              e.cancelBubble = true;
-            }  
-            $("#manage_sys").show();
-          });
-          $("#manage_sys").click(function(event){
-            var e=window.event || event;
-            if(e.stopPropagation){
-              e.stopPropagation();
-            }else{
-              e.cancelBubble = true;
-            }
-          });
-          document.onclick = function(){
-            $("#manage_sys").hide();
-          };
-        })
     //获取登录学生session
     myAjax("get", conf.apiurl + '/login/getloginstu', {}, function (res) {
         if (res.code == 10001) {
-            var stuinfor1 = new Vue({
-                el: '.stuinfo1',
-                data: res.resultObject
-            })
             var stuinfor2 = new Vue({
                 el: '.stuinfo2',
                 data: res.resultObject
@@ -40,7 +14,6 @@ window.onload = function () {
         } else {
             tan.closew();
             tan.tips(res.msg, 1000);
-            setTimeout(window.location.href = "登录.html", 3000);
         }
     }, 'json');
 

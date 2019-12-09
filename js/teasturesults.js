@@ -79,21 +79,6 @@ window.onload = function(){
 			 page: true,
 		});
 	}
-		tan.loading();
-			//获取登录老师session
-			myAjax("get", conf.apiurl + '/login/getlogintea', {}, function (res) {
-				if (res.code == 10001) {
-					var stuinfor1 = new Vue({
-						el: '.stuinfo1',
-						data: res.resultObject
-					})
-					tan.closew();
-				} else {
-					tan.closew();
-					tan.tips(res.msg, 1000);
-					setTimeout(window.location.href = "登录.html", 3000);
-				}
-			}, 'json');
 		//监听工具条
 		table.on('tool(project)',function(obj){
 			var data = obj.data;

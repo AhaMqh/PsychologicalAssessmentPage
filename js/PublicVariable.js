@@ -1,5 +1,5 @@
 //引入公共的导航和页脚
-if ($(".headpage")!=null) {
+if ($(".headpage") != null) {
     $(".headpage").load("header.html");
     $(".footpage").load("footer.html");
 }
@@ -181,7 +181,7 @@ function myAjax(method, url, data, callback, type) {
 
 var tan = {
     //loading执行动画弹出层
-    loading: function(){
+    loading: function () {
         layer.load(2, {
             shade: [0.4, '#fff'] //0.1透明度的白色背景
         });
@@ -235,7 +235,7 @@ var tan = {
         });
     },
 
-    closew: function(wname){
+    closew: function (wname) {
         layer.closeAll(wname);
     }
 }
