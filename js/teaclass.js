@@ -63,7 +63,7 @@ function querylist() {
 						
 					},
 				}
-			     ] 
+			     ]
 			 ],
 			 page: true,
 		});

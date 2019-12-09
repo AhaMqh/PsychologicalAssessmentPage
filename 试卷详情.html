@@ -11,8 +11,19 @@
     <link rel="stylesheet" href="css/student.css">
 
     <script src="PokioPlugin/jquery-3.3.1.min.js"></script>
-</head>
+    <style>  
+      
+      .layui-radio-disbaled>i {
+            color: #000000!important;
+        }
+    .layui-disabled, .layui-disabled:hover {
+    color: #000000!important;
+    cursor: not-allowed!important;
+    }
 
+
+    </style>
+</head>
 <body id="tags" name="teaexampage">
     <div class="main">
         <!-- 导航栏 -->
@@ -74,13 +85,6 @@
                 </div>
                 <div id="u_countDown" class="ax_default" data-left="115" data-top="375" data-width="190"
                     data-height="229">
-                    <div id="u_countDown_div" class="">
-                        <div class="mainbox">
-                            <div class="timer" id="showtime">
-                            </div>
-                        </div>
-
-                    </div>
                 </div>
 
 
@@ -101,7 +105,7 @@
                                         v-bind:answerid="tit.answerid" v-for="(ans,index) in tit.answerall" type="radio"
                                         v-bind:optionscore="ans.optioncontentscore" v-bind:useranswer="ans.useranswer"
                                         v-bind:title="ans.ABCoptionCotent" v-bind={checked:ans.ifcheck}
-                                        v-bind:choiceoption="index+1">
+                                        v-bind:choiceoption="index+1" disabled>
                                 </div>
                             </form>
                         </div>
