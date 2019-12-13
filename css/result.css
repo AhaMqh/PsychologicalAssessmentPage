@@ -165,5 +165,9 @@ body .demo-class .layui-layer-title{background:#5EAAB7; color:#333;font-weight: 
     height: 40px;
     line-height: 40px;
 }
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+
+    background-color: #5eaab7;
+}
 
 
