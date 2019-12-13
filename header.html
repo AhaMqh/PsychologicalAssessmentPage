@@ -3,17 +3,18 @@
       <div class="layui-col-xs5 layui-col-sm5 layui-col-md5 head-logo">
         <img src="img/logo.png" alt="">
       </div>
-      <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 school"><span v-html="schoolName"></span></div>
+      <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 school"><span v-html="info.schoolName"></span></div>
       <div class="head-user" id="navbar_edit">
         <div class="user-name">
-          <span v-html="realName+'，欢迎您！'"></span></div>
+          <span v-if="usertype" v-html="info.realName+'老师，欢迎您！'"></span>
+          <span v-if="usertype==false" v-html="info.realName+'同学，欢迎您！'"></span></div>
         <div class="user-pic">
           <a href="#" id="btn_oprator"><img src="img/default-head.svg" alt=""> <i
               class="layui-icon layui-icon-triangle-d xiala" style="font-size: 16px; color: #fff;"></i> </a>
         </div>
 
         <ul class="mainmenu layui-anim layui-anim-scaleSpring" id="manage_sys">
-          <li><a href="学生管理.html"><span class="edit_info">班级管理</span></a></li>
+          <li v-if="usertype"><a href="学生管理.html"><span class="edit_info">班级管理</span></a></li>
           <li><a href="#"><span class="edit_info">修改信息</span></a></li>
           <li><a href="#"><span class="edit_info" data-method="notice">修改密码</span></a></li>
           <li><a href="#" onclick="exitsys()"><span class="edit_info">退出登录</span></a></li>

@@ -201,7 +201,16 @@ if (roletype == 'teacher') {
         if (res.code == 10001) {
             var stuinfor1 = new Vue({
                 el: '.stuinfo1',
-                data: res.resultObject,
+                data: {
+                    info: res.resultObject,
+                    usertype: true
+                },
+                created: function () {
+                    var _this = this;
+                    if (res.resultObject.hasOwnProperty("stuid")) {
+                        _this.usertype = false;
+                    }
+                },
                 mounted() {
                     //菜单展开收起 
                     $(".user-pic").on("click", function (e) {
@@ -221,13 +230,22 @@ if (roletype == 'teacher') {
             setTimeout(window.location.href = "登录.html", 3000);
         }
     }, 'json');
-}else if (roletype == 'student') {
+} else if (roletype == 'student') {
     //获取登录学生session
     myAjax("get", conf.apiurl + '/login/getloginstu', {}, function (res) {
         if (res.code == 10001) {
             var stuinfor1 = new Vue({
                 el: '.stuinfo1',
-                data: res.resultObject,
+                data: {
+                    info: res.resultObject,
+                    usertype: true
+                },
+                created: function () {
+                    var _this = this;
+                    if (res.resultObject.hasOwnProperty("stuid")) {
+                        _this.usertype = false;
+                    }
+                },
                 mounted() {
                     //菜单展开收起 
                     $(".user-pic").on("click", function (e) {
