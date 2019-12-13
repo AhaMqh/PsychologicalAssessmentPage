@@ -35,7 +35,16 @@ window.onload = function(){
 					even: true,
 					cols: [ 
 			     [ {field : 'id', title:'编号', align:'center',width : 60}
-			      ,{field : 'stuid', title:'学号', align:'center',width : 290}
+				  ,{field : 'stuid', title:'学号', align:'center',width : 290}
+				  ,{title : '班级',align : 'center',width : 300
+				  ,templet : function(p){
+					var gname = p.gradename;
+					var cname = p.className;
+					var html = '<div>'+gname+cname+'</div>'
+
+					html += '</div>'
+					return html;
+					},}
 				  ,{field : 'realName',title : '姓名',align : 'center',width : 300}
 				  ,{field : 'sex',title : '性别',align : 'center',width : 120}
 				  ,{field : 'type', title:'操作',align:'center'
@@ -49,6 +58,7 @@ window.onload = function(){
 			 ],
 					
 			 page: true,
+			 limit: 9 //每页默认显示的数量
 				});
 			}
 			/*点击查询加载表格数据结束*/
