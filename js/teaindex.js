@@ -14,6 +14,7 @@ window.onload = function(){
 			$("#btnselfrontinfo").click(function() {
 				//alert("1");
 				querylist(); //调用局部刷新
+				
 
 			});
 
@@ -77,6 +78,7 @@ window.onload = function(){
 					
 			 page: true,
 				});
+				table.reload();
 			}
 			/*点击查询加载表格数据结束*/
 		//监听工具条

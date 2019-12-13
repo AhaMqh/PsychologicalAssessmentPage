@@ -182,7 +182,7 @@ body {
     position: relative;
 }
 .mainmenu {
-    height: 195px;
+    height: auto;
     width: 150px;
     background-color: #eee;
     z-index: 100;
