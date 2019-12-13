@@ -12,7 +12,7 @@
     
 </head>
 
-<body  id="tags" roletype="teacher">
+<body  id="tags"  name="stumanage" roletype="teacher">
     <div class="main">
         <!-- 导航栏 -->
     <div class="headpage"></div>
@@ -26,11 +26,8 @@
                     <form class="layui-form" action="">
                         <div class="layui-form-item ts_body" style="display: flex;">
                             <div class="layui-input-block" style="width: 200px;margin-left: 0;">
-                                <select name="interest" lay-filter="">
-                                    <option value="0" selected="">请选择班级</option>
-                                    <option value="1">一年级一班</option>
-                                    <option value="2">一年级二班</option>
-                                  
+                                <select lay-verify="required" name="PaymentModeID" class="SelectPaymentMode">
+                                    <option value="">请选择</option>
                                 </select>
                             </div>
 
@@ -49,141 +46,11 @@
                 <div class="theform-body">
                     <div class="table-name">班级学生管理 <button class="layui-btn   layui-btn-sm resetpwd">班级批量重置</button></div>
                   
-                    <table class="layui-table" style="margin-top: 0;">
-                        <colgroup>
-                            <col width="80">
-                            <col width="370">
-                            <col width="280">
-                           
-                            <col>
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>序号</th>
-                                <th>学号</th>
-                                <th>学生姓名</th>
-                                <th>性别</th>
-                                <th>操作</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>KMDSZX2018010011</td>
-                                <td>梁林昌</td>
-                                <td>男</td>
-                                <td>
-                                   
-                                      <button type="button"
-                                                class="layui-btn layui-btn-sm btn_unresult">
-                                                重置密码
-                                            </button>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>KMDSZX2018010034</td>
-                                <td>尹晓航</td>
-                                <td>男</td>
-                                <td>
-                                   
-                                    <button type="button"
-                                              class="layui-btn layui-btn-sm btn_unresult">
-                                              重置密码
-                                          </button>
-
-                              </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>KMDSZX201801001</td>
-                                <td>孟秋洪</td>
-                                <td>女</td>
-                                <td>
-                                   
-                                    <button type="button"
-                                              class="layui-btn layui-btn-sm btn_unresult">
-                                              重置密码
-                                          </button>
-
-                              </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>KMDSZX201801007</td>
-                                <td>李小二</td>
-                                <td>女</td>
-                                <td>
-                                   
-                                    <button type="button"
-                                              class="layui-btn layui-btn-sm btn_unresult">
-                                              重置密码
-                                          </button>
-
-                              </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>KMDSZX2018010022</td>
-                                <td>金某某</td>
-                                <td>男</td>
-                                <td>
-                                   
-                                    <button type="button"
-                                              class="layui-btn layui-btn-sm btn_unresult">
-                                              重置密码
-                                          </button>
-
-                              </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>KMDSZX2018010015</td>
-                                <td>王大柱</span></td>
-                                <td>女</td>
-                                <td>
-                                   
-                                    <button type="button"
-                                              class="layui-btn layui-btn-sm btn_unresult">
-                                              重置密码
-                                          </button>
-
-                              </td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>KMDSZX2018010011</td>
-                                <td>李四</td>
-                                <td>男</td>
-                                <td>
-                                   
-                                    <button type="button"
-                                              class="layui-btn layui-btn-sm btn_unresult">
-                                              重置密码
-                                          </button>
-
-                              </td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>KMDSZX2018010053</td>
-                                <td>张三</td>
-                                <td>男</td>
-                                <td>
-                                   
-                                    <button type="button"
-                                              class="layui-btn layui-btn-sm btn_unresult">
-                                              重置密码
-                                          </button>
-
-                              </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <!-- 表格开始 -->
+                    <table class="layui-hide" name="project" id="project" lay-filter="project"></table>
+                    <!-- 表格结束 -->
 
                 </div>
-                <div id="demo2" style="position: absolute;left: 15px;bottom: 0;"></div>
             </div>
         </div>
         <div class="push">
@@ -194,12 +61,9 @@
                 <div class="layui-form-item reset">
                         <label class="layui-form-label">选择班级</label>
                         <div class="layui-input-block">
-                          <select name="city" lay-verify="required">
-                            <option value=""></option>
-                            <option value="0">一年级一班</option>
-                            <option value="1">一年级二班</option>
-                            <option value="2">三年级二班</option>
-                          </select>
+                          <select lay-verify="required" name="PaymentModeID" class="SelectPaymentMode">
+                            <option value="">请选择</option>
+                        </select>
                         </div>
                       </div>
                       <div class="layui-form-item reset">
@@ -227,7 +91,11 @@
   <div class="footpage"></div>
 </body>
 <script src="layui/layui.js"></script>
+<script src="PokioPlugin/vue.js"></script>
 <script src="js/PublicVariable.js"></script>
+<script src="PokioPlugin/systempublickey.js"></script>
+<script src="PokioPlugin/md5.js"></script>
+<script src="PokioPlugin/Constant.js"></script>
 
 
 </html>

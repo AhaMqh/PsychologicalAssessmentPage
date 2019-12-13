@@ -20,17 +20,14 @@ if (js_name != null) {
 //name为要添加的js路径，model为是否开启
 var all_js = [
     {
-        name: 'PokioPlugin/vue.js',
-        model: true
+        name: givejs,
+        model: givejs_model
     },
     {
         name: 'js/main.js',
         model: true
     },
-    {
-        name: givejs,
-        model: givejs_model
-    },
+    
 ];
 //注入定义好的js
 for (i = 0; i < all_js.length; i++) {
