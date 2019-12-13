@@ -161,5 +161,9 @@ body .demo-class .layui-layer-title{background:#5EAAB7; color:#333;font-weight: 
     padding: 0 30px 0 0;
     margin-top: 30px;
 }
+.layui-table-cell {
+    height: 40px;
+    line-height: 40px;
+}
 
 
