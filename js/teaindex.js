@@ -38,18 +38,28 @@ window.onload = function(){
 					cols: [ 
 			     [ {field : 'eplanid', title:'编号', align:'center',width : 60}
 			      ,{field : 'examname', title:'试卷名称', align:'center',width : 290}
-				  ,{field : 'starttime',title : '测评时间',align : 'center',width : 300}
+				  ,{title : '测评时间',align : 'center',width : 300
+				  ,templet : function(p){
+					var Stime = p.starttime;
+					var Etime = p.endtime;
+					var html = '<div>'+Stime+'~'+Etime+'</div>'
+
+					html += '</div>'
+					return html;
+					},}
 				  ,{field : 'examtpye',title : '状态',align : 'center',width : 120
 					,templet : function(p){
-						var core = p.examtpye;
-						if(core==0){
-						var html = '<a><span class="tb_beagin">进行中</span></a>'
+					var core = p.examtpye;
+					if(core==0){
+						var html = '<a><span class="tb_nostart">未开始</span></a>'
 						return html;
-						}else{
+						}else if(core==1){
 						var html = '<a><span class="tb_finish">已结束</span></a>'
 						return html;
-						}
-						
+						}else{
+						var html = '<a><span class="tb_beagin">进行中</span></a>'
+						return html;
+					}
 					},
 				}
 				  ,{title:'人数完成比例 (实际测评/应测评)',align:'center',width : 290
