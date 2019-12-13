@@ -34,8 +34,8 @@ window.onload = function(){
 					skin : 'line',
 					even: true,
 					cols: [ 
-			     [ {field : 'id', title:'编号', align:'center',width : 60}
-				  ,{field : 'stuid', title:'学号', align:'center',width : 290}
+			     [ {field : 'id', title:'编号', align:'center',width : 80}
+				  ,{field : 'stuid', title:'学号', align:'center',width : 350}
 				  ,{title : '班级',align : 'center',width : 300
 				  ,templet : function(p){
 					var gname = p.gradename;
@@ -45,7 +45,7 @@ window.onload = function(){
 					html += '</div>'
 					return html;
 					},}
-				  ,{field : 'realName',title : '姓名',align : 'center',width : 300}
+				  ,{field : 'realName',title : '姓名',align : 'center',width : 350}
 				  ,{field : 'sex',title : '性别',align : 'center',width : 120}
 				  ,{field : 'type', title:'操作',align:'center'
 					,templet : function(p){
