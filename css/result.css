@@ -91,13 +91,7 @@
     line-height: 30px;
     cursor: no-drop;
 }
-.layui-table td, .layui-table th {
-    position: relative;
-    padding: 12px 5px;
-    min-height: 20px;
-    line-height: 20px;
-    font-size: 14px;
-}
+
 .classAnswer{
     top: 12%;
     display: flex;
@@ -126,11 +120,10 @@
 .icon_pwd{
     padding: 0 5px;
 }
-.layui-layer-btn .layui-layer-btn0 {
-    border-color: #5EAAB7 !important;
-    background-color: #5EAAB7 !important;
-    color: #fff;
+.btn_answer{
+    background-color: #5EAAB7;
 }
+
 
 
 /* 学生管理页面----开始----- */
@@ -151,23 +144,13 @@
     color: #fff;
     opacity: 1;
 }
-.layui-form-select dl dd.layui-this {
-    background-color: #5EAAB7;
-    color: #fff;
-}
-body .demo-class .layui-layer-title{background:#5EAAB7; color:#333;font-weight: 600;}
+
+
 
 .reset{
     padding: 0 30px 0 0;
     margin-top: 30px;
 }
-.layui-table-cell {
-    height: 40px;
-    line-height: 40px;
-}
-.layui-laypage .layui-laypage-curr .layui-laypage-em {
 
-    background-color: #5eaab7;
-}
 
 

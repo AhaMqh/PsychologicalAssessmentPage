@@ -66,6 +66,9 @@ function querylist() {
 			     ]
 			 ],
 			 page: true,
+			 done: function (p) {
+				element.render();
+			}
 		});
 	}
 		//监听工具条
