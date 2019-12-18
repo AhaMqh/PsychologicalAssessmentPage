@@ -18,11 +18,16 @@ window.onload = function(){
 			});
 
 			function querylist() {
-				myAjax("get", conf.apiurl+"/teastuexam/getteaclass", function (data) {
-					for (var k in data) 
+				myAjax("get", conf.apiurl+"/teastuexam/getteaclass",{}, function (data) {
+					console.log(data.data);
+					for (var k in data.data) 
 					{
-					$(".SelectPaymentMode").append("<option value='" + data[k].classid + "'>" + data[k].gradename + data[k].className + "</option>");
+					$(".SelectPaymentMode").append("<option value='" + data.data[k].classid + "'>" + data.data[k].gradename + data.data[k].className + "</option>");
 					}
+					layui.use('form', function () {
+						var form = layui.form;
+						form.render();
+					});
 				}, 'json');
 
 				var url = conf.apiurl + "/teastuexam/getstubyclass";

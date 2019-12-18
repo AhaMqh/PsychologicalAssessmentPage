@@ -33,7 +33,7 @@ function querylist() {
 			skin : 'line',
 			even : true,
 			cols : [ 
-			     [ {field : 'eplanid', title:'编号', align:'center'}
+			     [ {field : 'eplanid', title:'测评编号', align:'center'}
 			      ,{field : 'classid', title:'编号', align:'center', hide:true}
 			      ,{field : 'gradename', title:'年级', align:'center'}
 				  ,{field : 'className',title : '班级',align : 'center'}

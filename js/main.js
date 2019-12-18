@@ -260,7 +260,26 @@ $(".resetpwd").click(function () {
         shade: 0.6,
         btn: ['确认', '取消'],
         cancel: function (layero, index) {
-            layer.closeAll();
+            var enpwd = hex_md5(fix(Encryption_key,val));
+				layer.msg(
+					myAjax("get", conf.apiurl + '/teastuexam/updatebyid', {
+					stuid:stuid,
+					pwd:enpwd
+				}, function (res) {
+					if (res.code == 0) {
+						layer.alert('修改成功', {
+						icon: 1,
+						title: "提示"
+						});
+					} else {
+						layer.alert('修改失败', {
+						icon: 2,
+						title: "提示"
+						});
+					}
+				}, 'json')
+				);
+				layer.close(index);
         }
 
     })
