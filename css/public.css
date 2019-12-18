@@ -12,7 +12,6 @@
 
 html,
 body {
-    background-color: rgba(242, 242, 242, 1);
     margin: 0;
     padding: 0;
     height: 100%;
@@ -22,7 +21,7 @@ body {
 
 .body-container {
     width: 1280px;
-    margin: 16px auto;
+    margin: 86px auto;
     max-width: 100%;
     display: flex;
     justify-content: center;
@@ -102,7 +101,11 @@ body {
     width: 100%;
     height: 70px;
     background: rgba(94, 170, 183, 1);
-    position: relative;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .head-logo {
@@ -139,7 +142,7 @@ body {
 .user-name {
     font-size: 16px;
     color: #333333;
-    width: 210px;
+    width: auto;
 }
 
 .quit {
@@ -182,7 +185,7 @@ body {
     position: relative;
 }
 .mainmenu {
-    height: 195px;
+    height: auto;
     width: 150px;
     background-color: #eee;
     z-index: 100;
@@ -258,4 +261,12 @@ body {
     border-radius: 2px;
     color: #7F7F7F;
     background: #f2f2f2;
+}
+.table_style .layui-table-cell {
+    height: 40px;
+    line-height: 40px;
+  
+}
+.table_style .layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background-color: #5EAAB7;
 }

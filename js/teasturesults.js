@@ -44,10 +44,10 @@ window.onload = function(){
 			cols : [ 
 			     [ {field : 'planstudentid', title:'序号', align:'center', hide:true}
 			      ,{field : 'studentid', title:'学号', align:'center', hide:true}
-			      ,{field : 'stuid', title:'学号', align:'center'}
-			      ,{field : 'realName', title:'学生姓名', align:'center'}
-				  ,{field : 'sex',title : '性别',align : 'center'}
-				  ,{field : 'eplanstudenttype',title : '状态',align : 'center'
+			      ,{field : 'stuid', title:'学号', align:'center',width:220}
+			      ,{field : 'realName', title:'学生姓名', align:'center',width:120}
+				  ,{field : 'sex',title : '性别',align : 'center',width:80}
+				  ,{field : 'eplanstudenttype',title : '状态',align : 'center',width:120
 				  ,templet : function(p){
 						var core = p.eplanstudenttype;
 						if(core==0){
@@ -61,7 +61,7 @@ window.onload = function(){
 						return html;
 						}
 					},}
-				  ,{title : '完成题目数',align : 'center'
+				  ,{title : '完成题目数',align : 'center',width:110
 					,templet : function(p){
 						var all = p.allnum;
 						var finish = p.finishnum;
@@ -71,8 +71,8 @@ window.onload = function(){
 						return html;
 					},}
 				  ,{field : 'starttime',title : '测评开始时间',align : 'center'}
-				  ,{field : 'endtime',title : '测评结束时间',align : 'center'}
-				  ,{title : '缺考标记',toolbar : '#markbar',align : 'center'}
+				  ,{field : 'endtime',title : '测评结束时间',align : 'center',width:120}
+				  ,{title : '缺考标记',toolbar : '#markbar',align : 'center',width:110}
                   ,{title : '操作',toolbar : '#barDemo',align : 'center',}
 			     ] 
 			 ],

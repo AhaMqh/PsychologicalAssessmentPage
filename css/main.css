@@ -199,11 +199,7 @@
 
 
 
-.layui-table-cell {
-    height: 40px;
-    line-height: 40px;
-  
-}
+
 .btn_enter{
     height: 30px;
     line-height: 30px;
@@ -366,12 +362,6 @@
 
 }
 
-.layui-layer-btn .layui-layer-btn0 {
-    border-color: #5EAAB7 !important;
-    background-color: #5EAAB7 !important;
-    color: #fff;
-}
-
 
 .input_edit{
     margin-top: 6px;
@@ -436,7 +426,10 @@
 .pro_b{
     background-color: #5EAAB7 !important;
 }
-.layui-progress-text {
-    top: -28px;
+.pro_b .layui-progress-text {
+    top: -30px;
   letter-spacing: 4px;
+}
+.btn_editstatus{
+    background-color: #5EAAB7;
 }
