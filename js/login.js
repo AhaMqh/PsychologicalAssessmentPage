@@ -7,6 +7,7 @@ window.onload = function () {
 
 
 
+
     // var div = document.getElementById('testbtn');
     // var a = document.getElementsByClassName('layui-btn');
     // eventUtil.addEventHandle($('#testbtn')[0],'click',function(e){
@@ -52,6 +53,24 @@ window.onload = function () {
 
 
     // })
+    myAjax('post', conf.apiurl + '/login/loginschool',{}, function (res) {
+        console.log(res)
+        if (res.code== 10001) {
+        var result=[];
+        for(var i=0;i<res.resultObject.length;i++){
+            result.push({id:i,name:res.resultObject[i]});
+
+        }
+        console.log(result)
+                $.each(result, function (index, item) {
+                    $('#xxiao').append(new Option(item.name, item.id));// 下拉菜单里添加元素
+                    });
+                    layui.form.render("select");
+        } else{alert("拉取学校信息失败，请刷新后重试。")
+        }
+        
+    },'json');
+
     eventUtil.addEventHandle($('.btnlogin')[0], 'click', function (e) {
       var username = $('.username').val();
       var pwd = $('.pwd').val();
