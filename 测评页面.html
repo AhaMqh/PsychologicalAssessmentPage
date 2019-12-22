@@ -92,7 +92,8 @@
             <div class="layui-col-xs10 layui-col-sm10 layui-col-md10 theform_stu">
                 <div class="exam-head">
                     <span class="wait_txt planbaseinfo1"><i class="layui-icon layui-icon-list q_topic"
-                            style="font-size: 24px;font-weight: 700;"></i>{{examname}}</span>
+                            style="font-size: 24px;font-weight: 700;"></i>{{examname}}
+                        <input type="text" id="checktypeid" v-model="checktypeid" hidden></span>
                     <!-- <span class="exam_time">(考试时间：120分钟)</span> -->
                     <span class="exam_save"><a href="#" class="layui-btn btn_save">保存</a></span>
                 </div>
@@ -106,7 +107,7 @@
                             <form class="layui-form" action="">
                                 <div class="layui-input-block qselect">
                                     <input v-bind:name="'anser'+(num+1)" v-bind:planstudentid="tit.planstudentid"
-                                        v-bind:answerid="tit.answerid" v-for="(ans,index) in tit.answerall" type="radio"
+                                        v-bind:answerid="tit.answerid" v-bind:dimensionid="tit.dimensionid" v-for="(ans,index) in tit.answerall" type="radio"
                                         v-bind:optionscore="ans.optioncontentscore" v-bind:useranswer="ans.useranswer"
                                         v-bind:title="ans.ABCoptionCotent" v-bind={checked:ans.ifcheck}
                                         v-bind:choiceoption="index+1">

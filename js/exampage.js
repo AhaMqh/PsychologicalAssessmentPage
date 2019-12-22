@@ -76,7 +76,7 @@ window.onload = function () {
                         var optionContentstr = aoptionContent.split("&"); //将单个选项分成数组
                         var answerall = [];
                         for (j = 0; j < optionContentstr.length - 1; j++) {
-                            var newoptionContent = optionContentstr[j].split(","); //得到一个选项的内容和分值
+                            var newoptionContent = optionContentstr[j].split("||"); //得到一个选项的内容和分值
                             var ABCoptionCotent = newoptionContent[0]; //某个选项内容
                             var onlyoptionContent = ABCoptionCotent.split("、");
                             var onyoption = onlyoptionContent[0]; //只获取ABC编号
@@ -122,6 +122,7 @@ window.onload = function () {
             var domvlue = data.elem;
             var anserdata = {};
             var answerid = domvlue.attributes.answerid.value;
+            var dimensionid = domvlue.attributes.dimensionid.value;
             var planstudentid = domvlue.attributes.planstudentid.value;
             var optionscore = domvlue.attributes.optionscore.value;
             var useranswer = domvlue.attributes.useranswer.value;
@@ -133,6 +134,7 @@ window.onload = function () {
                 optionscore: optionscore,
                 useranswer: useranswer,
                 choiceoption: choiceoption,
+                dimensionid:dimensionid
             }
             //点击时改变边上题号的颜色
             if (!$(titnumClassName).hasClass("choisetab")) {
@@ -198,7 +200,7 @@ window.onload = function () {
         }
         tan.loading();
         myAjax("post", conf.apiurl + "/studentexam/handexams", {
-            answerList: JSON.stringify(backanswer)
+            answerList: JSON.stringify(backanswer),checktypeid:$("#checktypeid").val(),
         }, function (res) {
             if (res.code == 10001) {
                 tan.tips(res.msg, 1500);
