@@ -70,7 +70,45 @@ function querylist() {
 				element.render();
 			}
 		});
+		myAjax("get",'http://localhost:8080/SchoolPsychologicalAssessmentWeb/teaclass/geteplanclasslist', {
+			eplanid:id,
+			limit:10,
+			page:1
+		}, function (data) {
+			if (data.code == 0) {
+				$("#spJY").html(data.data[0].examname);
+				for (var k in data.data){
+					$(".SelectPaymentMode").append("<option value='" + data.data[k].grade + "'>" + data.data[k].gradename + "</option>");
+					layui.use('form', function () {
+						var form = layui.form;
+						form.render();
+					});
+				}				
+			}
+		}, 'json');
 	}
+	form.on('select(testId)', function(data){
+		var myType = document.getElementById("PaymentModeID");//获取select对象
+		var index = myType.selectedIndex; //获取选项中的索引，selectIndex表示的是当前所选中的index
+		var grade = myType.options[index].value;//获取选项中options的value值
+		console.log(data);
+		myAjax("get",'http://localhost:8080/SchoolPsychologicalAssessmentWeb/teaclass/geteplanclasslistbygrade', {
+			grade:grade,
+			eplanid:id,
+			limit:10,
+			page:1
+		}, function (data) {
+			if (data.code == 0) {
+				for (var k in data.data){
+					$(".SelectPaymentMode2").append("<option value='" + data.data[k].classid + "'>" + data.data[k].className + "</option>");
+					layui.use('form', function () {
+						var form = layui.form;
+						form.render();
+					});
+				}				
+			}
+		}, 'json');
+	})
 		//监听工具条
 		table.on('tool(project)',function(obj){
 			var data = obj.data;
@@ -84,7 +122,9 @@ function querylist() {
 				var classiid = data.classid;
 				window.location.href = "测评结果.html?eplanid="+epid+"=classid="+classiid;
 			} else if(obj.event === 'edit3'){
-				window.location.href = "测评详情.html"
+				var epid = data.eplanid;
+				var classiid = data.classid;
+				window.location.href = "测评详情.html?eplanid="+epid+"=classid="+classiid;
 			}
 		});
 	});

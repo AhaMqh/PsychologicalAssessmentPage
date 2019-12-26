@@ -25,11 +25,11 @@ window.onload = function(){
 
 	function querylist() {
 
-			var url = conf.apiurl + "/teastu/getteastudent?eplanid="+id+'&classid='+classiid;
+			var url = conf.apiurl + "/teastu/getteastudent?eplanid="+id+'&classid='+classiid+"&examtype=1";
 			var strwhere = document.getElementById("title").value; 
 			var value = strwhere.value;
 			if(!strwhere==""){
-				url = conf.apiurl + "/teastu/getteastudentstrwhere?eplanid="+id+'&classid='+classiid+'&strwhere='+value;
+				url = conf.apiurl + "/teastu/getteastudentstrwhere?eplanid="+id+'&classid='+classiid+'&strwhere='+value+"&examtype=1";
 			}
 
 		/*加载表格*/
@@ -68,6 +68,15 @@ window.onload = function(){
 			 ],
 			 page: true,
 		});
+		myAjax("get",url+"&limit=1&page=10", {}, function (data) {
+			if (data.code == 0) {
+				$("#spClass").html(data.data[0].gradename+data.data[0].className);
+				layui.use('form', function () {
+					var form = layui.form;
+					form.render();
+				});			
+			}
+		}, 'json');
 	}
 		//监听工具条
 		table.on('tool(project)',function(obj){
