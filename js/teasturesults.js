@@ -24,13 +24,12 @@ window.onload = function(){
 			});
 
 	function querylist() {
-			var url = conf.apiurl + "/teastu/getteastudent?eplanid=1&classid=KMMDZX2019090103001";
-			//var url = conf.apiurl + "/teastu/getteastudent?eplanid="+id+'&classid='+classiid;
-			var strwhere = document.getElementById("title").value; 
-			var value = strwhere.value;
+			//var url = conf.apiurl + "/teastu/getteastudent?eplanid=1&classid=KMMDZX2019090103001";
+			var url = conf.apiurl + "/teastu/getteastudent?eplanid="+id+'&classid='+classiid+"&examtype=2";
+			var strwhere = document.getElementById("title").value;
 			if(!strwhere==""){
-				url = conf.apiurl + "/teastu/getteastudent?eplanid=1&classid=KMMDZX2019090103001";
-				//url = conf.apiurl + "/teastu/getteastudentstrwhere?eplanid="+id+'&classid='+classiid+'&strwhere='+value;
+				//url = conf.apiurl + "/teastu/getteastudent?eplanid=1&classid=KMMDZX2019090103001";
+				url = conf.apiurl + "/teastu/getteastudentstrwhere?eplanid="+id+"&examtype=2"+'&classid='+classiid+'&strwhere='+strwhere;
 			}
 
 		/*加载表格*/
@@ -78,6 +77,16 @@ window.onload = function(){
 			 ],
 			 page: true,
 		});
+		myAjax("get",url+"&limit=1&page=10", {}, function (data) {
+			if (data.code == 0) {
+				$("#spJY").html(data.data[0].examname);
+				$("#spClass").html(data.data[0].gradename+data.data[0].className);
+				layui.use('form', function () {
+					var form = layui.form;
+					form.render();
+				});			
+			}
+		}, 'json');
 	}
 		//监听工具条
 		table.on('tool(project)',function(obj){

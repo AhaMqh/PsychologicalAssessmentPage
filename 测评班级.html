@@ -26,19 +26,13 @@
                     <form class="layui-form" action="">
                         <div class="layui-form-item ts_body" style="display: flex;">
                             <div class="layui-input-block sousuo_txt" style="width: 200px;">
-                                <select name="interest" lay-filter="">
-                                    <option value="1" selected="">请选择年级</option>
-                                    <option value="5">一年级</option>
-                                    <option value="4">二年级</option>
+                                <select lay-verify="required" id="PaymentModeID" name="PaymentModeID" class="SelectPaymentMode" lay-filter="testId">
+                                    <option value="-10" selected="">请选择年级</option>
                                 </select>
                             </div>
                             <div class="layui-input-block" style="width: 200px;margin-left: 40px;">
-                                <select name="interest" lay-filter="">
-                                    <option value="1" selected="">请选择班级</option>
-                                    <option value="2">01班</option>
-                                    <option value="3">02班</option>
-                                    <option value="4">03班</option>
-                                    <option value="5">04班</option>
+                                <select lay-verify="required" name="PaymentModeID2" class="SelectPaymentMode2" lay-filter="testId2">
+                                    <option value="-10" selected="">请选择班级</option>
                                 </select>
                             </div>
 
@@ -49,7 +43,7 @@
                     </form>
                 </div>
                 <div class="theform-body table_style">
-                    <div class="table-name">2019年1-2年级心理测评（MHT）</div>
+                    <div class="table-name"><span id="spJY"></span></div>
                     <!-- 表格开始 -->
                     <table class="layui-hide" name="project" id="project" lay-filter="project"></table>
                     <!-- 表格结束 -->
@@ -64,7 +58,6 @@
   <div class="footpage"></div>
 </body>
 <script src="layui/layui.js"></script>
-
 <script src="PokioPlugin/vue.js"></script>
 <script src="js/PublicVariable.js"></script>
 
