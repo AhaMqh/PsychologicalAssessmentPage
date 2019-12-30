@@ -229,7 +229,13 @@ body {
     color: #5EAAB7;
     background: #f7fbfc;
 }
-
+.tb_missed {
+    padding: 8px 10px;
+    border: 1px solid #FFB800;
+    border-radius: 2px;
+    color: #FFB800;
+    background: #f7fbfc;
+}
 .tb_end {
     padding: 8px 10px;
     border: 1px solid #d7d7d7;
