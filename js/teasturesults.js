@@ -155,36 +155,63 @@ window.onload = function(){
 
 		// 允许为空                                                                       
 		form.on('switch(statusDemo)', function(obj){    
+			var checked = obj.elem.checked;
 			// 获取当前控件                                                                 
 			var selectIfKey=obj.othis;                                                
 			// 获取当前所在行                                                                
 			var parentTr = selectIfKey.parents("tr");              
 			// 获取“是否主键”的值                                                             
 			var ifKey=parentTr.find(('td:eq(0)')).text().trim();
-			console.log(ifKey);
-			layer.confirm('您确定要将其设置为缺考吗？', {
-				btn: ['确定','取消'] //按钮
-			  }, function(){
-				myAjax("get", conf.apiurl + '/teastu/updatetype', {
-						planstudentid:ifKey,
-						type:4
-					}, function (res) {
-						if (res.code == 0) {
-							layer.alert('设置缺考成功', {
-							icon: 1,
-							title: "提示"
-							});
-						} else {
-							layer.alert('设置缺考失败', {
-							icon: 2,
-							title: "提示"
-							});
-						}
-						querylist();
-					}, 'json');
+			console.log(checked);
+			if(checked){
+				layer.confirm('您确定要修改缺考状态吗？', {
+					btn: ['确定','取消'] //按钮
 				}, function(){
+					myAjax("get", conf.apiurl + '/teastu/updatetype', {
+							planstudentid:ifKey,
+							type:4
+						}, function (res) {
+							if (res.code == 0) {
+								layer.alert('设置缺考成功', {
+								icon: 1,
+								title: "提示"
+								});
+							} else {
+								layer.alert('设置缺考失败', {
+								icon: 2,
+								title: "提示"
+								});
+							}
+							querylist();
+						}, 'json');
+					}, function(){
 
-				}); 																
+					}); 
+			}else{
+				layer.confirm('您确定要修改缺考状态吗？', {
+					btn: ['确定','取消'] //按钮
+				}, function(){
+					myAjax("get", conf.apiurl + '/teastu/updatetype', {
+							planstudentid:ifKey,
+							type:2
+						}, function (res) {
+							if (res.code == 0) {
+								layer.alert('取消缺考成功', {
+								icon: 1,
+								title: "提示"
+								});
+							} else {
+								layer.alert('取消缺考失败', {
+								icon: 2,
+								title: "提示"
+								});
+							}
+							querylist();
+						}, 'json');
+					}, function(){
+
+					});
+			}														
 		}); 		                                                                  
 	});
 
