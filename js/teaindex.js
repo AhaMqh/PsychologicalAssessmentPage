@@ -23,14 +23,13 @@ window.onload = function () {
 		function querylist() {
 			var url = conf.apiurl + "/teaindex/geteplanlist";
 			var type = +$("#queryrole").val();
-			var strwhere = document.getElementById("title").value;
-			var value = strwhere.value;
-			if (type != 10 && !strwhere == "") {
-				url = conf.apiurl + "/teaindex/geteplanliststrwhere?type=" + type + "&strwhere = " + value;
-			} else if (type != 10 && strwhere == "") {
-				url = conf.apiurl + "/teaindex/geteplanliststrwhere?type=" + type + "&strwhere = ''";
-			} else if (!strwhere == "") {
-				url = conf.apiurl + "/teaindex/geteplanliststrwhere?type=10 & strwhere = " + value;
+			var str = document.getElementById("title").value;
+			if (type != 10 && !str == "") {
+				url = conf.apiurl + "/teaindex/geteplanliststrwhere?type=" + type + "&strwhere=" + str;
+			} else if (type != 10 && str == "") {
+				url = conf.apiurl + "/teaindex/geteplanliststrwhere?type=" + type;
+			} else if (!str == "") {
+				url = conf.apiurl + "/teaindex/geteplanliststrwhere?type=10 &strwhere=" + str;
 			}
 			table.render({
 				elem: '#table',
