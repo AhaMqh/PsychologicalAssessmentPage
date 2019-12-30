@@ -23,12 +23,40 @@ window.onload = function(){
 
 			});
 
+			myAjax("get",'http://localhost:8080/SchoolPsychologicalAssessmentWeb/teaclass/getgradeselect', {
+				eplanid:id
+				}, function (data) {
+				if (data.code == 0) {
+					$("#spJY").html(data.data[0].examname);
+					for (var k in data.data){
+						$(".SelectPaymentMode").append("<option value='" + data.data[k].grade + "'>" + data.data[k].gradename + "</option>");
+						layui.use('form', function () {
+							var form = layui.form;
+							form.render();
+						});
+					}				
+				}
+			}, 'json');
+
 function querylist() {
+		var url = conf.apiurl + "/teaclass/geteplanclasslist?eplanid=" + id;
+		var Ntype = +$("#PaymentModeID").val();
+		var myType = document.getElementById("PaymentModeID2");//获取select对象
+		var index = myType.selectedIndex; //获取选项中的索引，selectIndex表示的是当前所选中的index
+		var Ptype = myType.options[index].value;//获取选项中options的value值
+		console.log(Ntype);
+		console.log(Ptype);
+		if (Ntype != -10 && Ptype != -10) {
+			url = conf.apiurl + "/teaclass/geteplanclassstrwhere?eplanid=" + id+"&strwhere1=" + Ntype + "&strwhere2 = " + Ptype;
+		} else if (Ntype != -10 && Ptype == -10) {
+			url = conf.apiurl + "/teaclass/geteplanliststrwhere?eplanid=" + id+"&strwhere1=" + Ntype+ "&strwhere2 = ''";
+		}
+
 		/*加载表格*/
 		table.render({
 			elem : '#project',
 			id:'project',
-			url : 'http://localhost:8080/SchoolPsychologicalAssessmentWeb/teaclass/geteplanclasslist?eplanid=' + id,
+			url : url,
 			title : '后台通知管理数据表',
 			skin : 'line',
 			even : true,
@@ -70,36 +98,19 @@ function querylist() {
 				element.render();
 			}
 		});
-		myAjax("get",'http://localhost:8080/SchoolPsychologicalAssessmentWeb/teaclass/geteplanclasslist', {
-			eplanid:id,
-			limit:10,
-			page:1
-		}, function (data) {
-			if (data.code == 0) {
-				$("#spJY").html(data.data[0].examname);
-				for (var k in data.data){
-					$(".SelectPaymentMode").append("<option value='" + data.data[k].grade + "'>" + data.data[k].gradename + "</option>");
-					layui.use('form', function () {
-						var form = layui.form;
-						form.render();
-					});
-				}				
-			}
-		}, 'json');
 	}
 	form.on('select(testId)', function(data){
 		var myType = document.getElementById("PaymentModeID");//获取select对象
 		var index = myType.selectedIndex; //获取选项中的索引，selectIndex表示的是当前所选中的index
 		var grade = myType.options[index].value;//获取选项中options的value值
-		console.log(data);
 		myAjax("get",'http://localhost:8080/SchoolPsychologicalAssessmentWeb/teaclass/geteplanclasslistbygrade', {
 			grade:grade,
-			eplanid:id,
-			limit:10,
-			page:1
+			eplanid:id
 		}, function (data) {
 			if (data.code == 0) {
 				for (var k in data.data){
+					console.log( data);
+					console.log( data.data[k].classid);
 					$(".SelectPaymentMode2").append("<option value='" + data.data[k].classid + "'>" + data.data[k].className + "</option>");
 					layui.use('form', function () {
 						var form = layui.form;
@@ -112,6 +123,7 @@ function querylist() {
 		//监听工具条
 		table.on('tool(project)',function(obj){
 			var data = obj.data;
+			console.log(data);
 			if(obj.event === 'edit1'){
 				layer.alert('此次考试还未开始', {
 				icon: 2,

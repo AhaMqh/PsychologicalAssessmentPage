@@ -11,7 +11,6 @@ window.onload = function(){
 	            if(url.indexOf("?") != -1) {
 	            str = url.substr(1);
 	            strs = str.split("=");
-				console.log(strs);
 	            id = strs[1];
 				classiid = strs[3];
         }
@@ -55,8 +54,11 @@ window.onload = function(){
 						}else if(core==1){
 						var html = '<a><span class="tb_finish">已结束</span></a>'
 						return html;
-						}else{
+						}else if(core==2){
 						var html = '<a><span class="tb_beagin">进行中</span></a>'
+						return html;
+						}else{
+						var html = '<a><span class="tb_nostart">缺考</span></a>'
 						return html;
 						}
 					},}
@@ -64,6 +66,12 @@ window.onload = function(){
 					,templet : function(p){
 						var all = p.allnum;
 						var finish = p.finishnum;
+						if (all="undefined") {
+							all=0;
+						}
+						if (finish="undefined") {
+							finish=0;
+						}
 						var html = '<div>'+finish+'/'+all+'</div>'
 
 						html += '</div>'
@@ -71,7 +79,7 @@ window.onload = function(){
 					},}
 				  ,{field : 'starttime',title : '测评开始时间',align : 'center'}
 				  ,{field : 'endtime',title : '测评结束时间',align : 'center',width:120}
-				  ,{title : '缺考标记',toolbar : '#markbar',align : 'center',width:110}
+				  ,{title : '缺考标记', templet: '#switchTpl',align : 'center',width:110}
                   ,{title : '操作',toolbar : '#barDemo',align : 'center',}
 			     ] 
 			 ],
@@ -93,41 +101,91 @@ window.onload = function(){
 			var data = obj.data;
 			var plid = data.planstudentid;
 			if(obj.event === 'edit1'){
-				myAjax("get", conf.apiurl + '/teastu/updatetype', {
-					planstudentid:plid,
-					type:1
-				}, function (res) {
-					if (res.code == 10001) {
-						layer.alert('交卷成功', {
-						icon: 1,
-						title: "提示"
-						});
-					} else {
-						layer.alert('交卷失败', {
-						icon: 2,
-						title: "提示"
-						});
-					}
-				}, 'json');
-			} else if(obj.event === 'edit2'){
-				myAjax("get", conf.apiurl + '/teastu/updatetype', {
+				layer.confirm('您确定要强制交卷吗？', {
+					btn: ['确定','取消'] //按钮
+				  }, function(){
+					myAjax("get", conf.apiurl + '/teastu/updatetype', {
 						planstudentid:plid,
-						type:2
+						type:1
 					}, function (res) {
-						if (res.code == 10001) {
+						if (res.code == 0) {
 							layer.alert('交卷成功', {
 							icon: 1,
 							title: "提示"
 							});
+							
 						} else {
 							layer.alert('交卷失败', {
 							icon: 2,
 							title: "提示"
 							});
 						}
+						querylist();
 					}, 'json');
+				  }, function(){
+
+				  });
+				
+			} else if(obj.event === 'edit2'){
+				layer.confirm('您确定要取消交卷吗？', {
+					btn: ['确定','取消'] //按钮
+				  }, function(){
+					myAjax("get", conf.apiurl + '/teastu/updatetype', {
+							planstudentid:plid,
+							type:2
+						}, function (res) {
+							if (res.code == 0) {
+								layer.alert('取消交卷成功', {
+								icon: 1,
+								title: "提示"
+								});
+							} else {
+								layer.alert('取消交卷失败', {
+								icon: 2,
+								title: "提示"
+								});
+							}
+							querylist();
+						}, 'json');
+					}, function(){
+  
+					});
 			}
 		});
+
+		// 允许为空                                                                       
+		form.on('switch(statusDemo)', function(obj){    
+			// 获取当前控件                                                                 
+			var selectIfKey=obj.othis;                                                
+			// 获取当前所在行                                                                
+			var parentTr = selectIfKey.parents("tr");              
+			// 获取“是否主键”的值                                                             
+			var ifKey=parentTr.find(('td:eq(0)')).text().trim();
+			console.log(ifKey);
+			layer.confirm('您确定要将其设置为缺考吗？', {
+				btn: ['确定','取消'] //按钮
+			  }, function(){
+				myAjax("get", conf.apiurl + '/teastu/updatetype', {
+						planstudentid:ifKey,
+						type:4
+					}, function (res) {
+						if (res.code == 0) {
+							layer.alert('设置缺考成功', {
+							icon: 1,
+							title: "提示"
+							});
+						} else {
+							layer.alert('设置缺考失败', {
+							icon: 2,
+							title: "提示"
+							});
+						}
+						querylist();
+					}, 'json');
+				}, function(){
+
+				}); 																
+		}); 		                                                                  
 	});
 
 

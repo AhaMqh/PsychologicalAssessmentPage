@@ -26,10 +26,9 @@ window.onload = function(){
 	function querylist() {
 
 			var url = conf.apiurl + "/teastu/getteastudent?eplanid="+id+'&classid='+classiid+"&examtype=1";
-			var strwhere = document.getElementById("title").value; 
-			var value = strwhere.value;
+			var strwhere = document.getElementById("title").value;
 			if(!strwhere==""){
-				url = conf.apiurl + "/teastu/getteastudentstrwhere?eplanid="+id+'&classid='+classiid+'&strwhere='+value+"&examtype=1";
+				url = conf.apiurl + "/teastu/getteastudentstrwhere?eplanid="+id+'&classid='+classiid+'&strwhere='+strwhere+"&examtype=1";
 			}
 
 		/*加载表格*/
@@ -57,8 +56,11 @@ window.onload = function(){
 						}else if(core==1){
 						var html = '<a><span class="tb_finish">已结束</span></a>'
 						return html;
-						}else{
+						}else if(core==2){
 						var html = '<a><span class="tb_beagin">进行中</span></a>'
+						return html;
+						}else{
+						var html = '<a><span class="tb_nostart">缺考</span></a>'
 						return html;
 						}
 						

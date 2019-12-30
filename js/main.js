@@ -277,11 +277,15 @@ $(".resetpwd").click(function () {
         content: $("#modifypwd"),
         shade: 0.6,
         btn: ['确认', '取消'],
-        cancel: function (layero, index) {
+        yes: function(index){
+            var val = document.getElementById("ppassword");//获取select对象
+            var myType = document.getElementById("PaymentModeID");//获取select对象
+            var selectindex = myType.selectedIndex; //获取选项中的索引，selectIndex表示的是当前所选中的index
+            var classid = myType.options[selectindex].value;//获取选项中options的value值
             var enpwd = hex_md5(fix(Encryption_key,val));
 				layer.msg(
-					myAjax("get", conf.apiurl + '/teastuexam/updatebyid', {
-					stuid:stuid,
+					myAjax("get", conf.apiurl + '/teastuexam/updatebyclass', {
+                    classid:classid,
 					pwd:enpwd
 				}, function (res) {
 					if (res.code == 0) {
@@ -296,7 +300,10 @@ $(".resetpwd").click(function () {
 						});
 					}
 				}, 'json')
-				);
+                );
+                layer.close(index);
+        },
+        cancel: function (layero, index) {
 				layer.close(index);
         }
 

@@ -230,6 +230,14 @@ body {
     background: #f7fbfc;
 }
 
+.tb_miss {
+    padding: 8px 10px;
+    border: 1px solid #ffcc33;
+    border-radius: 2px;
+    color: #ff9900;
+    background: #f7fbfc;
+}
+
 .tb_end {
     padding: 8px 10px;
     border: 1px solid #d7d7d7;

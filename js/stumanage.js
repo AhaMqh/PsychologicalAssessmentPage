@@ -9,6 +9,7 @@ window.onload = function(){
 			
 
 			querylist();
+			queryselest();
 
 			/* 点击查询对网站用户进行筛选 */
 			$("#btnselfrontinfo").click(function() {
@@ -16,10 +17,8 @@ window.onload = function(){
 				querylist(); //调用局部刷新
 
 			});
-
-			function querylist() {
+			function queryselest() {
 				myAjax("get", conf.apiurl+"/teastuexam/getteaclass",{}, function (data) {
-					console.log(data.data);
 					for (var k in data.data) 
 					{
 					$(".SelectPaymentMode").append("<option value='" + data.data[k].classid + "'>" + data.data[k].gradename + data.data[k].className + "</option>");
@@ -29,8 +28,14 @@ window.onload = function(){
 						form.render();
 					});
 				}, 'json');
-
+			}
+			function querylist() {
+				
 				var url = conf.apiurl + "/teastuexam/getstubyclass";
+				var strwhere = document.getElementById("title").value;
+				if(!strwhere==""){
+					url = conf.apiurl + "/teastuexam/getstubyclassstr?strwhere="+strwhere;
+				}
 				table.render({
 					elem: '#project',
 					id: 'project',

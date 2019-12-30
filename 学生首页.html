@@ -127,6 +127,7 @@
                 <option value="1">已测评</option>
                 <option value="0">未测评</option>
                 <option value="2">测评中</option>
+                <option value="4">缺考</option>
               </select>
             </div>
 
@@ -144,9 +145,10 @@
               测评状态：<b class="tb_nostart" v-if="plan.eplanstudenttype == 0">未测评</b>
               <span class="tb_finish" v-else-if="plan.eplanstudenttype == 1">已测评</span>
               <span class="tb_beagin" v-else-if="plan.eplanstudenttype == 2">测评中</span>
+              <span class="tb_miss" v-else-if="plan.eplanstudenttype == 4">缺考</span>
             </span>
             <div class="btn_begin">
-              <button class="layui-btn beginTest" v-if="plan.eplanstudenttype !=1" v-bind:planstudentid="plan.planstudentid" type="button" onclick="examstatu(this);">开始测评</button>
+              <button class="layui-btn beginTest" v-if="plan.eplanstudenttype !=1 && plan.eplanstudenttype !=4" v-bind:planstudentid="plan.planstudentid" type="button" onclick="examstatu(this);">开始测评</button>
             </div>
           </div>
           <div id="sexamplan" style="position: absolute;left: 15px;bottom: 0;"></div>

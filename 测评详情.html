@@ -50,7 +50,9 @@
                         <a class="layui-btn layui-btn-xs btn_editstatus" id="edit1" lay-event="edit1" data-method="confirmTrans">强制交卷</a>
                         <a class="layui-btn layui-btn-xs btn_editstatus" id="edit2" lay-event="edit2" data-method="cancel">取消交卷</a>
                     </script>
-
+                    <script type="text/html" id="switchTpl">
+                        <input type="checkbox" name="status" value="{{d.planstudentid}}" lay-skin="switch" lay-text="启用|不启用" lay-filter="statusDemo" {{ d.eplanstudenttype == 4 ? 'checked' : '' }}>
+                    </script>
                 </div>
             </div>
         </div>

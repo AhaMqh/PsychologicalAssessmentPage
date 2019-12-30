@@ -25,11 +25,8 @@
                 <div class="theform-select">
                     <form class="layui-form" action="">
                         <div class="layui-form-item ts_body" style="display: flex;">
-                            <div class="layui-input-block" style="width: 200px;margin-left: 0;">
-                            </div>
-
                             <div class="layui-input-block txt_examtit" style="width: 200px;">
-                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                <input type="text" name="title" id="title" lay-verify="title" autocomplete="off"
                                     placeholder="请输入学生姓名或学号" class="layui-input">
                             </div>
                             <div class="layui-input-block " style="margin-left: 40px;">
@@ -57,15 +54,15 @@
                 <div class="layui-form-item reset">
                         <label class="layui-form-label">选择班级</label>
                         <div class="layui-input-block">
-                          <select lay-verify="required" name="PaymentModeID" class="SelectPaymentMode">
-                            <option value="">请选择</option>
+                          <select lay-verify="required" id="PaymentModeID" name="PaymentModeID" class="SelectPaymentMode">
+                            <option value="-10">请选择</option>
                         </select>
                         </div>
                       </div>
                       <div class="layui-form-item reset">
                             <label class="layui-form-label">输入密码</label>
                             <div class="layui-input-block">
-                              <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                              <input type="password" id="ppassword" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
                             </div>
                           </div>
               
