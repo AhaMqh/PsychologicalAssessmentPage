@@ -7,7 +7,7 @@ if ($(".headpage") != null) {
 
 //在这里面写好变量或者函数的封装，然后在其他js中调用
 var conf = {
-    apiurl: "http://localhost:8080/SchoolPsychologicalAssessmentWeb",
+    apiurl: "http://localhost:9080/SchoolPsychologicalAssessmentWeb",
 }
 //将与该页面body name属性同名js注入
 var js_name = document.getElementById('tags');

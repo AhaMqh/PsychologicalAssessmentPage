@@ -97,6 +97,7 @@ window.onload = function () {
 					}]
 				],
 				page: true,
+				limit: 9, //每页默认显示的数量
 				done: function (p) {
 					element.render();
 				}

@@ -278,7 +278,8 @@ $(".resetpwd").click(function () {
         shade: 0.6,
         btn: ['确认', '取消'],
         yes: function(index){
-            var val = document.getElementById("ppassword");//获取select对象
+            var val = document.getElementById("ppassword").value;//获取select对象
+            console.log(val);
             var myType = document.getElementById("PaymentModeID");//获取select对象
             var selectindex = myType.selectedIndex; //获取选项中的索引，selectIndex表示的是当前所选中的index
             var classid = myType.options[selectindex].value;//获取选项中options的value值

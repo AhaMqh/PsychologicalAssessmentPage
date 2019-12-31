@@ -1,6 +1,6 @@
 // 学生考试测评页面js
 window.onload = function () {
-    
+
 
     myAjax('post', conf.apiurl + '/login/getloginstu', {}, function (res) {
         if (res.code == 10001) {
@@ -25,7 +25,7 @@ window.onload = function () {
 
             //试卷已做时间显示
             datatime = res.resultObject.examstartime;
-            setInterval(function(){
+            setInterval(function () {
                 BirthDay = new Date(datatime); //这个日期是可以修改的  
                 today = new Date();
                 timeold = (today.getTime() - BirthDay.getTime());
@@ -40,7 +40,7 @@ window.onload = function () {
                 minsold = Math.floor((e_hrsold - hrsold) * 60);
                 seconds = Math.floor((e_minsold - minsold) * 60);
                 showtime.innerHTML = daysold + "<span class='inin'>天</span>" + hrsold + "<span class='inin'>时</span>" + minsold + "<span class='inin'>分</span>" + seconds + "<span class='inin'>秒</span>";
-                    },1000)
+            }, 1000)
         } else {
             tan.tips(res.msg, 1000);
         }
@@ -134,7 +134,7 @@ window.onload = function () {
                 optionscore: optionscore,
                 useranswer: useranswer,
                 choiceoption: choiceoption,
-                dimensionid:dimensionid
+                dimensionid: dimensionid
             }
             //点击时改变边上题号的颜色
             if (!$(titnumClassName).hasClass("choisetab")) {
@@ -169,8 +169,18 @@ window.onload = function () {
         savepaper();
     })
 
-    //每10分钟自动保存一次
-    setInterval("savepaper()", 1000 * 60 * 10);
+    //自动保存试卷
+    function autosave() {
+        if(backanswer.length!=0){
+            myAjax("post", conf.apiurl + "/studentexam/savestuanswer", {
+                answerList: JSON.stringify(backanswer)
+            }, function (res) {
+            }, 'json')    
+        }
+    }
+
+    //每1分钟自动保存一次
+    setInterval(autosave, 1000*60);
 
     //交卷
     this.eventUtil.addEventHandle($(".btn_tijiao")[0], 'click', function (e) {
@@ -200,7 +210,8 @@ window.onload = function () {
         }
         tan.loading();
         myAjax("post", conf.apiurl + "/studentexam/handexams", {
-            answerList: JSON.stringify(backanswer),checktypeid:$("#checktypeid").val(),
+            answerList: JSON.stringify(backanswer),
+            checktypeid: $("#checktypeid").val(),
         }, function (res) {
             if (res.code == 10001) {
                 tan.tips(res.msg, 1500);
