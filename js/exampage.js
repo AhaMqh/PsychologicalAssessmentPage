@@ -220,6 +220,25 @@ window.onload = function () {
             scrollTop: howlong
         }, 1000);
     }
+
+    //右下角保存按钮
+    layui.use(['util', 'laydate', 'layer'], function(){
+        var util = layui.util
+        ,laydate = layui.laydate
+        ,layer = layui.layer;
+        //固定块
+        util.fixbar({
+          bar1: '&#x1005'
+          ,css: {right: 50, bottom: 132,width:80,}
+          ,bgcolor: '#9ec317'
+          ,click: function(type){
+            if(type === 'bar1'){
+                tan.loading();
+                savepaper();
+            }
+          }
+        });        
+      });
 }
 
 
