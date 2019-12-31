@@ -103,9 +103,7 @@ function examstatu(e) {
         planstudentid: $(e).attr("planstudentid")
     }, function (res) {
         if (res.code == 10001) {
-            setTimeout(function () {
-                window.location.href = "测评页面.html"
-            }, 1500)
+                window.location.href = "测评页面.html"           
         } else {
             tan.closew();
             tan.tips(res.msg, 1500);
