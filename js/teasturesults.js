@@ -66,11 +66,16 @@ window.onload = function(){
 					,templet : function(p){
 						var all = p.allnum;
 						var finish = p.finishnum;
-						if (all="undefined") {
+						if (all!="" && $.trim(all)!="") {
+
+						}else{
 							all=0;
 						}
-						if (finish="undefined") {
+						if (finish!="" && $.trim(finish)!="") {
+
+						}else{
 							finish=0;
+							
 						}
 						var html = '<div>'+finish+'/'+all+'</div>'
 
