@@ -23,7 +23,7 @@ window.onload = function(){
 
 			});
 
-			myAjax("get",'http://localhost:8080/SchoolPsychologicalAssessmentWeb/teaclass/getgradeselect', {
+			myAjax("get",conf.apiurl + '/teaclass/getgradeselect', {
 				eplanid:id
 				}, function (data) {
 				if (data.code == 0) {
@@ -90,10 +90,18 @@ function querylist() {
 						}
 						
 					},
-				}, {
-					title: '操作',
-					toolbar: '#barDemo',
-					align: 'center'
+				}
+				  , {field : 'type',title: '操作',align:'center'
+					,templet : function(p){
+						var core = p.eplamclasstype;
+						if(core==0){
+							var html = "<a class='layui-btn layui-btn-primary layui-btn-sm' lay-event='detail'>设置密码</a><a class='layui-btn layui-btn-sm examBegin' lay-event='edit1' >开始考试</a>"
+							return html;
+						}else{
+							var html = "<a class='layui-btn layui-btn-primary layui-btn-sm' lay-event='detail'>设置密码</a><a class='layui-btn layui-btn-sm examBegin' lay-event='edit2' >进入</a>"
+							return html;
+						}						
+					},
 				}]
 			 ],
 			 page: true,
@@ -107,7 +115,7 @@ function querylist() {
 		var myType = document.getElementById("PaymentModeID");//获取select对象
 		var index = myType.selectedIndex; //获取选项中的索引，selectIndex表示的是当前所选中的index
 		var grade = myType.options[index].value;//获取选项中options的value值
-		myAjax("get",'http://localhost:8080/SchoolPsychologicalAssessmentWeb/teaclass/geteplanclasslistbygrade', {
+		myAjax("get",conf.apiurl + '/teaclass/geteplanclasslistbygrade', {
 			grade:grade,
 			eplanid:id
 		}, function (data) {
@@ -128,18 +136,49 @@ function querylist() {
 		table.on('tool(project)',function(obj){
 			var data = obj.data;
 			console.log(data);
-			if(data.eplamclasstype === 0){
-				var epid = data.eplanid;
-				var classiid = data.classid;
-				window.location.href = "测评详情.html?eplanid="+epid+"=classid="+classiid;
-			} else if(data.eplamclasstype === 1){
-				var epid = data.eplanid;
-				var classiid = data.classid;
-				window.location.href = "测评结果.html?eplanid="+epid+"=classid="+classiid;
-			} else if(data.eplamclasstype === 2){
-				var epid = data.eplanid;
-				var classiid = data.classid;
-				window.location.href = "evaluationdetails.html?eplanid="+epid+"=classid="+classiid;
+			if(obj.event === 'edit1'){
+				//你自己写
+
+			}else if(obj.event === 'edit2'){
+				if(data.eplamclasstype === 0){
+					var epid = data.eplanid;
+					var classiid = data.classid;
+					window.location.href = "测评详情.html?eplanid="+epid+"=classid="+classiid;
+				} else if(data.eplamclasstype === 1){
+					var epid = data.eplanid;
+					var classiid = data.classid;
+					window.location.href = "测评结果.html?eplanid="+epid+"=classid="+classiid;
+				} else if(data.eplamclasstype === 2){
+					var epid = data.eplanid;
+					var classiid = data.classid;
+					window.location.href = "evaluationdetails.html?eplanid="+epid+"=classid="+classiid;
+				}
+			}else if(obj.event === 'detail'){
+				var classid = data.classid;
+				console.log(classid);
+				//默认prompt'密码是'+enpwd + '学生学号是' + stuid
+				layer.prompt({title : '请输入密码'},function(val, index){
+				var enpwd = hex_md5(fix(Encryption_key,val));
+				layer.msg(
+					myAjax("get", conf.apiurl + '/teastuexam/updatebyclass', {
+					classid:classid,
+					pwd:enpwd
+				}, function (res) {
+					if (res.code == 0) {
+						layer.alert('修改成功', {
+						icon: 1,
+						title: "提示"
+						});
+					} else {
+						layer.alert('修改失败', {
+						icon: 2,
+						title: "提示"
+						});
+					}
+				}, 'json')
+				);
+				layer.close(index);
+				});
 			}
 		});
 	});

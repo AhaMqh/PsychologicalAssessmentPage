@@ -110,9 +110,8 @@ window.onload = function(){
 				layer.confirm('您确定要强制交卷吗？', {
 					btn: ['确定','取消'] //按钮
 				  }, function(){
-					myAjax("get", conf.apiurl + '/teastu/updatetype', {
-						planstudentid:plid,
-						type:1
+					myAjax("get", conf.apiurl + '/teastuexam/getcheckrepot', {
+						planstudentid:plid
 					}, function (res) {
 						if (res.code == 0) {
 							layer.alert('交卷成功', {
