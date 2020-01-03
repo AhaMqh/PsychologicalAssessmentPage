@@ -139,7 +139,7 @@ function querylist() {
 			} else if(data.eplamclasstype === 2){
 				var epid = data.eplanid;
 				var classiid = data.classid;
-				window.location.href = "测评详情.html?eplanid="+epid+"=classid="+classiid;
+				window.location.href = "evaluationdetails.html?eplanid="+epid+"=classid="+classiid;
 			}
 		});
 	});

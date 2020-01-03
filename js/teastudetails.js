@@ -87,7 +87,7 @@ window.onload = function(){
 			if(obj.event === 'edit1'){
 				var epid = data.eplanid;
 				var stuid = data.studentid;
-				window.location.href = "试卷详情.html?eplanid="+epid+"=stuid="+stuid;
+				window.location.href = "papersdetails.html?eplanid="+epid+"=stuid="+stuid;
 			} else if(obj.event === 'del'){
 			layer.confirm('真的删除行么', function(index){
 				obj.del();
