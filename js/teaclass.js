@@ -79,19 +79,22 @@ function querylist() {
 					,templet : function(p){
 						var core = p.eplamclasstype;
 						if(core==0){
-						var html = '<a id="edit1" lay-event="edit1"><span class="tb_nostart">未开始</span></a>'
+						var html = '<a><span class="tb_nostart">未开始</span></a>'
 						return html;
 						}else if(core==1){
-						var html = '<a id="edit2" lay-event="edit2"><span class="tb_finish">已结束</span></a>'
+						var html = '<a><span class="tb_finish">已结束</span></a>'
 						return html;
 						}else{
-						var html = '<a id="edit3" lay-event="edit3"><span class="tb_beagin">进行中</span></a>'
+						var html = '<a><span class="tb_beagin">进行中</span></a>'
 						return html;
 						}
 						
 					},
-				}
-			     ]
+				}, {
+					title: '操作',
+					toolbar: '#barDemo',
+					align: 'center'
+				}]
 			 ],
 			 page: true,
 			 limit: 9, //每页默认显示的数量
@@ -125,16 +128,15 @@ function querylist() {
 		table.on('tool(project)',function(obj){
 			var data = obj.data;
 			console.log(data);
-			if(obj.event === 'edit1'){
-				layer.alert('此次考试还未开始', {
-				icon: 2,
-				title: "提示"
-				});
-			} else if(obj.event === 'edit2'){
+			if(data.eplamclasstype === 0){
+				var epid = data.eplanid;
+				var classiid = data.classid;
+				window.location.href = "测评详情.html?eplanid="+epid+"=classid="+classiid;
+			} else if(data.eplamclasstype === 1){
 				var epid = data.eplanid;
 				var classiid = data.classid;
 				window.location.href = "测评结果.html?eplanid="+epid+"=classid="+classiid;
-			} else if(obj.event === 'edit3'){
+			} else if(data.eplamclasstype === 2){
 				var epid = data.eplanid;
 				var classiid = data.classid;
 				window.location.href = "测评详情.html?eplanid="+epid+"=classid="+classiid;
