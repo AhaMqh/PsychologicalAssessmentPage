@@ -65,7 +65,7 @@ function querylist() {
 			      ,{field : 'classid', title:'编号', align:'center', hide:true}
 			      ,{field : 'gradename', title:'年级', align:'center'}
 				  ,{field : 'className',title : '班级',align : 'center'}
-				  ,{field : 'bili',title : '测评人数比例 (实际测评/应测评)',align : 'center'
+				  ,{field : 'bili',title : '测评人数比例 (实际测评/应测评)',align : 'center',width:230
 				  ,templet : function(p){
 					  var core = p.bili;
 					  var html = '<div class="layui-progress pro_bar" lay-showPercent="true">'
