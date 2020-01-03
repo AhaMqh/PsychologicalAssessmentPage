@@ -99,7 +99,7 @@ window.onload = function () {
                   myAjax('post', conf.apiurl + '/login/loginteacher', { username: username, pwd: enpwd, schoolname: scname }, function (res) {
 
                       if (res.code == 10001) {
-                          window.location.href = "教师首页.html";
+                          window.location.href = "teacherhome.html";
                           tan.closew();
                       } else{
                           tan.closew();
@@ -113,7 +113,7 @@ window.onload = function () {
                   myAjax('post', conf.apiurl + '/login/loginstudent', { stuid: username, pwd: enpwd, schoolname: scname }, function (res) {
 
                       if (res.code == 10001) {
-                          window.location.href = "学生首页.html";
+                          window.location.href = "studenthome.html";
                           tan.closew();
                       } else{
                           tan.closew();

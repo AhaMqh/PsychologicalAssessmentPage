@@ -7,7 +7,8 @@ if ($(".headpage") != null) {
 
 //在这里面写好变量或者函数的封装，然后在其他js中调用
 var conf = {
-    apiurl: "http://localhost:9080/SchoolPsychologicalAssessmentWeb",
+    //apiurl: "http://zhixinyun.com/eva",
+    apiurl:"http://localhost:9080/SchoolPsychologicalAssessmentWeb"
 }
 //将与该页面body name属性同名js注入
 var js_name = document.getElementById('tags');
@@ -175,7 +176,7 @@ function myAjax(method, url, data, callback, type) {
 
 }
 
-
+//对layui弹窗进行封装
 var tan = {
     //loading执行动画弹出层
     loading: function () {
@@ -235,4 +236,30 @@ var tan = {
     closew: function (wname) {
         layer.closeAll(wname);
     }
+}
+
+//对Cookie进行封装
+var Cookie = {
+    setCookie: function(name, value) {
+        //写cookies 
+        var d = new Date();
+        d.setTime(d.getTime() + (24 * 60 * 60 * 1000));//cookie的存储默认时间
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + "; " + expires;
+    },
+    getCookie: function(cname) {
+        //读取cookies 
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+             var c = ca[i];
+             while (c.charAt(0) == ' ') c = c.substring(1);
+             if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+         }
+        return "";
+    },
+    delCookie: function(name) {
+         //删除cookies 
+         f.setCookie(name, "", -1);
+    },
 }
