@@ -378,6 +378,9 @@
 .icon_pwd{
     padding: 0 5px;
 }
+.examBegin{
+    background-color: #5EAAB7;
+}
 /* 班级测评答题卡 */
 
 .theform-body .report-time {
