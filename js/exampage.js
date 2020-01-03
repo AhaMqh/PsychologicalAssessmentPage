@@ -215,7 +215,7 @@ window.onload = function () {
         }, function (res) {
             if (res.code == 10001) {
                 tan.tips(res.msg, 1500);
-                setTimeout(window.location.href = "学生首页.html", 3000);
+                setTimeout(window.location.href = "studenthome.html", 3000);
             } else {
                 tan.closew();
                 tan.tips(res.msg, 1500);

@@ -109,7 +109,7 @@ window.onload = function () {
 			var data = obj.data;
 			if (obj.event === 'edit') {
 				var epid = data.eplanid;
-				location.href = "../测评班级.html?eplanid=" + epid;
+				location.href = "evaluationclass.html?eplanid=" + epid;
 			}
 		});
 

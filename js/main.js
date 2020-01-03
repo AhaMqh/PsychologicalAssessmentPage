@@ -135,7 +135,7 @@ layui.use('layer', function () { //独立版的layer无需执行这一句
                 success: function (layero) {
                     var btn = layero.find('.layui-layer-btn');
                     btn.find('.layui-layer-btn0').attr({
-                        href: '登录.html',
+                        href: 'login.html',
                         target: '_blank'
                     });
                 }
@@ -227,7 +227,7 @@ if (roletype == 'teacher') {
                 }
             })
         } else {
-            setTimeout(window.location.href = "登录.html", 3000);
+            setTimeout(window.location.href = "login.html", 3000);
         }
     }, 'json');
 } else if (roletype == 'student') {
@@ -263,7 +263,7 @@ if (roletype == 'teacher') {
                 }
             })
         } else {
-            setTimeout(window.location.href = "登录.html", 3000);
+            setTimeout(window.location.href = "login.html", 3000);
         }
     }, 'json');
 }
@@ -330,7 +330,7 @@ function exitsys() {
     myAjax('post', conf.apiurl + '/loginout/exit', {}, function (res) {
         if (res.code == 10001) {
             layer.closeAll('loading');
-            window.location.href = "/登录.html";
+            window.location.href = "login.html";
         }
     }, 'json')
 }
