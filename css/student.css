@@ -1,7 +1,4 @@
 
-
-
-
 .waitingfor{
     height: 43px;
     display: flex;
@@ -27,13 +24,15 @@
     padding: 0 5px;
 }
 
-.theform_stu {
+
+.theform_student {
     border-radius: 5px;
     border: 1px solid rgba(94, 170, 183, 1);
     box-shadow: 1px 1px 5px rgba(94, 170, 183, 0.298039215686275);
     background: rgba(255, 255, 255, 1);
     position: relative;
-    margin-left: 20px;
+    width: 74%;
+    margin-left: 1%;
 
 }
 
@@ -216,11 +215,10 @@
     border-width: 0 0 0 0;
 }
 
-.info_stu {
+.info_student {
     /* background-color: #eee; */
-    height: 735px;
+    height: 670px;
 }
-
 .info_stutit {
     font-weight: bold;
 }
@@ -235,14 +233,15 @@
 
     padding: 15px;
     background-color: #fff;
+    min-height: 585px;
 
 }
 
 .exam_info {
 
-    height: 100px;
+    height: 90px;
     background-color: #F7FBFC;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     border: 1px solid #CFE6EA;
     padding: 10px;
 
@@ -254,7 +253,7 @@
 }
 
 .exam_tit {
-    font-size: 18px;
+    font-size: 16px;
     color: #666666;
     line-height: 30px;
 }
@@ -272,7 +271,7 @@
     border: 1px solid rgba(94, 170, 183, 1);
     color: rgba(94, 170, 183, 1);
     border-radius: 5px;
-    width: 240px;
+    width: 220px;
 
 }
 
@@ -285,7 +284,7 @@
 }
 
 .btn_begin {
-    padding: 10px 0;
+    padding: 5px 0;
     text-align: center;
 }
 
@@ -310,7 +309,7 @@
 }
 
 .stu_stuInfo {
-    height: 670px;
+    height: 600px;
 }
 
 
@@ -396,7 +395,7 @@
 
 .exam_number {
     height: 25px;
-    width: 25px;
+    width: 27px;
     background-color: #fff;
     border: 1px solid #e4e4e4;
     text-align: center;

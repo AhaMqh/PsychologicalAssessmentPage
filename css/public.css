@@ -21,9 +21,8 @@ body {
 
 .body-container {
     width: 1280px;
-    margin: 86px auto;
+    margin: 90px auto 50px;
     max-width: 100%;
-    display: flex;
     justify-content: center;
 }
 

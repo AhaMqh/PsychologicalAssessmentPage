@@ -23,7 +23,7 @@ window.onload = function(){
 
 			});
 
-			myAjax("get",'http://localhost:8080/SchoolPsychologicalAssessmentWeb/teaclass/getgradeselect', {
+			myAjax("get",conf.apiurl + '/teaclass/getgradeselect', {
 				eplanid:id
 				}, function (data) {
 				if (data.code == 0) {
@@ -105,7 +105,7 @@ function querylist() {
 		var myType = document.getElementById("PaymentModeID");//获取select对象
 		var index = myType.selectedIndex; //获取选项中的索引，selectIndex表示的是当前所选中的index
 		var grade = myType.options[index].value;//获取选项中options的value值
-		myAjax("get",'http://localhost:8080/SchoolPsychologicalAssessmentWeb/teaclass/geteplanclasslistbygrade', {
+		myAjax("get",conf.apiurl + '/teaclass/geteplanclasslistbygrade', {
 			grade:grade,
 			eplanid:id
 		}, function (data) {
