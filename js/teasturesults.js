@@ -106,31 +106,25 @@ window.onload = function(){
 		table.on('tool(project)',function(obj){
 			var data = obj.data;
 			var plid = data.planstudentid;
+			var aurl = 'answercard.html?planstudentid='+plid;
+			console.log(aurl);
 			if(obj.event === 'edit1'){
-				layer.confirm('您确定要强制交卷吗？', {
-					btn: ['确定','取消'] //按钮
-				  }, function(){
-					myAjax("get", conf.apiurl + '/teastuexam/getcheckrepot', {
-						planstudentid:plid
-					}, function (res) {
-						if (res.code == 0) {
-							layer.alert('交卷成功', {
-							icon: 1,
-							title: "提示"
-							});
-							
-						} else {
-							layer.alert('交卷失败', {
-							icon: 2,
-							title: "提示"
-							});
-						}
-						querylist();
-					}, 'json');
-				  }, function(){
+				if(data.eplanstudenttype==0){
+					//信息框-例1
+					layer.alert('该名考生还未开考', {icon: 2});
+				}else{
+					//iframe层
+					layer.open({
+						type: 2,
+						title: '答题卡',
+						scrollbar: true,
+						shadeClose: true,
+						shade: 0.8,
+						area: ['980px', '50%'],
+						content: aurl //iframe的url
+					}); 
 
-				  });
-				
+				}
 			} else if(obj.event === 'edit2'){
 				layer.confirm('您确定要取消交卷吗？', {
 					btn: ['确定','取消'] //按钮
