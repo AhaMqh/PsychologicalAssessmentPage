@@ -6,10 +6,16 @@ window.onload = function(){
 			laydate = layui.laydate, laytpl = layui.laytpl,
 			element = layui.element;
 	
+			var url = location.search; //获取url中"?"符后的字串 ?vm_id=2
+            var id;
+	            if(url.indexOf("?") != -1) {
+	            str = url.substr(1);
+	            strs = str.split("=");
+	            id = strs[1];
+            }
 			
 
 			querylist();
-			queryselest();
 
 			/* 点击查询对网站用户进行筛选 */
 			$("#btnselfrontinfo").click(function() {
@@ -17,24 +23,12 @@ window.onload = function(){
 				querylist(); //调用局部刷新
 
 			});
-			function queryselest() {
-				myAjax("get", conf.apiurl+"/teastuexam/getteaclass",{}, function (data) {
-					for (var k in data.data) 
-					{
-					$(".SelectPaymentMode").append("<option value='" + data.data[k].classid + "'>" + data.data[k].gradename + data.data[k].className + "</option>");
-					}
-					layui.use('form', function () {
-						var form = layui.form;
-						form.render();
-					});
-				}, 'json');
-			}
 			function querylist() {
 				
-				var url = conf.apiurl + "/teastuexam/getstubyclass";
+				var url = conf.apiurl + "/teastuexam/getstubyclass?classid=" + id;
 				var strwhere = document.getElementById("title").value;
 				if(!strwhere==""){
-					url = conf.apiurl + "/teastuexam/getstubyclassstr?strwhere="+strwhere;
+					url = conf.apiurl + "/teastuexam/getstubyclassstr?classid=" + id+"$strwhere="+strwhere;
 				}
 				table.render({
 					elem: '#project',
@@ -72,6 +66,47 @@ window.onload = function(){
 				});
 			}
 			/*点击查询加载表格数据结束*/
+
+			
+			$(".resetpwd").click(function () {
+				layer.open({
+					skin: 'demo-class',
+					type: 1,
+					area: ['500px', '260px'],
+					title: '班级密码重置',
+					content: $("#modifypwd"),
+					shade: 0.6,
+					btn: ['确认', '取消'],
+					yes: function(index){
+						var val = document.getElementById("ppassword").value;//获取select对象
+						console.log(val);
+						var enpwd = hex_md5(fix(Encryption_key,val));
+							layer.msg(
+								myAjax("get", conf.apiurl + '/teastuexam/updatebyclass', {
+								classid:id,
+								pwd:enpwd
+							}, function (res) {
+								if (res.code == 0) {
+									layer.alert('修改成功', {
+									icon: 1,
+									title: "提示"
+									});
+								} else {
+									layer.alert('修改失败', {
+									icon: 2,
+									title: "提示"
+									});
+								}
+							}, 'json')
+							);
+							layer.close(index);
+					},
+					cancel: function (layero, index) {
+							layer.close(index);
+					}
+
+				})
+			})
 		//监听工具条
 		table.on('tool(project)',function(obj){
 			var data = obj.data;
