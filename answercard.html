@@ -12,193 +12,28 @@
     <script src="PokioPlugin/jquery-3.3.1.min.js"></script>
 </head>
 
-<body roletype="teacher">
-    <div class="main">
-        <div class="head">
-            <div class="layui-row">
-                <div class="layui-col-xs5 layui-col-sm5 layui-col-md5 head-logo">
-                    <img src="img/logo.png" alt="">
-                </div>
-                <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 school"><span>昆明市明通小学</span></div>
-                <div class="head-user" id="navbar_edit">
-                    <div class="user-name">
-
-                        <span>徐某某老师，欢迎您！</span></div>
-                    <div class="user-pic">
-                        <a href="#" onclick="f('edit');"><img src="img/default-head.svg" alt=""> <i
-                                class="layui-icon layui-icon-triangle-d xiala"
-                                style="font-size: 16px; color: #fff;"></i> </a>
-
-                    </div>
-
-                    <ul class="mainmenu layui-anim layui-anim-scaleSpring" id="edit">
-
-                        <li><a href="#"><span class="edit_info">修改信息</span></a></li>
-                        <li><a href="#"><span class="edit_info" data-method="notice">修改密码</span></a></li>
-
-                        <li><a href="login.html"><span class="edit_info">退出登录</span></a></li>
-
-
-                    </ul>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="body-container">
-            <div class="theform">
-                <div class="theform-head">
-                    <div class="th_head"><i class="layui-icon layui-icon-table"
-                            style="font-size: 20px; color: #1E9FFF; padding: 0 5px;"></i><span>答题卡</span></div>
-                </div>
-                <div class="exam_box">
-                    <fieldset class="layui-elem-field">
-                        <div class="layui-field-box">
-                            <form class="layui-form" action="">
-
-                                <div class="layui-input-block dati_info">
-                                    <span><i class="layui-icon layui-icon-username"></i> 姓名：梁林昌</span>
-                                    <span><i class="layui-icon layui-icon-note"></i> 学号：KMYTZX20190203</span>
-                                    <span><i class="layui-icon layui-icon-user"></i> 班级：一年级1班</span>
-                                    <span><i class="layui-icon layui-icon-file"></i> 测评试卷：2019年1-2年级心理测评（MHT）</span>
-                                    <span><i class="layui-icon layui-icon-log"></i> 测评时间：2019-2-12 09:11:23</span>
-                                    <div class="layui-btn-group btn_daochu">
-                                        <a href="#"> <button type="button" class="layui-btn layui-btn-sm btn_result">
-                                                导出Excel</button></a>
-                                        <a href="#"> <button type="button" class="layui-btn layui-btn-sm btn_result">
-                                                导出Word
-                                            </button></a>
-
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </fieldset>
-                    <table class="layui-table" lay-even="" lay-skin="row">
-                        <colgroup>
-                            <col width="150">
-                            <col width="150">
-                            <col width="150">
-                            <col width="150">
-                            <col width="150">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>第1题</th>
-                                <th>第2题</th>
-                                <th>第3题</th>
-                                <th>第4题</th>
-                                <th>第5题</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>A</th>
-                                <th>C</th>
-                                <th>B</th>
-                                <th>C</th>
-                                <th>D</th>
-                            </tr>
-                            <tr>
-                                <th>第6题</th>
-                                <th>第7题</th>
-                                <th>第8题</th>
-                                <th>第9题</th>
-                                <th>第10题</th>
-                            </tr>
-                            <tr>
-                                <th>C</th>
-                                <th>D</th>
-                                <th>A</th>
-                                <th>C</th>
-                                <th>D</th>
-                            </tr>
-                            <tr>
-                                <th>第11题</th>
-                                <th>第12题</th>
-                                <th>第13题</th>
-                                <th>第14题</th>
-                                <th>第15题</th>
-                            </tr>
-                            <tr>
-                                <th>C</th>
-                                <th>D</th>
-                                <th>A</th>
-                                <th>C</th>
-                                <th>D</th>
-                            </tr>
-                            <tr>
-                                <th>第16题</th>
-                                <th>第17题</th>
-                                <th>第18题</th>
-                                <th>第19题</th>
-                                <th>第20题</th>
-                            </tr>
-                            <tr>
-                                <th>C</th>
-                                <th>D</th>
-                                <th>A</th>
-                                <th>C</th>
-                                <th>D</th>
-                            </tr>
-                            <tr>
-                                <th>第21题</th>
-                                <th>第22题</th>
-                                <th>第23题</th>
-                                <th>第24题</th>
-                                <th>第25题</th>
-                            </tr>
-                            <tr>
-                                <th>C</th>
-                                <th>D</th>
-                                <th>A</th>
-                                <th>C</th>
-                                <th>E</th>
-                            </tr>
-                            <tr>
-                                <th>第26题</th>
-                                <th>第27题</th>
-                                <th>第28题</th>
-                                <th>第29题</th>
-                                <th>第30题</th>
-                            </tr>
-                            <tr>
-                                <th>C</th>
-                                <th>D</th>
-                                <th>A</th>
-                                <th>C</th>
-                                <th>A</th>
-                            </tr>
-                            <tr>
-                                <th>第31题</th>
-                                <th>第32题</th>
-                                <th>第33题</th>
-                                <th>第34题</th>
-                                <th>第35题</th>
-                            </tr>
-                            <tr>
-                                <th>A</th>
-                                <th>E</th>
-                                <th>E</th>
-                                <th>B</th>
-                                <th>C</th>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                </div>
-            </div>
-        </div>
-        <div class="push">
-            <!-- not put anything here -->
-        </div>
-    </div>
-    <div class="foot">
-        <p>copyright&nbsp;思贤心理咨询</p>
+<body id="tags" name="answercard" roletype="teacher">
+    <div id="app">
+        <table class="layui-table" lay-even="" lay-skin="row"  v-for="item in info">
+            <colgroup>
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+            </colgroup>
+            <tbody>
+                    <tr>
+                        <td>第{{item.titleNumber}}题</td>
+                        <td>{{item.useranswer}}</td>
+                    </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 <script src="layui/layui.js"></script>
 <script src="PokioPlugin/vue.js"></script>
+<script src="js/PublicVariable.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 
 </html>
