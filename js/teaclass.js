@@ -102,11 +102,13 @@ function querylist() {
 				  , {field : 'type',title: '操作',align:'center'
 					,templet : function(p){
 						var core = p.eplamclasstype;
+						var surl = 'studentmanagement.html?classid=' + p.classid;
+						console.log(surl);
 						if(core==0){
-							var html = "<a class='layui-btn layui-btn-primary layui-btn-sm' lay-event='detail'>设置密码</a><a class='layui-btn layui-btn-sm examBegin' lay-event='edit1' >开始考试</a>"
+							var html = "<a href="+surl+" class='layui-btn layui-btn-primary layui-btn-sm' lay-event='detail'>设置密码</a><a class='layui-btn layui-btn-sm examBegin' lay-event='edit1' >开始考试</a>"
 							return html;
 						}else{
-							var html = "<a class='layui-btn layui-btn-primary layui-btn-sm' lay-event='detail'>设置密码</a><a class='layui-btn layui-btn-sm examBegin' lay-event='edit2' >进入</a>"
+							var html = "<a href="+surl+" class='layui-btn layui-btn-primary layui-btn-sm' lay-event='detail'>设置密码</a><a class='layui-btn layui-btn-sm examBegin' lay-event='edit2' >进入</a>"
 							return html;
 						}						
 					},

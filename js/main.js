@@ -267,49 +267,6 @@ if (roletype == 'teacher') {
         }
     }, 'json');
 }
-
-$(".resetpwd").click(function () {
-    layer.open({
-        skin: 'demo-class',
-        type: 1,
-        area: ['500px', '260px'],
-        title: '班级密码重置',
-        content: $("#modifypwd"),
-        shade: 0.6,
-        btn: ['确认', '取消'],
-        yes: function(index){
-            var val = document.getElementById("ppassword").value;//获取select对象
-            console.log(val);
-            var myType = document.getElementById("PaymentModeID");//获取select对象
-            var selectindex = myType.selectedIndex; //获取选项中的索引，selectIndex表示的是当前所选中的index
-            var classid = myType.options[selectindex].value;//获取选项中options的value值
-            var enpwd = hex_md5(fix(Encryption_key,val));
-				layer.msg(
-					myAjax("get", conf.apiurl + '/teastuexam/updatebyclass', {
-                    classid:classid,
-					pwd:enpwd
-				}, function (res) {
-					if (res.code == 0) {
-						layer.alert('修改成功', {
-						icon: 1,
-						title: "提示"
-						});
-					} else {
-						layer.alert('修改失败', {
-						icon: 2,
-						title: "提示"
-						});
-					}
-				}, 'json')
-                );
-                layer.close(index);
-        },
-        cancel: function (layero, index) {
-				layer.close(index);
-        }
-
-    })
-})
 $(".btn_unresult").click(function () {
     layer.open({
         skin: 'demo-class',
