@@ -18,10 +18,15 @@ body {
     min-width: 950px;
     overflow: auto;
 }
-
+   .breadNav{
+    z-index: 1000;
+position: relative;
+top: 95px;
+padding-left: 3%;
+}
 .body-container {
     width: 1280px;
-    margin: 90px auto 50px;
+    margin: 100px auto 50px;
     max-width: 100%;
     justify-content: center;
 }
@@ -276,4 +281,8 @@ body {
 }
 .table_style .layui-laypage .layui-laypage-curr .layui-laypage-em{
     background-color: #5EAAB7;
+}
+.breadNav_list a:last-child{
+    color: #5EAAB7 !important;
+    font-weight: 600;
 }

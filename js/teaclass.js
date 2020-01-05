@@ -1,5 +1,13 @@
 //将页面执行脚本单独写在外部js中，在html的head中进行引用，由于牵扯到dom的操作，所以要使用window.onload来包装一下
 window.onload = function(){
+	var eee = Cookie.getCookie("eplanidCookie");
+	console.log(eee);
+
+	//面包屑动态生成
+	var breadTit = document.title;
+	$('#breadNav_list').append('<a href="evaluationclass.html?eplanid='+eee+'">'+breadTit+'</a>');
+	//面包屑动态生成 ---结束	
+
     layui.use([ 'table', 'form', 'layer', 'laydate', 'laytpl', 'element' ], function() {
 		var table = layui.table, form = layui.form, 
 			layer = layui.layer, $ = layui.jquery,
@@ -151,7 +159,11 @@ function querylist() {
 				} else if(data.eplamclasstype === 2){
 					var epid = data.eplanid;
 					var classiid = data.classid;
+					Cookie.setCookie("eplanidCookie",epid);
+					Cookie.setCookie("breadCookie",breadTit);
+					Cookie.setCookie("classid",classiid);
 					window.location.href = "evaluationdetails.html?eplanid="+epid+"=classid="+classiid;
+
 				}
 			}else if(obj.event === 'detail'){
 				var classid = data.classid;
