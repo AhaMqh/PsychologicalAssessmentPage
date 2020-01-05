@@ -1,6 +1,16 @@
 // 学生考试测评页面js
 window.onload = function () {
     
+    var eplanid_bread = Cookie.getCookie("eplanidCookie");
+    var nav_bread = Cookie.getCookie("breadCookie");
+    var classid_bread = Cookie.getCookie("classid");
+	var breadTit = document.title;
+	//面包屑
+    $('#breadNav_list').append('<a href="evaluationclass.html?eplanid='+eplanid_bread+'">'+nav_bread+'</a>'+'<a href="evaluationresults.html?eplanid='+eplanid_bread+''+"=classid="+''+classid_bread+'">'+nav_bread+'</a>'+'<a href="">'+breadTit+'</a>');
+    
+    layui.use('element', function(){
+          var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+        });
     var url = location.search; //获取url中"?"符后的字串 ?vm_id=2
             var id;
             var stuid;

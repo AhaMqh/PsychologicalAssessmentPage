@@ -153,17 +153,21 @@ function querylist() {
 				if(data.eplamclasstype === 0){
 					var epid = data.eplanid;
 					var classiid = data.classid;
-					window.location.href = "测评详情.html?eplanid="+epid+"=classid="+classiid;
+					Cookie.setCookie("eplanidCookie",epid);
+					Cookie.setCookie("breadCookie",breadTit);
+					window.location.href = "evaluationdetails.html?eplanid="+epid+"=classid="+classiid;
 				} else if(data.eplamclasstype === 1){
 					var epid = data.eplanid;
 					var classiid = data.classid;
-					window.location.href = "测评结果.html?eplanid="+epid+"=classid="+classiid;
+					Cookie.setCookie("eplanidCookie",epid);
+					Cookie.setCookie("classid",classiid);
+					Cookie.setCookie("breadCookie",breadTit);
+					window.location.href = "evaluationresults.html?eplanid="+epid+"=classid="+classiid;
 				} else if(data.eplamclasstype === 2){
 					var epid = data.eplanid;
 					var classiid = data.classid;
 					Cookie.setCookie("eplanidCookie",epid);
 					Cookie.setCookie("breadCookie",breadTit);
-					Cookie.setCookie("classid",classiid);
 					window.location.href = "evaluationdetails.html?eplanid="+epid+"=classid="+classiid;
 
 				}
