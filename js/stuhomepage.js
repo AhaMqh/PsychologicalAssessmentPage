@@ -11,6 +11,7 @@ window.onload = function () {
                 data: res.resultObject
             })
             tan.closew();
+            Cookie.setCookie("stuid",res.resultObject.stuid)
         } else {
             tan.closew();
             tan.tips(res.msg, 1000);
@@ -110,4 +111,6 @@ function examstatu(e) {
             tan.tips(res.msg, 1500);
         }
     }, 'json');
+    Cookie.setCookie("planstuid",$(e).attr("planstudentid"));
+    Cookie.setCookie("paperid",$(e).attr("paperid"))
 }

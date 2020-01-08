@@ -9,7 +9,6 @@ window.onload = function () {
                 data: res.resultObject
             })
             tan.closew();
-            Cookie.setCookie("stuid", res.resultObject.stuid);
         } else {
             tan.tips(res.msg, 1000);
         }
@@ -23,7 +22,6 @@ window.onload = function () {
                 data: res.resultObject
             })
             tan.closew();
-
             //试卷已做时间显示
             datatime = res.resultObject.examstartime;
             setInterval(function () {
@@ -59,8 +57,12 @@ window.onload = function () {
         methods: {
             gettitall: function () {
                 var _this = this;
-                myAjax('post', conf.apiurl + '/studentexam/getallpapercontents', {}, function (res) {
-                    res.resultObject.sort(function(a,b){//将返回的题目按照题号重新排序
+                myAjax('post', conf.apiurl + '/studentexam/getallpapercontents', {
+                    planstudentid: Cookie.getCookie("planstuid"),
+                    paperid: Cookie.getCookie("paperid"),
+                    stuid: Cookie.getCookie("stuid"),
+                }, function (res) {
+                    res.resultObject.sort(function (a, b) { //将返回的题目按照题号重新排序
                         return a.titleOrder - b.titleOrder;
                     })
                     for (i = 0; i < res.resultObject.length; i++) {
@@ -71,8 +73,8 @@ window.onload = function () {
                         var titleid = res.resultObject[i].titleid //题目id                    
                         var choiceoption = res.resultObject[i].choiceoption; //学生已选选项
                         var titleOrder = res.resultObject[i].titleOrder;
-                        var stuid = Cookie.getCookie("stuid");
-                        var anserincookie = Cookie.getCookie(stuid)
+                        var planstuid = Cookie.getCookie("planstuid");
+                        var anserincookie = Cookie.getCookie(planstuid);
                         if (!isEmpty(anserincookie)) {
                             choicemap = mapAndJson._jsonToMap(anserincookie);
                             choiceoption = choicemap.get(titleOrder.toString());
@@ -103,7 +105,7 @@ window.onload = function () {
                             titleid: titleid,
                             answerall: answerall,
                             choiceoption: choiceoption,
-                            titleOrder:titleOrder
+                            titleOrder: titleOrder
                         }
                         _this.titall.push(objtit);
                     }
@@ -126,8 +128,8 @@ window.onload = function () {
 
     var backanswer = []; //将试卷答案暂存到这
     var cookieanswer = new Map(); //预存到cookie中的答案
-    var stuid = Cookie.getCookie("stuid");
-    var ifhavecookie = Cookie.getCookie(stuid)
+    var planstuid = Cookie.getCookie("planstuid");
+    var ifhavecookie = Cookie.getCookie(planstuid)
     if (!isEmpty(ifhavecookie)) { //为cookie赋初始值
         cookieanswer = mapAndJson._jsonToMap(ifhavecookie);
     }
@@ -157,7 +159,7 @@ window.onload = function () {
             if (!$(titnumClassName).hasClass("choisetab")) {
                 $(titnumClassName).addClass("choisetab");
             }
-            
+
             //判断之前数组中是否存在该字段
             let status = backanswer.some(item => item.tittleidcontent === tittleidcontent)
             if (status) {
@@ -179,8 +181,8 @@ window.onload = function () {
             tan.closew();
             tan.tips(res.msg, 1500);
         }, 'json')
-        var stuid = Cookie.getCookie("stuid");
-        Cookie.setCookie(stuid, mapAndJson._mapToJson(cookieanswer));
+        var planstuid = Cookie.getCookie("planstuid");
+        Cookie.setCookie(planstuid, mapAndJson._mapToJson(cookieanswer));
     }
 
     //点击保存按钮保存试卷
@@ -196,8 +198,8 @@ window.onload = function () {
                 answerList: JSON.stringify(backanswer),
                 planstudentid: $('#planstudentid').val()
             }, function (res) {}, 'json')
-            var stuid = Cookie.getCookie("stuid");
-            Cookie.setCookie(stuid, mapAndJson._mapToJson(cookieanswer));
+            var planstuid = Cookie.getCookie("planstuid");
+            Cookie.setCookie(planstuid, mapAndJson._mapToJson(cookieanswer));
         }
     }
 
@@ -244,8 +246,8 @@ window.onload = function () {
                 tan.tips(res.msg, 1500);
             }
         }, 'json')
-        var stuid = Cookie.getCookie("stuid");
-        Cookie.setCookie(stuid, mapAndJson._mapToJson(cookieanswer));
+        var planstuid = Cookie.getCookie("planstuid");
+        Cookie.setCookie(planstuid, mapAndJson._mapToJson(cookieanswer));
     }
 
 
