@@ -22,7 +22,7 @@ window.onload = function(){
 				querylist(); //调用局部刷新
 
 			});
-
+ 
 			myAjax("get",conf.apiurl + '/teaclass/getgradeselect', {
 				eplanid:id
 				}, function (data) {
@@ -94,9 +94,10 @@ function querylist() {
 				  , {field : 'type',title: '操作',align:'center'
 					,templet : function(p){
 						var core = p.eplamclasstype;
+						var beingpaper = p.beingpaper;
 						var surl = 'studentmanagement.html?classid=' + p.classid;
 						console.log(surl);
-						if(core==0){
+						if(beingpaper==0){
 							var html = "<a href="+surl+" class='layui-btn layui-btn-primary layui-btn-sm' lay-event='detail'>设置密码</a><a class='layui-btn layui-btn-sm examBegin' lay-event='edit1' >开始考试</a>"
 							return html;
 						}else{
@@ -140,7 +141,13 @@ function querylist() {
 			console.log(data);
 			if(obj.event === 'edit1'){
 				//你自己写
-
+				tan.loading();
+				myAjax("get",conf.apiurl+"/teaclass/getpaperintotxt",{paperid:data.paperid},function(res){
+					if(res.code==10001){
+						tan.closew();
+						querylist();
+					}
+				},"json")
 			}else if(obj.event === 'edit2'){
 				if(data.eplamclasstype === 0){
 					var epid = data.eplanid;

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/student.css">
     <script src="PokioPlugin/jquery-3.3.1.min.js"></script>
 </head>
+
 <body id="tags" name="exampage" roletype="student">
     <div class="main">
         <!-- 导航栏 -->
@@ -61,14 +62,14 @@
                         </div>
                     </div>
                     <div id="contannum" class="contannum">
-                        <div class="datika"><i class="layui-icon layui-icon-tabs q_icon"></i><b class="q_dati">答题卡</b><span
-                                class="q_num">共{{contnum.length}}题</span></div>
+                        <div class="datika"><i class="layui-icon layui-icon-tabs q_icon"></i><b
+                                class="q_dati">答题卡</b><span class="q_num">共{{contnum.length}}题</span></div>
                         <div class="exam_num">
                             <div class="exam_number" v-for="(num,index) in contnum"
                                 :class="['anser'+(index+1),{choisetab:num.choiceoption!=0&&num.choiceoption!=null}]"
                                 v-bind:gotoid="'anserid'+(index+1)" onclick="gotofornum(this);">
                                 <span v-html="index+1"></span>
-                            </div>  
+                            </div>
                         </div>
                     </div>
                     <div id="u_countDown" class="ax_default" data-left="115" data-top="375" data-width="190"
@@ -91,7 +92,9 @@
                     <div class="exam-head">
                         <span class="wait_txt planbaseinfo1"><i class="layui-icon layui-icon-list q_topic"
                                 style="font-size: 24px;font-weight: 700;"></i>{{examname}}
-                            <input type="text" id="checktypeid" v-model="checktypeid" hidden></span>
+                            <input type="text" id="checktypeid" v-model="checktypeid" hidden>
+                            <input type="text" id="planstudentid" v-model="planstudentid" hidden>
+                        </span>
                         <!-- <span class="exam_time">(考试时间：120分钟)</span> -->
                         <span class="exam_save"><a href="#" class="layui-btn btn_save">保存</a></span>
                     </div>
@@ -103,11 +106,12 @@
                             <div class="layui-field-box">
                                 <form class="layui-form" action="">
                                     <div class="layui-input-block qselect">
-                                        <input v-bind:name="'anser'+(num+1)" v-bind:planstudentid="tit.planstudentid"
-                                            v-bind:answerid="tit.answerid" v-bind:dimensionid="tit.dimensionid" v-for="(ans,index) in tit.answerall" type="radio"
-                                            v-bind:optionscore="ans.optioncontentscore" v-bind:useranswer="ans.useranswer"
-                                            v-bind:title="ans.ABCoptionCotent" v-bind={checked:ans.ifcheck}
-                                            v-bind:choiceoption="index+1">
+                                        <input v-bind:name="'anser'+(num+1)" v-bind:titleid="tit.titleid"
+                                            v-bind:titleOrder="tit.titleOrder" v-bind:dimensionid="tit.dimensionid"
+                                            v-for="(ans,index) in tit.answerall" type="radio"
+                                            v-bind:optionscore="ans.optioncontentscore"
+                                            v-bind:useranswer="ans.useranswer" v-bind:title="ans.ABCoptionCotent"
+                                            v-bind={checked:ans.ifcheck} v-bind:choiceoption="index+1">
                                     </div>
                                 </form>
                             </div>
@@ -129,5 +133,5 @@
 <script src="layui/layui.js"></script>
 <script src="PokioPlugin/vue.js"></script>
 <script src="js/PublicVariable.js"></script>
-<script src="js/js.js"></script>
+
 </html>

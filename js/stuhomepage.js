@@ -99,8 +99,9 @@ function examstatu(e) {
     // console.log($(e).attr("planstudentid"))取出点击标签的自定义属性
     console.log($(e));
     tan.loading();
-    myAjax('post', conf.apiurl + '/studenthome/changeexamstatu', {
-        planstudentid: $(e).attr("planstudentid")
+    myAjax('post', conf.apiurl + '/studenthome/changetimeandstatu', {
+        planstudentid: $(e).attr("planstudentid"),
+        paperid:$(e).attr("paperid")
     }, function (res) {
         if (res.code == 10001) {
                 window.location.href = "beingevaluated.html"           

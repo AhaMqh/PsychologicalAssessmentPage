@@ -9,6 +9,7 @@ window.onload = function () {
                 data: res.resultObject
             })
             tan.closew();
+            Cookie.setCookie("stuid", res.resultObject.stuid);
         } else {
             tan.tips(res.msg, 1000);
         }
@@ -59,20 +60,23 @@ window.onload = function () {
             gettitall: function () {
                 var _this = this;
                 myAjax('post', conf.apiurl + '/studentexam/getallpapercontents', {}, function (res) {
-                    var contannum = new Vue({
-                        el: '#contannum',
-                        data: {
-                            contnum: res.resultObject,
-                        },
+                    res.resultObject.sort(function(a,b){//将返回的题目按照题号重新排序
+                        return a.titleOrder - b.titleOrder;
                     })
                     for (i = 0; i < res.resultObject.length; i++) {
                         var objtit = {};
                         titcon = (i + 1) + "." + res.resultObject[i].titleName; //获得题目
                         var aoptionContent = res.resultObject[i].optionContent; //获得多个选项
                         var dimensionid = res.resultObject[i].dimensionid; //题目维度
-                        var answerid = res.resultObject[i].answerid //answer表主键id
+                        var titleid = res.resultObject[i].titleid //题目id                    
                         var choiceoption = res.resultObject[i].choiceoption; //学生已选选项
-                        var planstudentid = res.resultObject[i].planstudentid; //学生测评计划id
+                        var titleOrder = res.resultObject[i].titleOrder;
+                        var stuid = Cookie.getCookie("stuid");
+                        var anserincookie = Cookie.getCookie(stuid)
+                        if (!isEmpty(anserincookie)) {
+                            choicemap = mapAndJson._jsonToMap(anserincookie);
+                            choiceoption = choicemap.get(titleOrder.toString());
+                        }
                         var optionContentstr = aoptionContent.split("&"); //将单个选项分成数组
                         var answerall = [];
                         for (j = 0; j < optionContentstr.length - 1; j++) {
@@ -96,14 +100,21 @@ window.onload = function () {
                         objtit = {
                             titcont: titcon,
                             dimensionid: dimensionid,
-                            answerid: answerid,
+                            titleid: titleid,
                             answerall: answerall,
                             choiceoption: choiceoption,
-                            planstudentid: planstudentid
+                            titleOrder:titleOrder
                         }
                         _this.titall.push(objtit);
                     }
-                    console.log(_this.titall);
+
+                    var contannum = new Vue({
+                        el: '#contannum',
+                        data: {
+                            contnum: _this.titall,
+                        },
+                    })
+                    //console.log(_this.titall);
                 }, 'json')
             }
         },
@@ -114,6 +125,12 @@ window.onload = function () {
     })
 
     var backanswer = []; //将试卷答案暂存到这
+    var cookieanswer = new Map(); //预存到cookie中的答案
+    var stuid = Cookie.getCookie("stuid");
+    var ifhavecookie = Cookie.getCookie(stuid)
+    if (!isEmpty(ifhavecookie)) { //为cookie赋初始值
+        cookieanswer = mapAndJson._jsonToMap(ifhavecookie);
+    }
     layui.use(['form'], function () {
         var form = layui.form
         form.on('radio', function (data) {
@@ -121,31 +138,31 @@ window.onload = function () {
             //console.log(data.value); //被点击的radio的value值
             var domvlue = data.elem;
             var anserdata = {};
-            var answerid = domvlue.attributes.answerid.value;
+            var tittleidcontent = domvlue.attributes.titleid.value;
             var dimensionid = domvlue.attributes.dimensionid.value;
-            var planstudentid = domvlue.attributes.planstudentid.value;
             var optionscore = domvlue.attributes.optionscore.value;
             var useranswer = domvlue.attributes.useranswer.value;
             var choiceoption = domvlue.attributes.choiceoption.value;
+            var titleOrder = domvlue.attributes.titleOrder.value;
             var titnumClassName = "." + domvlue.attributes.name.value;
             anserdata = {
-                answerid: answerid,
-                planstudentid: planstudentid,
+                tittleidcontent: tittleidcontent,
                 optionscore: optionscore,
                 useranswer: useranswer,
                 choiceoption: choiceoption,
                 dimensionid: dimensionid
             }
+            cookieanswer.set(titleOrder, choiceoption);
             //点击时改变边上题号的颜色
             if (!$(titnumClassName).hasClass("choisetab")) {
                 $(titnumClassName).addClass("choisetab");
             }
-
+            
             //判断之前数组中是否存在该字段
-            let status = backanswer.some(item => item.answerid === answerid)
+            let status = backanswer.some(item => item.tittleidcontent === tittleidcontent)
             if (status) {
-                backanswer = backanswer.map(item => item.answerid === anserdata.answerid ? anserdata : item)
-                console.log(backanswer);
+                backanswer = backanswer.map(item => item.tittleidcontent === anserdata.tittleidcontent ? anserdata : item)
+                //console.log(backanswer);
             } else {
                 backanswer.push(anserdata);
             }
@@ -156,11 +173,14 @@ window.onload = function () {
     //单保存试卷
     function savepaper() {
         myAjax("post", conf.apiurl + "/studentexam/savestuanswer", {
-            answerList: JSON.stringify(backanswer)
+            answerList: JSON.stringify(backanswer),
+            planstudentid: $('#planstudentid').val()
         }, function (res) {
             tan.closew();
             tan.tips(res.msg, 1500);
         }, 'json')
+        var stuid = Cookie.getCookie("stuid");
+        Cookie.setCookie(stuid, mapAndJson._mapToJson(cookieanswer));
     }
 
     //点击保存按钮保存试卷
@@ -171,16 +191,18 @@ window.onload = function () {
 
     //自动保存试卷
     function autosave() {
-        if(backanswer.length!=0){
+        if (backanswer.length != 0) {
             myAjax("post", conf.apiurl + "/studentexam/savestuanswer", {
-                answerList: JSON.stringify(backanswer)
-            }, function (res) {
-            }, 'json')    
+                answerList: JSON.stringify(backanswer),
+                planstudentid: $('#planstudentid').val()
+            }, function (res) {}, 'json')
+            var stuid = Cookie.getCookie("stuid");
+            Cookie.setCookie(stuid, mapAndJson._mapToJson(cookieanswer));
         }
     }
 
-    //每1分钟自动保存一次
-    setInterval(autosave, 1000*60);
+    //每1-2分钟进行一次随机保存分钟自动保存一次
+    setInterval(autosave, 1000 * 60 * Math.ceil(Math.random() * 2));
 
     //交卷
     this.eventUtil.addEventHandle($(".btn_tijiao")[0], 'click', function (e) {
@@ -212,15 +234,18 @@ window.onload = function () {
         myAjax("post", conf.apiurl + "/studentexam/handexams", {
             answerList: JSON.stringify(backanswer),
             checktypeid: $("#checktypeid").val(),
+            planstudentid: $('#planstudentid').val()
         }, function (res) {
             if (res.code == 10001) {
                 tan.tips(res.msg, 1500);
-                setTimeout(window.location.href = "studenthome.html", 3000);
+                window.location.href = "studenthome.html";
             } else {
                 tan.closew();
                 tan.tips(res.msg, 1500);
             }
         }, 'json')
+        var stuid = Cookie.getCookie("stuid");
+        Cookie.setCookie(stuid, mapAndJson._mapToJson(cookieanswer));
     }
 
 
@@ -233,26 +258,28 @@ window.onload = function () {
     }
 
     //右下角保存按钮
-    layui.use(['util', 'laydate', 'layer'], function(){
-        var util = layui.util
-        ,laydate = layui.laydate
-        ,layer = layui.layer;
+    layui.use(['util', 'laydate', 'layer'], function () {
+        var util = layui.util,
+            laydate = layui.laydate,
+            layer = layui.layer;
         //固定块
         util.fixbar({
-          bar1: '&#x1005'
-          ,css: {right: 50, bottom: 132,width:80,}
-          ,bgcolor: '#9ec317'
-          ,click: function(type){
-            if(type === 'bar1'){
-                tan.loading();
-                savepaper();
+            bar1: '&#x1005',
+            css: {
+                right: 50,
+                bottom: 132,
+                width: 80,
+            },
+            bgcolor: '#9ec317',
+            click: function (type) {
+                if (type === 'bar1') {
+                    tan.loading();
+                    savepaper();
+                }
             }
-          }
-        });        
-      });
+        });
+    });
 }
-
-
 
 //点击边上题号时，题目跳转到对应位置
 function gotofornum(e) {

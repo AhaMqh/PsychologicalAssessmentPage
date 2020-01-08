@@ -263,3 +263,47 @@ var Cookie = {
          f.setCookie(name, "", -1);
     },
 }
+
+//判断字符是否为空的方法
+function isEmpty(obj){
+    if(typeof obj == "undefined" || obj == null || obj == ""){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+/**
+ * map和json之间的相互转换
+ */
+var mapAndJson = {
+    _strMapToObj(strMap) {
+        let obj = Object.create(null);
+        for (let [k, v] of strMap) {
+            obj[k] = v;
+        }
+        return obj;
+    },
+
+    /**
+     *map转换为json
+     */
+    _mapToJson(map) {
+        return JSON.stringify(this._strMapToObj(map));
+    },
+    
+    _objToStrMap(obj) {
+        let strMap = new Map();
+        for (let k of Object.keys(obj)) {
+            strMap.set(k, obj[k]);
+        }
+        return strMap;
+    },
+    
+    /**
+     *json转换为map
+     */
+    _jsonToMap(jsonStr) {
+        return this._objToStrMap(JSON.parse(jsonStr));
+    }
+}
