@@ -1,5 +1,9 @@
 //将页面执行脚本单独写在外部js中，在html的head中进行引用，由于牵扯到dom的操作，所以要使用window.onload来包装一下
 window.onload = function () {
+
+	var breadTit = document.title;
+	$('#breadNav_list').append('<a href="">'+breadTit+'</a>');
+
 	layui.use(['table', 'form', 'layer', 'laydate', 'laytpl', 'element'], function () {
 		var table = layui.table,
 			form = layui.form,
@@ -109,6 +113,7 @@ window.onload = function () {
 			var data = obj.data;
 			if (obj.event === 'edit') {
 				var epid = data.eplanid;
+				Cookie.setCookie("eplanidCookie",epid);
 				location.href = "evaluationclass.html?eplanid=" + epid;
 			}
 		});

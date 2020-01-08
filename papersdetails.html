@@ -21,103 +21,109 @@
     cursor: not-allowed!important;
     }
 
-
     </style>
 </head>
 <body id="tags" name="teaexampage" roletype="teacher">
     <div class="main">
         <!-- 导航栏 -->
         <div class="headpage"></div>
-        <div class="body-container">
-            <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 info_stu">
-                <div class="exam_stuInfo">
-                    <div class="exam_stu_head">
-                        <img src="img/u66.svg">
-                    </div>
-                    <div class="exam_info_box stuinfo2">
-                        <table class="layui-table  exam_info_table" lay-skin="row">
-                            <colgroup>
-                                <col width="50">
-                                <col width="130">
+        <div class="breadNav">
+            <span>您所在的位置 :</span>
+            <span class="layui-breadcrumb breadNav_list" id="breadNav_list" lay-separator=">">
+                <a href="teacherhome.html"> 教师首页</a>
+            </span>
+        </div>
+        <div class="layui-fluid body-container">
+            <div class="layui-row">
+                <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 info_student">
+                    <div class="exam_stuInfo">
+                        <div class="exam_stu_head">
+                            <img src="img/u66.svg">
+                        </div>
+                        <div class="exam_info_box stuinfo2">
+                            <table class="layui-table  exam_info_table" lay-skin="row">
+                                <colgroup>
+                                    <col width="50">
+                                    <col width="130">
 
-                            </colgroup>
+                                </colgroup>
 
-                            <tbody>
-                                <tr>
-                                    <td class="info_stutit">姓名：</td>
-                                    <td v-html="realName"></td>
+                                <tbody>
+                                    <tr>
+                                        <td class="info_stutit">姓名：</td>
+                                        <td v-html="realName"></td>
 
-                                </tr>
-                                <tr>
-                                    <td class="info_stutit">性别：</td>
-                                    <td v-html="sex"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="info_stutit">性别：</td>
+                                        <td v-html="sex"></td>
 
-                                </tr>
-                                <tr>
-                                    <td class="info_stutit">学号：</td>
-                                    <td v-html="stuid"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="info_stutit">学号：</td>
+                                        <td v-html="stuid"></td>
 
-                                </tr>
-                                <tr>
-                                    <td class="info_stutit">班级：</td>
-                                    <td v-html="className"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="info_stutit">班级：</td>
+                                        <td v-html="className"></td>
 
-                                </tr>
-                                <tr>
-                                    <td class="info_stutit">年级：</td>
-                                    <td v-html="gradename"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="info_stutit">年级：</td>
+                                        <td v-html="gradename"></td>
 
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div id="contannum">
-                    <div class="datika"><i class="layui-icon layui-icon-tabs q_icon"></i><b class="q_dati">答题卡</b><span
-                            class="q_num">共{{contnum.length}}题</span></div>
-                    <div class="exam_num">
-                        <div class="exam_number" v-for="(num,index) in contnum"
-                            :class="['anser'+(index+1),{choisetab:num.choiceoption!=0&&num.choiceoption!=null}]"
-                            v-bind:gotoid="'anserid'+(index+1)" onclick="gotofornum(this);">
-                            <span v-html="index+1"></span>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                </div>
-                <div id="u_countDown" class="ax_default" data-left="115" data-top="375" data-width="190"
-                    data-height="229">
-                </div>
-
-
-
-            </div>
-
-            <div class="layui-col-xs10 layui-col-sm10 layui-col-md10 theform_stu">
-
-                <div class="exam_box" id="papercontant">
-                    <input type="hidden" id="quesnum" v-bind:value="titall.length" />
-
-                    <fieldset class="layui-elem-field" v-for="(tit,num) in titall">
-                        <legend v-html="tit.titcont" v-bind:id="'anserid'+(num+1)"></legend>
-                        <div class="layui-field-box">
-                            <form class="layui-form" action="">
-                                <div class="layui-input-block qselect">
-                                    <input v-bind:name="'anser'+(num+1)" v-bind:planstudentid="tit.planstudentid"
-                                        v-bind:answerid="tit.answerid" v-for="(ans,index) in tit.answerall" type="radio"
-                                        v-bind:optionscore="ans.optioncontentscore" v-bind:useranswer="ans.useranswer"
-                                        v-bind:title="ans.ABCoptionCotent" v-bind={checked:ans.ifcheck}
-                                        v-bind:choiceoption="index+1" disabled>
-                                </div>
-                            </form>
+                    <div id="contannum">
+                        <div class="datika"><i class="layui-icon layui-icon-tabs q_icon"></i><b class="q_dati">答题卡</b><span
+                                class="q_num">共{{contnum.length}}题</span></div>
+                        <div class="exam_num">
+                            <div class="exam_number" v-for="(num,index) in contnum"
+                                :class="['anser'+(index+1),{choisetab:num.choiceoption!=0&&num.choiceoption!=null}]"
+                                v-bind:gotoid="'anserid'+(index+1)" onclick="gotofornum(this);">
+                                <span v-html="index+1"></span>
+                            </div>
                         </div>
-                    </fieldset>
+                    </div>
+                    <div id="u_countDown" class="ax_default" data-left="115" data-top="375" data-width="190"
+                        data-height="229">
+                    </div>
+
+
 
                 </div>
 
+                <div class="layui-col-xs9 layui-col-sm9 layui-col-md9 theform_student">
 
+                    <div class="exam_box" id="papercontant">
+                        <input type="hidden" id="quesnum" v-bind:value="titall.length" />
+
+                        <fieldset class="layui-elem-field" v-for="(tit,num) in titall">
+                            <legend v-html="tit.titcont" v-bind:id="'anserid'+(num+1)"></legend>
+                            <div class="layui-field-box">
+                                <form class="layui-form" action="">
+                                    <div class="layui-input-block qselect">
+                                        <input v-bind:name="'anser'+(num+1)" v-bind:planstudentid="tit.planstudentid"
+                                            v-bind:answerid="tit.answerid" v-for="(ans,index) in tit.answerall" type="radio"
+                                            v-bind:optionscore="ans.optioncontentscore" v-bind:useranswer="ans.useranswer"
+                                            v-bind:title="ans.ABCoptionCotent" v-bind={checked:ans.ifcheck}
+                                            v-bind:choiceoption="index+1" disabled>
+                                    </div>
+                                </form>
+                            </div>
+                        </fieldset>
+
+                    </div>
+
+
+
+                </div>
 
             </div>
-
-
         </div>
         <div class="push">
             <!-- not put anything here -->
