@@ -285,6 +285,15 @@ $(".btn_unresult").click(function () {
 function exitsys() {
     tan.loading();
     myAjax('post', conf.apiurl + '/loginout/exit', {}, function (res) {
+        //清除所有cookie
+        var date = new Date();
+        date.setTime(date.getTime() - 10000);
+        var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+        console.log("需要删除的cookie名字：" + keys);
+        if (keys) {
+            for (var i = keys.length; i--;)
+                document.cookie = keys[i] + "=0; expire=" + date.toGMTString() + "; path=/";
+        }
         if (res.code == 10001) {
             layer.closeAll('loading');
             window.location.href = "login.html";
