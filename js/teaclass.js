@@ -104,8 +104,7 @@ function querylist() {
 						var core = p.eplamclasstype;
 						var beingpaper = p.beingpaper;
 						var surl = 'studentmanagement.html?classid=' + p.classid;
-						console.log(surl);
-						if(beingpaper==0){
+						if(beingpaper==0&&core==0){
 							var html = "<a href="+surl+" class='layui-btn layui-btn-primary layui-btn-sm' lay-event='detail'>设置密码</a><a class='layui-btn layui-btn-sm examBegin' lay-event='edit1' >开始考试</a>"
 							return html;
 						}else{
