@@ -121,7 +121,8 @@ window.onload = function(){
 				if(data.eplanstudenttype==0){
 					//信息框-例1
 					layer.alert('该名考生还未开考', {icon: 2});
-				}else{
+					
+				}else if(data.eplanstudenttype==1){
 					//iframe层
 					layer.open({
 						type: 2,
@@ -132,7 +133,12 @@ window.onload = function(){
 						area: ['980px', '50%'],
 						content: aurl //iframe的url
 					}); 
-
+				}else if(data.eplanstudenttype==2){
+					//信息框-例1
+					layer.alert('该名考生正在考试', {icon: 2});
+				}else{
+					//信息框-例1
+					layer.alert('该名考生以缺考', {icon: 2});
 				}
 			} else if(obj.event === 'edit2'){
 				layer.confirm('您确定要取消交卷吗？', {

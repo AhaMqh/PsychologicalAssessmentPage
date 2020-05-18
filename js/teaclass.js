@@ -57,7 +57,7 @@ function querylist() {
 		if (Ntype != -10 && Ptype != -10) {
 			url = conf.apiurl + "/teaclass/geteplanclassstrwhere?eplanid=" + id+"&strwhere1=" + Ntype + "&strwhere2 = " + Ptype;
 		} else if (Ntype != -10 && Ptype == -10) {
-			url = conf.apiurl + "/teaclass/geteplanliststrwhere?eplanid=" + id+"&strwhere1=" + Ntype+ "&strwhere2 = ''";
+			url = conf.apiurl + "/teaclass/geteplanclassstrwhere?eplanid=" + id+"&strwhere1=" + Ntype+ "&strwhere2 = ''";
 		}
 
 		/*加载表格*/
