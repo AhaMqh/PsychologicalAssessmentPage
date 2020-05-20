@@ -2,6 +2,7 @@
 window.onload = function(){
 	var eplanid_bread = Cookie.getCookie("eplanidCookie");
 	var nav_bread = Cookie.getCookie("breadCookie");
+	var eplantypeCZ = Cookie.getCookie("eplantypeCookie");
 	var breadTit = document.title;
 	//面包屑
 	$('#breadNav_list').append('<a href="evaluationclass.html?eplanid='+eplanid_bread+'">'+nav_bread+'</a>'+'<a href="">'+breadTit+'</a>');

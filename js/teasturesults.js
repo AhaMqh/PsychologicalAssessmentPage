@@ -3,6 +3,7 @@ window.onload = function(){
 	var eplanid_bread = Cookie.getCookie("eplanidCookie");
 	var classid_bread = Cookie.getCookie("classidCookie");
 	var nav_bread = Cookie.getCookie("breadCookie");
+	var eplantypeCZ = Cookie.getCookie("eplantypeCookie");
 	var breadTit = document.title;
 	
 	//面包屑
@@ -33,11 +34,11 @@ window.onload = function(){
 
 	function querylist() {
 			//var url = conf.apiurl + "/teastu/getteastudent?eplanid=1&classid=KMMDZX2019090103001";
-			var url = conf.apiurl + "/teastu/getteastudent?eplanid="+id+'&classid='+classiid+"&examtype=2";
+			var url = conf.apiurl + "/teastu/getteastudent?eplanid="+id+'&classid='+classiid+"&examtype="+eplantypeCZ;
 			var strwhere = document.getElementById("title").value;
 			if(!strwhere==""){
 				//url = conf.apiurl + "/teastu/getteastudent?eplanid=1&classid=KMMDZX2019090103001";
-				url = conf.apiurl + "/teastu/getteastudentstrwhere?eplanid="+id+"&examtype=2"+'&classid='+classiid+'&strwhere='+strwhere;
+				url = conf.apiurl + "/teastu/getteastudentstrwhere?eplanid="+id+"&examtype="+eplantypeCZ+'&classid='+classiid+'&strwhere='+strwhere;
 			}
 
 		/*加载表格*/

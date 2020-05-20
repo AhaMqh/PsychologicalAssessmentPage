@@ -160,21 +160,27 @@ function querylist() {
 				if(data.eplamclasstype === 0){
 					var epid = data.eplanid;
 					var classiid = data.classid;
+					var eptype = data.eplamclasstype;
 					Cookie.setCookie("eplanidCookie",epid);
 					Cookie.setCookie("breadCookie",breadTit);
+					Cookie.setCookie("eplantypeCookie",eptype);
 					window.location.href = "evaluationdetails.html?eplanid="+epid+"=classid="+classiid;
 				} else if(data.eplamclasstype === 1){
 					var epid = data.eplanid;
 					var classiid = data.classid;
+					var eptype = data.eplamclasstype;
 					Cookie.setCookie("eplanidCookie",epid);
 					Cookie.setCookie("classid",classiid);
 					Cookie.setCookie("breadCookie",breadTit);
+					Cookie.setCookie("eplantypeCookie",eptype);
 					window.location.href = "evaluationresults.html?eplanid="+epid+"=classid="+classiid;
 				} else if(data.eplamclasstype === 2){
 					var epid = data.eplanid;
 					var classiid = data.classid;
+					var eptype = data.eplamclasstype;
 					Cookie.setCookie("eplanidCookie",epid);
 					Cookie.setCookie("breadCookie",breadTit);
+					Cookie.setCookie("eplantypeCookie",eptype);
 					window.location.href = "evaluationdetails.html?eplanid="+epid+"=classid="+classiid;
 
 				}
