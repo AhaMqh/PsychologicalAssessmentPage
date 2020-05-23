@@ -292,7 +292,7 @@ function exitsys() {
         console.log("需要删除的cookie名字：" + keys);
         if (keys) {
             for (var i = keys.length; i--;)
-                document.cookie = keys[i] + "=0; expire=" + date.toGMTString() + "; path=/";
+                document.cookie = keys[i] + "=; expire=" + date.toGMTString() + "; path=/";
         }
         if (res.code == 10001) {
             layer.closeAll('loading');

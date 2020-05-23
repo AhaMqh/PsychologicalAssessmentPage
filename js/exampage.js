@@ -45,87 +45,6 @@ window.onload = function () {
         }
     }, 'json');
 
-    //获取学生试卷（已做题目还原）
-    var papercontant = new Vue({
-        el: '#papercontant',
-        data: {
-            titall: []
-        },
-        created: function () {
-            this.gettitall();
-        },
-        methods: {
-            gettitall: function () {
-                var _this = this;
-                myAjax('post', conf.apiurl + '/studentexam/getallpapercontents', {
-                    planstudentid: Cookie.getCookie("planstuid"),
-                    paperid: Cookie.getCookie("paperid"),
-                    stuid: Cookie.getCookie("stuid"),
-                }, function (res) {
-                    res.resultObject.sort(function (a, b) { //将返回的题目按照题号重新排序
-                        return a.titleOrder - b.titleOrder;
-                    })
-                    for (i = 0; i < res.resultObject.length; i++) {
-                        var objtit = {};
-                        titcon = (i + 1) + "." + res.resultObject[i].titleName; //获得题目
-                        var aoptionContent = res.resultObject[i].optionContent; //获得多个选项
-                        var dimensionid = res.resultObject[i].dimensionid; //题目维度
-                        var titleid = res.resultObject[i].titleid //题目id                    
-                        var choiceoption = res.resultObject[i].choiceoption; //学生已选选项
-                        var titleOrder = res.resultObject[i].titleOrder;
-                        var planstuid = Cookie.getCookie("planstuid");
-                        var anserincookie = Cookie.getCookie(planstuid);
-                        if (!isEmpty(anserincookie)) {
-                            choicemap = mapAndJson._jsonToMap(anserincookie);
-                            choiceoption = choicemap.get(titleOrder.toString());
-                        }
-                        var optionContentstr = aoptionContent.split("&"); //将单个选项分成数组
-                        var answerall = [];
-                        for (j = 0; j < optionContentstr.length - 1; j++) {
-                            var newoptionContent = optionContentstr[j].split("||"); //得到一个选项的内容和分值
-                            var ABCoptionCotent = newoptionContent[0]; //某个选项内容
-                            var onlyoptionContent = ABCoptionCotent.split("、");
-                            var onyoption = onlyoptionContent[0]; //只获取ABC编号
-                            var optioncontentscore = newoptionContent[1]; //某个选项分值
-                            var ifcheck = false;
-                            if (j + 1 == choiceoption) {
-                                ifcheck = true;
-                            }
-                            _ansobj = {
-                                ABCoptionCotent: ABCoptionCotent,
-                                optioncontentscore: optioncontentscore,
-                                ifcheck: ifcheck,
-                                useranswer: onyoption,
-                            };
-                            answerall.push(_ansobj);
-                        }
-                        objtit = {
-                            titcont: titcon,
-                            dimensionid: dimensionid,
-                            titleid: titleid,
-                            answerall: answerall,
-                            choiceoption: choiceoption,
-                            titleOrder: titleOrder
-                        }
-                        _this.titall.push(objtit);
-                    }
-
-                    var contannum = new Vue({
-                        el: '#contannum',
-                        data: {
-                            contnum: _this.titall,
-                        },
-                    })
-                    //console.log(_this.titall);
-                }, 'json')
-            }
-        },
-        updated: function () {
-            layui.form.render(); //重构layui表
-        },
-
-    })
-
     var backanswer = []; //将试卷答案暂存到这
     var cookieanswer = new Map(); //预存到cookie中的答案
     var planstuid = Cookie.getCookie("planstuid");
@@ -241,15 +160,94 @@ window.onload = function () {
             if (res.code == 10001) {
                 tan.tips(res.msg, 1500);
                 window.location.href = "studenthome.html";
+                Cookie.delCookie("planstuid");
             } else {
                 tan.closew();
                 tan.tips(res.msg, 1500);
             }
         }, 'json')
-        var planstuid = Cookie.getCookie("planstuid");
-        Cookie.setCookie(planstuid, mapAndJson._mapToJson(cookieanswer));
     }
 
+    //获取学生试卷（已做题目还原）
+    var papercontant = new Vue({
+        el: '#papercontant',
+        data: {
+            titall: []
+        },
+        created: function () {
+            this.gettitall();
+        },
+        methods: {
+            gettitall: function () {
+                var _this = this;
+                myAjax('post', conf.apiurl + '/studentexam/getallpapercontents', {
+                    planstudentid: Cookie.getCookie("planstuid"),
+                    paperid: Cookie.getCookie("paperid"),
+                    stuid: Cookie.getCookie("stuid"),
+                }, function (res) {
+                    res.resultObject.sort(function (a, b) { //将返回的题目按照题号重新排序
+                        return a.titleOrder - b.titleOrder;
+                    })
+                    for (i = 0; i < res.resultObject.length; i++) {
+                        var objtit = {};
+                        titcon = (i + 1) + "." + res.resultObject[i].titleName; //获得题目
+                        var aoptionContent = res.resultObject[i].optionContent; //获得多个选项
+                        var dimensionid = res.resultObject[i].dimensionid; //题目维度
+                        var titleid = res.resultObject[i].titleid //题目id                    
+                        var choiceoption = res.resultObject[i].choiceoption; //学生已选选项
+                        var titleOrder = res.resultObject[i].titleOrder;
+                        var planstuid = Cookie.getCookie("planstuid");
+                        var anserincookie = Cookie.getCookie(planstuid);
+                        if (anserincookie.length <=3 || anserincookie.toString == "{}") {
+                            choicemap = mapAndJson._jsonToMap(anserincookie);
+                            choiceoption = choicemap.get(titleOrder.toString());
+                        }
+                        var optionContentstr = aoptionContent.split("&"); //将单个选项分成数组
+                        var answerall = [];
+                        for (j = 0; j < optionContentstr.length - 1; j++) {
+                            var newoptionContent = optionContentstr[j].split("||"); //得到一个选项的内容和分值
+                            var ABCoptionCotent = newoptionContent[0]; //某个选项内容
+                            var onlyoptionContent = ABCoptionCotent.split("、");
+                            var onyoption = onlyoptionContent[0]; //只获取ABC编号
+                            var optioncontentscore = newoptionContent[1]; //某个选项分值
+                            var ifcheck = false;
+                            if (j + 1 == choiceoption) {
+                                ifcheck = true;
+                            }
+                            _ansobj = {
+                                ABCoptionCotent: ABCoptionCotent,
+                                optioncontentscore: optioncontentscore,
+                                ifcheck: ifcheck,
+                                useranswer: onyoption,
+                            };
+                            answerall.push(_ansobj);
+                        }
+                        objtit = {
+                            titcont: titcon,
+                            dimensionid: dimensionid,
+                            titleid: titleid,
+                            answerall: answerall,
+                            choiceoption: choiceoption,
+                            titleOrder: titleOrder
+                        }
+                        _this.titall.push(objtit);
+                    }
+
+                    var contannum = new Vue({
+                        el: '#contannum',
+                        data: {
+                            contnum: _this.titall,
+                        },
+                    })
+                    //console.log(_this.titall);
+                }, 'json');   
+            }
+        },
+        updated: function () {
+            layui.form.render(); //重构layui表
+        },
+
+    })
 
     //锚点快速定位题目位置
     function Gtoposition(objID) {
@@ -270,7 +268,7 @@ window.onload = function () {
             css: {
                 right: 50,
                 bottom: 132,
-                width: 80,
+                width: 80
             },
             bgcolor: '#9ec317',
             click: function (type) {

@@ -260,7 +260,7 @@ var Cookie = {
     },
     delCookie: function(name) {
          //删除cookies 
-         f.setCookie(name, "", -1);
+         Cookie.setCookie(name, "", -1);
     },
 }
 
