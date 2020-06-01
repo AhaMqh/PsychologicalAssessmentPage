@@ -286,13 +286,13 @@ function exitsys() {
     tan.loading();
     myAjax('post', conf.apiurl + '/loginout/exit', {}, function (res) {
         //清除所有cookie
-        var date = new Date();
-        date.setTime(date.getTime() - 10000);
-        var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
-        console.log("需要删除的cookie名字：" + keys);
+        var keys = document.cookie.match(/[^ =;]+(?==)/g)
         if (keys) {
-            for (var i = keys.length; i--;)
-                document.cookie = keys[i] + "=; expire=" + date.toGMTString() + "; path=/";
+            for (var i = keys.length; i--;) {
+            document.cookie = keys[i] + '=0;path=/;expires=' + new Date(0).toUTCString() // 清除当前域名下的,例如：m.ratingdog.cn
+            document.cookie = keys[i] + '=0;path=/;domain=' + document.domain + ';expires=' + new Date(0).toUTCString() // 清除当前域名下的，例如 .m.ratingdog.cn
+            document.cookie = keys[i] + '=0;path=/;domain=ratingdog.cn;expires=' + new Date(0).toUTCString() // 清除一级域名下的或指定的，例如 .ratingdog.cn
+            }
         }
         if (res.code == 10001) {
             layer.closeAll('loading');
