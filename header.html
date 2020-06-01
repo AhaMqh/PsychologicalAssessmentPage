@@ -16,7 +16,10 @@
         <ul class="mainmenu layui-anim layui-anim-scaleSpring" id="manage_sys">
           <!--<li><a href="#"><span class="edit_info">修改信息</span></a></li>
           <li><a href="#"><span class="edit_info" data-method="notice">修改密码</span></a></li>-->
-          <li><a href="#" onclick="exitsys()"><span class="edit_info">退出登录</span></a></li>
+          <!-- 教师退出 -->
+          <li v-if="usertype"><a href="#" onclick="exittea()"><span class="edit_info">退出登录</span></a></li>
+          <!-- 学生退出 -->
+          <li v-if="usertype==false"><a href="#" onclick="exitstu()"><span class="edit_info">退出登录</span></a></li>
         </ul>
 
       </div>
